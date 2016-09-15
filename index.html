@@ -11,6 +11,7 @@
 
         <script src="js/prismic-configuration.js"></script>
         <script src="js/prismic-helpers.js"></script>
+        <script src="js/uke.js"></script>
 	</head>
     <body>
     	<h1>Welcome</h1>
@@ -22,8 +23,7 @@
 	                {{#each this}}
 	                	<li>
 		                    <a href="song.html?id={{id}}&slug={{slug}}">
-		                    	{{data.[uke-song.name].value}}
-		                    </a>
+		                    	{{data.[uke-song.name].value}}</a> by {{data.[uke-song.artist].value}}		                 
 	                    </li>
 	                {{/each}}
 	            </script>
@@ -33,18 +33,7 @@
     	<script src="https://static.cdn.prismic.io/prismic.js"></script>
     	<script type="text/javascript">
             $(function() {
-                Helpers.withPrismic(function(ctx) {
-                    ctx.api.form("everything").set('page', parseInt(window.location.hash.substring(1)) || 1 ).ref(ctx.ref).submit(function(err, docs) {
-                        if (err) { Configuration.onPrismicError(err); return; }
-                        // Feed the templates
-                        console.log(docs.results);
-
-                        var songs = $("#song-template").html();
-                        var song_template = Handlebars.compile(songs);
-
-                        $("#listSongs").html(song_template(docs.results))                
-                    });
-                });
+                displaySongsList();
             });
         </script>
     </body>
