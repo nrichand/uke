@@ -62,6 +62,12 @@
                         <h4 class="subheader">{{data.[uke-song.artist].value}}</h4>
 
                         <p>Strumming pattern : {{data.[uke-song.strumming_pattern].value}}</p>
+                        <p>Chords : 
+                            {{#each data.[uke-song.chords].value}}
+                                {{label.value}}
+                            {{/each}}
+                        </p>
+
                         <p>
                             <a data-open="tabModal"><img src="{{data.[uke-song.tab].value.main.url}}"></a>
                         </p>
