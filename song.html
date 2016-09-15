@@ -61,11 +61,14 @@
                         <h3>{{data.[uke-song.name].value}}</h3>
                         <h4 class="subheader">{{data.[uke-song.artist].value}}</h4>
 
-                        <p>Strumming pattern : {{data.[uke-song.strumming_pattern].value}}</p>
-                        <p>Chords : 
+                        <p><b>Strumming pattern :</b> {{data.[uke-song.strumming_pattern].value}}</p>
+                        <p>
+                            <b>Chords :</b>
+                            <div class="primary callout">
                             {{#each data.[uke-song.chords].value}}
-                                {{label.value}}
+                                <img src="img/chords/{{label.value}}.jpg" style="height: 100px;">
                             {{/each}}
+                            </div>
                         </p>
 
                         <p>
