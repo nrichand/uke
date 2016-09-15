@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html>
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <title>Song</title>
+
+        <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 
         <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -14,26 +18,67 @@
         <script src="js/uke.js"></script>
 	</head>
     <body>
-    	
-    	<div class="text-center"  id="ukeSong">
-            <script id="song-template" type="text/x-handlebars-template">
-                <h1>{{data.[uke-song.name].value}} by {{data.[uke-song.artist].value}}</h1>
-                Musical style : {{data.[uke-song.musical_style].value}}
-                <h2>Tutorial</h2>
-                <iframe width="560" height="315" src="{{data.[uke-song.tuto_link].value.url}}" frameborder="0" allowfullscreen>
-                </iframe>
-                <img src="{{data.[uke-song.tab].value.main.url}}">       
-                <h2>Original song</h2>
-                <iframe width="560" height="315" src="{{data.[uke-song.clip_link].value.url}}" frameborder="0" allowfullscreen>
-                </iframe>         
-            </script>
+    	<br>
+
+        <div class="row columns">
+          <nav aria-label="You are here:" role="navigation">
+            <ul class="breadcrumbs" id="bread">
+                <script id="breadcrumb-template" type="text/x-handlebars-template">
+                    <li><a href="index.html">Home</a></li>  
+                    <li class="disabled">{{data.[uke-song.artist].value}}</li>
+                    <li>
+                    <span class="show-for-sr">Current: </span> {{data.[uke-song.name].value}}
+                    </li>
+                </script>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="row">
+            
+            <div id="ukeSong">
+                <script id="song-template" type="text/x-handlebars-template">
+
+                    <div class="medium-6 columns">
+                        <h5>Tutorial</h5>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{data.[uke-song.tuto_youtube_id].value}}" frameborder="0" allowfullscreen>
+                        </iframe>
+
+                        <h5>Clip</h5>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{data.[uke-song.clip_youtube_id].value}}" frameborder="0" allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="medium-6 large-5 columns">
+                        <h3>{{data.[uke-song.name].value}}</h3>
+                        <h4 class="subheader">{{data.[uke-song.artist].value}}</h4>
+
+                        <p>Strumming pattern : {{data.[uke-song.strumming_pattern].value}}</p>
+                        <p>
+                            <img src="{{data.[uke-song.tab].value.main.url}}">
+                        </p>
+                    </div>
+                </script>
+            </div>
+            
+        </div>
+
+        <div class="row column">
+            <hr>
+
+            <ul class="tabs" data-tabs id="example-tabs">
+                <li class="tabs-title"><a href="#">Similar Songs</a></li>
+            </ul>
         </div>
 
     	<script src="https://static.cdn.prismic.io/prismic.js"></script>
+        <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     	<script type="text/javascript">
             $(function() {
                 displayASong();
             });
+            $(document).foundation();
+
         </script>
     </body>
 </html>

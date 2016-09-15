@@ -34,9 +34,17 @@ function displayASong(){
             document.title = "Ukulele song - " + doc.data['uke-song.artist'].value;
 
             var song = $("#song-template").html();
-            var song_template = Handlebars.compile(song);
-
+            var song_template = Handlebars.compile(song);            
             $("#ukeSong").html(song_template(doc))
+
+
+            var bread = $("#breadcrumb-template").html();
+            var bread_template = Handlebars.compile(bread);            
+            $("#bread").html(bread_template(doc))
+            
+
+            //TODO : a checker 
+            //console.log(img(src=pageContent.getImage(doc['data.[uke-song.tab].value.main.url']).url));
         });
 
     });
