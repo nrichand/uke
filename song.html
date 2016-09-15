@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Song</title>
+
+        <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+        <script src="js/prismic-configuration.js"></script>
+        <script src="js/prismic-helpers.js"></script>
+        <script src="js/uke.js"></script>
+	</head>
+    <body>
+    	
+    	<div class="text-center"  id="ukeSong">
+            <script id="song-template" type="text/x-handlebars-template">
+                <h1>{{data.[uke-song.name].value}} by {{data.[uke-song.artist].value}}</h1>
+                Musical style : {{data.[uke-song.musical_style].value}}
+                <h2>Tutorial</h2>
+                <iframe width="560" height="315" src="{{data.[uke-song.tuto_link].value.url}}" frameborder="0" allowfullscreen>
+                </iframe>
+                <img src="{{data.[uke-song.tab].value.main.url}}">       
+                <h2>Original song</h2>
+                <iframe width="560" height="315" src="{{data.[uke-song.clip_link].value.url}}" frameborder="0" allowfullscreen>
+                </iframe>         
+            </script>
+        </div>
+
+    	<script src="https://static.cdn.prismic.io/prismic.js"></script>
+    	<script type="text/javascript">
+            $(function() {
+                displayASong();
+            });
+        </script>
+    </body>
+</html>

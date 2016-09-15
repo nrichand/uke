@@ -5,10 +5,39 @@ function displaySongsList(){
             // Feed the templates
             console.log(docs.results);
 
-            var songs = $("#song-template").html();
+            var songs = $("#list-song-template").html();
             var song_template = Handlebars.compile(songs);
 
             $("#listSongs").html(song_template(docs.results))
         });
+    });
+}
+
+function displayASong(){
+	Helpers.withPrismic(function(ctx) {
+
+        var id = Helpers.queryString['id'],
+            slug = Helpers.queryString['slug'];
+
+        ctx.api.form("everything").ref(ctx.ref).query('[[:d = at(document.id, "' + id + '")]]').submit(function(err, docs) {
+
+            if (err) { Configuration.onPrismicError(err); return; }
+
+            var doc = docs.results[0];
+
+            // If there is no documents for this id
+            if(!doc) {
+                document.location = '404.html';
+            }
+
+            console.log(doc);
+            document.title = "Ukulele song - " + doc.data['uke-song.artist'].value;
+
+            var song = $("#song-template").html();
+            var song_template = Handlebars.compile(song);
+
+            $("#ukeSong").html(song_template(doc))
+        });
+
     });
 }
