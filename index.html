@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Uke site</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Discover &amp; learn ukulele with your favorite songs</title>
+		<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 
         <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -14,27 +15,68 @@
         <script src="js/uke.js"></script>
 	</head>
     <body>
-    	<h1>Welcome</h1>
-    	<h2>List of songs :</h2>
+    	<div class="off-canvas-wrapper">
+      		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
-    	<ul>
-	    	<div class="text-center"  id="listSongs">
-	            <script id="list-song-template" type="text/x-handlebars-template">
-	                {{#each this}}
-	                	<li>
-		                    <a href="song.html?id={{id}}&slug={{slug}}">
-		                    	{{data.[uke-song.name].value}}</a> by {{data.[uke-song.artist].value}}		                 
-	                    </li>
-	                {{/each}}
-	            </script>
-	        </div>
-	    </ul>
+				<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
+		          <div class="row column">
+		            <br>
+		            <img class="thumbnail" src="https://pixabay.com/static/uploads/photo/2015/12/18/19/26/ukulele-1098956_960_720.jpg">
+		            <h5>Filter the songs</h5>
+		            <p><i>More to come...</i></p>
+		          </div>
+		        </div>
+
+
+      			<div class="off-canvas-content" data-off-canvas-content>
+      				<div class="callout primary">
+			            <div class="row column">
+			              <h1>Welcome, you're in the right place to learn and have fun with your uke !</h1>
+			              <p class="lead"><i>We believe that we learn a lot more when we practice something we like. That's why we help you find songs you like and especially those who are appropriate with your ukulele level and we give you everything you need to learn it quickly !</i></p>
+			            </div>
+			        </div>
+
+			    	<div class="row small-up-2 medium-up-3 large-up-4">
+			    		<div class="text-center">
+			    			<h3>Choose your song and play</h3>
+			    		</div>
+				    	<div class="text-center"  id="listSongs">
+				            <script id="list-song-template" type="text/x-handlebars-template">
+				                {{#each this}}
+				                	<div class="column">
+					                    <a href="song.html?id={{id}}&slug={{slug}}">
+					                    	<img class="thumbnail" src="http://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg">
+					                    </a>
+					                    	<h5><a href="song.html?id={{id}}&slug={{slug}}">{{data.[uke-song.name].value}}</a> by {{data.[uke-song.artist].value}}<h5>
+					                    					                    
+				                    </div>
+				                {{/each}}
+				            </script>
+				        </div>
+				    </div>
+
+				    <hr>
+
+				    <div class="row">
+			            <div class="medium-6 columns">			         
+			              <p>This site is just a prototype, stay tuned !</p>
+			            </div>
+			            <div class="medium-6 columns">
+			            </div>
+			        </div>
+
+				</div>
+			</div>
+		</div>
 
     	<script src="https://static.cdn.prismic.io/prismic.js"></script>
+    	<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+
     	<script type="text/javascript">
             $(function() {
                 displaySongsList();
             });
+            $(document).foundation();
         </script>
     </body>
 </html>
