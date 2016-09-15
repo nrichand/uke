@@ -18,6 +18,16 @@
         <script src="js/uke.js"></script>
 	</head>
     <body>
+        <div class="large reveal" id="tabModal" data-reveal>
+            <script id="img-template" type="text/x-handlebars-template">
+                <img src="{{data.[uke-song.tab].value.main.url}}">
+
+                <button class="close-button" data-close aria-label="Close modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </script>
+        </div>
+
     	<br>
 
         <div class="row columns">
@@ -35,11 +45,9 @@
         </div>
 
         <div class="row">
-            
             <div id="ukeSong">
-                <script id="song-template" type="text/x-handlebars-template">
-
-                    <div class="medium-6 columns">
+                <script id="song-template" type="text/x-handlebars-template">                    
+                    <div class="medium-6 columns">                        
                         <h5>Tutorial</h5>
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{data.[uke-song.tuto_youtube_id].value}}" frameborder="0" allowfullscreen>
                         </iframe>
@@ -55,7 +63,7 @@
 
                         <p>Strumming pattern : {{data.[uke-song.strumming_pattern].value}}</p>
                         <p>
-                            <img src="{{data.[uke-song.tab].value.main.url}}">
+                            <a data-open="tabModal"><img src="{{data.[uke-song.tab].value.main.url}}"></a>
                         </p>
                     </div>
                 </script>
@@ -74,6 +82,8 @@
 
     	<script src="https://static.cdn.prismic.io/prismic.js"></script>
         <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/plugins/foundation.reveal.js"></script>
+
     	<script type="text/javascript">
             $(function() {
                 displayASong();

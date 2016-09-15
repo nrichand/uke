@@ -42,6 +42,12 @@ function displayASong(){
             var bread_template = Handlebars.compile(bread);            
             $("#bread").html(bread_template(doc))
             
+            var img = $("#img-template").html();
+            var img_template = Handlebars.compile(img);            
+            $("#tabModal").html(img_template(doc))
+            
+
+            
 
             //TODO : a checker 
             //console.log(img(src=pageContent.getImage(doc['data.[uke-song.tab].value.main.url']).url));
