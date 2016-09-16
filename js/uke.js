@@ -8,7 +8,8 @@ function displaySongsList(query){
         	request.query(query);
         }
 
-        request.set('page', parseInt(window.location.hash.substring(1)) || 1 ).submit(function(err, docs) {
+        request.set('page', parseInt(window.location.hash.substring(1)) || 1 )
+        	.submit(function(err, docs) {
             if (err) { Configuration.onPrismicError(err); return; }
             // Feed the templates
             console.log(docs.results);
@@ -33,7 +34,7 @@ function addFilterHandler(){
 	  } else {
 	  	displaySongsList();
 	  }
-	  
+
 	});
 }
 
