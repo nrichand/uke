@@ -22,8 +22,8 @@
 		          <div class="row column">
 		            <br>
 		            <img class="thumbnail" src="img/uke.jpg">
-		            <h5>Filter the songs</h5>
-		            <p><i>More to come...</i></p>
+		            <h3>Learn and have fun with your uke</h3>
+		            <p class="lead"><i>We believe that we learn a lot more when we practice something we like. That's why we help you find songs you like and especially those who are appropriate with your ukulele level and we give you everything you need to learn it quickly !</i></p>
 		          </div>
 		        </div>
 
@@ -31,15 +31,34 @@
       			<div class="off-canvas-content" data-off-canvas-content>
       				<div class="callout primary">
 			            <div class="row column">
-			              <h1>Welcome, you're in the right place to learn and have fun with your uke !</h1>
-			              <p class="lead"><i>We believe that we learn a lot more when we practice something we like. That's why we help you find songs you like and especially those who are appropriate with your ukulele level and we give you everything you need to learn it quickly !</i></p>
+			              <h1>Choose your song and play</h1>			              
 			            </div>
 			        </div>
 
-			    	<div class="row small-up-2 medium-up-3 large-up-4">
-			    		<div class="text-center">
-			    			<h3>Choose your song and play</h3>
-			    		</div>
+			    	<div class="row small-up-2 medium-up-3 large-up-4">			    		
+			    		<div class="text-center">			    			
+				    		<div class="column">				            
+				            	<label>Level
+							        <select>
+							        	<option value="">All</option>	
+							          	<option value="0">Ultra easy</option>
+							          	<option value="1">Beginner</option>
+							          	<option value="2">Advanced beginner</option>
+							          	<option value="3">Eperienced and +</option>
+							        </select>
+						        </label>
+						    </div>
+						    <div class="column">
+						        <label>Music Style
+							        <select>
+							        	<option value="">All</option>	
+							          	<option value="0">Disney</option>
+							          	<option value="1">Pop</option>
+							          	<option value="2">Reggae</option>
+							        </select>
+						        </label>
+				            </div>
+				        </div>
 				    	<div class="text-center"  id="listSongs">
 				            <script id="list-song-template" type="text/x-handlebars-template">
 				                {{#each this}}
