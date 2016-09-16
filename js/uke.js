@@ -1,16 +1,40 @@
-function displaySongsList(){
+var songs;
+
+function displaySongsList(query){
 	Helpers.withPrismic(function(ctx) {
-        ctx.api.form("everything").set('page', parseInt(window.location.hash.substring(1)) || 1 ).ref(ctx.ref).submit(function(err, docs) {
+		var request = ctx.api.form("everything").ref(ctx.ref);
+
+		if(query){
+        	request.query(query);
+        }
+
+        request.set('page', parseInt(window.location.hash.substring(1)) || 1 ).submit(function(err, docs) {
             if (err) { Configuration.onPrismicError(err); return; }
             // Feed the templates
             console.log(docs.results);
 
-            var songs = $("#list-song-template").html();
+            if(! songs){
+            	songs = $("#list-song-template").html();          
+            }
             var song_template = Handlebars.compile(songs);
 
             $("#listSongs").html(song_template(docs.results))
         });
     });
+}
+
+function addFilterHandler(){
+	$("#level").on('change', function() {
+	  var selectedLevel = this.value;
+
+	  if(selectedLevel){
+	  	var query = '[[:d = at(my.uke-song.level, ' + selectedLevel + ')]]';
+	  	displaySongsList(query);	
+	  } else {
+	  	displaySongsList();
+	  }
+	  
+	});
 }
 
 function displayASong(){
@@ -44,10 +68,7 @@ function displayASong(){
             
             var img = $("#img-template").html();
             var img_template = Handlebars.compile(img);            
-            $("#tabModal").html(img_template(doc))
-            
-
-            
+            $("#tabModal").html(img_template(doc))                        
 
             //TODO : a checker 
             //console.log(img(src=pageContent.getImage(doc['data.[uke-song.tab].value.main.url']).url));

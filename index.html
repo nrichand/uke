@@ -39,7 +39,7 @@
 			    		<div class="text-center">			    			
 				    		<div class="column">				            
 				            	<label>Level
-							        <select>
+							        <select id="level">
 							        	<option value="">All</option>	
 							          	<option value="0">Ultra easy</option>
 							          	<option value="1">Beginner</option>
@@ -51,10 +51,12 @@
 						    <div class="column">
 						        <label>Music Style
 							        <select>
-							        	<option value="">All</option>	
+							        	<option value="">All</option>
+							        	<!--
 							          	<option value="0">Disney</option>
 							          	<option value="1">Pop</option>
 							          	<option value="2">Reggae</option>
+							          	-->
 							        </select>
 						        </label>
 				            </div>
@@ -94,6 +96,7 @@
     	<script type="text/javascript">
             $(function() {
                 displaySongsList();
+                addFilterHandler();
             });
             $(document).foundation();
         </script>
