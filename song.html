@@ -18,15 +18,6 @@
         <script src="js/uke.js"></script>
 	</head>
     <body>
-        <div class="large reveal" id="tabModal" data-reveal>
-            <script id="img-template" type="text/x-handlebars-template">
-                <img src="{{data.[uke-song.tab].value.main.url}}">
-
-                <button class="close-button" data-close aria-label="Close modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </script>
-        </div>
 
     	<br>
 
@@ -75,15 +66,16 @@
                             </div>
                         </p>
 
-                        <p>
-                            <a data-open="tabModal"><img src="{{data.[uke-song.tab].value.main.url}}"></a>
-                        </p>
+                        <div style="font-family: monospace;">
+                            {{{tablature}}}
+                        </div>
                     </div>
                 </script>
             </div>
             
         </div>
 
+<!--
         <div class="row column">
             <hr>
 
@@ -91,7 +83,7 @@
                 <li class="tabs-title is-active"><a href="#" aria-selected="true">Similar Songs</a></li>
             </ul>
         </div>
-
+-->
     	<script src="https://static.cdn.prismic.io/prismic.js"></script>
         <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/plugins/foundation.reveal.js"></script>

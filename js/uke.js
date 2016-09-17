@@ -58,21 +58,16 @@ function displayASong(){
             console.log(doc);
             document.title = "Ukulele song - " + doc.data['uke-song.artist'].value;
 
-            var song = $("#song-template").html();
-            var song_template = Handlebars.compile(song);            
-            $("#ukeSong").html(song_template(doc))
+            doc.tablature = doc.getStructuredText('uke-song.tabs').asHtml(ctx.linkResolver);
+            doc.tablature = doc.tablature.replace(/ /g, "&nbsp;");
 
+            var song = $("#song-template").html();
+            var song_template = Handlebars.compile(song);
+            $("#ukeSong").html(song_template(doc))
 
             var bread = $("#breadcrumb-template").html();
             var bread_template = Handlebars.compile(bread);            
-            $("#bread").html(bread_template(doc))
-            
-            var img = $("#img-template").html();
-            var img_template = Handlebars.compile(img);            
-            $("#tabModal").html(img_template(doc))                        
-
-            //TODO : a checker 
-            //console.log(img(src=pageContent.getImage(doc['data.[uke-song.tab].value.main.url']).url));
+            $("#bread").html(bread_template(doc))         
         });
 
     });
