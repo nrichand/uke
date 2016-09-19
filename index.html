@@ -13,6 +13,17 @@
         <script src="js/prismic-configuration.js"></script>
         <script src="js/prismic-helpers.js"></script>
         <script src="js/uke.js"></script>
+
+        <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-84373454-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
 	</head>
     <body>
     	<div class="off-canvas-wrapper">
@@ -54,7 +65,7 @@
 				                {{#each this}}
 				                	<div class="column">
 					                    <a href="song.html?id={{id}}&slug={{slug}}">
-					                    	<img class="thumbnail" src="http://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg">
+					                    	<img class="thumbnail" src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg">
 					                    </a>
 					                    	<h5><a href="song.html?id={{id}}&slug={{slug}}">{{data.[uke-song.name].value}}</a> by {{data.[uke-song.artist].value}}<h5>
 					                    					                    
