@@ -131,10 +131,8 @@ function initUser(){
     });
 }
 
-function doWithFavorites(fun){
+function doWithFavorites(fun, forceLogin){
     var currentUser = firebase.auth().currentUser;
-
-    console.log(currentUser);
 
     if(currentUser){
         var userId = currentUser.uid;
@@ -144,7 +142,10 @@ function doWithFavorites(fun){
             fun(favList.val(), userId);
         });
     } else {
-        window.location='login.html';
+        console.log("Is not logged !");
+        if(forceLogin){
+            window.location='login.html';
+        }
     }
 }
 
@@ -154,12 +155,10 @@ function displayFavorites(){
             var query = "[[:d = any(document.id, "+ JSON.stringify(favorites) + ")]]";
             displaySongsList(query);
         }
-    });
+    }, true);
 }
 
 function checkIfFavorited(){
-    console.log("check fav");
-
     doWithFavorites(function(favorites, userId){
         var songId = Helpers.queryString['id'];
 
@@ -170,7 +169,7 @@ function checkIfFavorited(){
         } else {
             console.log("is not a favory");
         }
-    });
+    }, false);
 }
 
 function addFavorite(){
@@ -190,5 +189,5 @@ function addFavorite(){
 
             checkIfFavorited();
         } 
-    });
+    }, true);
 }
