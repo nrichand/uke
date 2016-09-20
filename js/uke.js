@@ -64,11 +64,13 @@ function displayASong(){
 
             var song = $("#song-template").html();
             var song_template = Handlebars.compile(song);
-            $("#ukeSong").html(song_template(doc))
+            $("#ukeSong").html(song_template(doc));
 
             var bread = $("#breadcrumb-template").html();
             var bread_template = Handlebars.compile(bread);            
-            $("#bread").html(bread_template(doc))         
+            $("#bread").html(bread_template(doc));
+
+            checkIfFavorited();       
         });
 
     });
@@ -156,10 +158,13 @@ function displayFavorites(){
 }
 
 function checkIfFavorited(){
+    console.log("check fav");
+
     doWithFavorites(function(favorites, userId){
         var songId = Helpers.queryString['id'];
 
         if(_.includes(favorites, songId)) {
+            console.log("is a fav");
             $("#favory").removeClass("warning").addClass("secondary");
             $("#favory").html('<i class="fa fa-star-o" aria-hidden="true"></i> Remove favorite');
         } else {
