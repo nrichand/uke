@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Discover &amp; learn ukulele with your favorite songs</title>
+		
 		<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
         <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -40,26 +42,44 @@
 
 
       			<div class="off-canvas-content" data-off-canvas-content>
-      				<div class="callout primary">
-			            <div class="row column">
-			              <h1>Choose your song and play</h1>			              
-			            </div>
-			        </div>
+      				<!-- Start Top Bar -->
+				    <div class="top-bar">
+				      <div class="row">
+				        <div class="top-bar-left">
+				          <ul class="dropdown menu" data-dropdown-menu>
+				            <li class="menu-text">Choose your song and play</li> 
+				          </ul>
 
-			    	<div class="row small-up-2 medium-up-3 large-up-4">			    		
-			    		<div class="text-center">			    			
-				    		<div class="column">				            
-				            	<label>Level
-							        <select id="level">
-							        	<option value="">All</option>	
-							          	<option value="easy">Ultra easy</option>
-							          	<option value="beginner">Beginner</option>
-							          	<option value="adv beginner">Advanced beginner</option>
-							          	<option value="experienced">Eperienced and +</option>
-							        </select>
-						        </label>
-						    </div>
 				        </div>
+				        <div class="top-bar-right">
+				          <ul class="menu">
+				            <li>
+								<button type="button" class="button">
+									<i class="fa fa-sign-in" aria-hidden="true"></i> Login
+								</button>
+							</li>
+				          </ul>
+				        </div>
+				      </div>
+				    </div>
+				    <!-- End Top Bar -->
+
+			    	<div class="row small-up-2 medium-up-3 large-up-4">
+			    		<br>
+
+			    		<div class="text-center">           			               
+			               	<div class="column">     
+			                      <select id="level">
+			                        <option value="">Level : All</option> 
+			                          <option value="easy">Ultra easy</option>
+			                          <option value="beginner">Beginner</option>
+			                          <option value="adv beginner">Advanced beginner</option>
+			                          <option value="experienced">Eperienced and +</option>
+			                      </select>
+			                    
+			                </div>
+			    		</div>
+
 				    	<div class="text-center"  id="listSongs">
 				            <script id="list-song-template" type="text/x-handlebars-template">
 				                {{#each this}}
