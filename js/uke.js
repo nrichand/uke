@@ -9,6 +9,7 @@ function displaySongsList(query){
         }
 
         request.set('page', parseInt(window.location.hash.substring(1)) || 1 )
+            .orderings('[my.uke-song.name]')
         	.submit(function(err, docs) {
             if (err) { Configuration.onPrismicError(err); return; }
             // Feed the templates
@@ -29,7 +30,7 @@ function addFilterHandler(){
 	  var selectedLevel = this.value;
 
 	  if(selectedLevel){
-	  	var query = '[[:d = at(my.uke-song.level, ' + selectedLevel + ')]]';
+	  	var query = '[[:d = at(my.uke-song.ukelevel, "' + selectedLevel + '")]]';
 	  	displaySongsList(query);	
 	  } else {
 	  	displaySongsList();
