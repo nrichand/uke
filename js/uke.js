@@ -96,19 +96,16 @@ function initFirebase(){
   firebase.initializeApp(config);
 }
 
-function loginHandler(){
-    $("#login").on('click', function() {
-
-        if(firebase.auth().currentUser){
-            firebase.auth().signOut().then(function() {              
-              location.reload();
-            }, function(error) {
-              console.log(error);
-            });
-        } else {
-            window.location='login.html';
-        }
-    });    
+function login(){
+    if(firebase.auth().currentUser){
+        firebase.auth().signOut().then(function() {              
+          location.reload();
+        }, function(error) {
+          console.log(error);
+        });
+    } else {
+        window.location='login.html';
+    }
 }
 
 function initUser(){
@@ -122,7 +119,7 @@ function initUser(){
         var uid = user.uid;
         var providerData = user.providerData;
         user.getToken().then(function(accessToken) {
-            $("#username").text(displayName);
+            $("#username").html("<i>" + displayName + "</i>");
             $("#login").html('<i class="fa fa-sign-out" aria-hidden="true"></i>Logout');
             $("#login").addClass("secondary");
         });
@@ -130,6 +127,27 @@ function initUser(){
     }, function(error) {
       console.log("Error init user : "+error);
     });
+}
+
+//TODO : to refactor with addFavorite
+function displayFavorites(){
+    var currentUser = firebase.auth().currentUser;
+
+    if(currentUser){
+        var userId = currentUser.uid;
+        var database = firebase.database();
+
+        var favoriteSongs = database.ref('users/' + userId + '/favorite');
+        favoriteSongs.on('value', function(favList) {
+            var favorites = favList.val();
+            if(favorites){
+                var query = "[[:d = any(document.id, "+ JSON.stringify(favorites) + ")]]";
+                displaySongsList(query);
+            }
+        });
+    } else {
+        window.location='login.html';
+    }
 }
 
 function addFavorite(){

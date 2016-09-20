@@ -63,8 +63,14 @@
 				          <ul class="menu">
 				          	<li class="menu-text" id="username">	          		
 				          	</li>
+				          	<li>
+				          		<a onclick="displayFavorites()" id="">My favorite songs</a>
+				          	</li>
+				          	<li>
+				          		<a onclick="displaySongsList()" id="">All songs</a>
+				          	</li>				          	
 				            <li>
-								<a id="login" type="button" class="button">
+								<a id="login" onclick="login()" type="button" class="button">
 									<i class="fa fa-sign-in" aria-hidden="true"></i> Login
 								</a>
 							</li>
@@ -128,7 +134,6 @@
                 addFilterHandler();
 
                 //login
-                loginHandler();
                 initFirebase();
                 initUser();
             });
