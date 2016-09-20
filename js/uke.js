@@ -30,7 +30,7 @@ function addFilterHandler(){
 	  var selectedLevel = this.value;
 
 	  if(selectedLevel){
-	  	var query = '[[:d = at(my.uke-song.level, ' + selectedLevel + ')]]';
+	  	var query = '[[:d = at(my.uke-song.ukelevel, "' + selectedLevel + '")]]';
 	  	displaySongsList(query);	
 	  } else {
 	  	displaySongsList();
