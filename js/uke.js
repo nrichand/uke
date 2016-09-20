@@ -13,7 +13,7 @@ function displaySongsList(query){
         	.submit(function(err, docs) {
             if (err) { Configuration.onPrismicError(err); return; }
             // Feed the templates
-            console.log(docs.results);
+            //console.log(docs.results);
 
             if(! songs){
             	songs = $("#list-song-template").html();          
@@ -56,7 +56,7 @@ function displayASong(){
                 document.location = '404.html';
             }
 
-            console.log(doc);
+            //console.log(doc);
             document.title = "Ukulele song - " + doc.data['uke-song.artist'].value;
 
             doc.tablature = doc.getStructuredText('uke-song.tabs').asHtml(ctx.linkResolver);
@@ -129,54 +129,61 @@ function initUser(){
     });
 }
 
-//TODO : to refactor with addFavorite
-function displayFavorites(){
+function doWithFavorites(fun){
     var currentUser = firebase.auth().currentUser;
+
+    console.log(currentUser);
 
     if(currentUser){
         var userId = currentUser.uid;
-        var database = firebase.database();
 
-        var favoriteSongs = database.ref('users/' + userId + '/favorite');
-        favoriteSongs.on('value', function(favList) {
-            var favorites = favList.val();
-            if(favorites){
-                var query = "[[:d = any(document.id, "+ JSON.stringify(favorites) + ")]]";
-                displaySongsList(query);
-            }
+        var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
+        favoriteSongs.on('value', function(favList) {            
+            fun(favList.val(), userId);
         });
     } else {
         window.location='login.html';
     }
 }
 
-function addFavorite(){
-    var userId = firebase.auth().currentUser.uid;
-    var database = firebase.database();
+function displayFavorites(){
+    doWithFavorites(function(favorites, userId){
+        if(favorites){
+            var query = "[[:d = any(document.id, "+ JSON.stringify(favorites) + ")]]";
+            displaySongsList(query);
+        }
+    });
+}
 
-    var favoriteSongs = database.ref('users/' + userId + '/favorite');
-    favoriteSongs.on('value', function(favList) {
+function checkIfFavorited(){
+    doWithFavorites(function(favorites, userId){
         var songId = Helpers.queryString['id'];
 
-        if(! _.includes(favList.val(), songId)) {            
-            var favorites = favList.val();
+        if(_.includes(favorites, songId)) {
+            $("#favory").removeClass("warning").addClass("secondary");
+            $("#favory").html('<i class="fa fa-star-o" aria-hidden="true"></i> Remove favorite');
+        } else {
+            console.log("is not a favory");
+        }
+    });
+}
+
+function addFavorite(){
+    doWithFavorites(function(favorites, userId){
+        var songId = Helpers.queryString['id'];
+
+        if(!_.includes(favorites, songId)) {            
             if(favorites) {
                 favorites.push(songId);
             } else {
                 favorites = [songId];
             }
             
-            database.ref('users/' + userId).set({
+            firebase.database().ref('users/' + userId).set({
                 favorite: favorites
-            });     
-        }  
-    });
-}
+            });
 
-function favoriteHandler(){
-    if(firebase.auth().currentUser){
-        addFavorite();
-    } else {
-        window.location='login.html';
-    }
+            checkIfFavorited();
+        } 
+    });
 }
