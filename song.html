@@ -7,13 +7,22 @@
 
         <title>Song</title>
 
+        <!-- CSS -->
         <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">        
 
+        <!-- Prismic -->
         <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
+        <!-- lodash -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
+
+        <!-- custom JS -->
         <script src="js/prismic-configuration.js"></script>
         <script src="js/prismic-helpers.js"></script>
         <script src="js/uke.js"></script>
@@ -60,7 +69,7 @@
                         </iframe>
 
                         <h5>Ukulele covers to inspire you</h5>
-                         <iframe width="560" height="315" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele cover" frameborder="0" allowfullscreen>
+                         <iframe width="560" height="315" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele cover -teacher" frameborder="0" allowfullscreen>
                         </iframe>
                     </div>
 
@@ -86,6 +95,7 @@
                         </div>
                         <a href="#" onclick="printDiv('printableArea')" class="button info small"><i class="fa fa-print" aria-hidden="true"></i>
 Print the tutorial</a>
+                        <a href="#" onclick="favoriteHandler()" class="button warning small"><i class="fa fa-star" aria-hidden="true"></i> Add to favorite</a>
                     </div>
                 </script>
             </div>
@@ -103,14 +113,13 @@ Print the tutorial</a>
 -->
     	<script src="https://static.cdn.prismic.io/prismic.js"></script>
         <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/plugins/foundation.reveal.js"></script>
 
     	<script type="text/javascript">
             $(function() {
                 displayASong();
+                initFirebase();
             });
             $(document).foundation();
-
         </script>
     </body>
 </html>

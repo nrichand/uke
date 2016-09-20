@@ -1,5 +1,4 @@
 var songs;
-var loggedUser;
 
 function displaySongsList(query){
 	Helpers.withPrismic(function(ctx) {
@@ -99,7 +98,8 @@ function initFirebase(){
 
 function loginHandler(){
     $("#login").on('click', function() {
-        if(loggedUser){
+
+        if(firebase.auth().currentUser){
             firebase.auth().signOut().then(function() {              
               location.reload();
             }, function(error) {
@@ -114,8 +114,6 @@ function loginHandler(){
 function initUser(){
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        loggedUser = user;
-
         // User is signed in.
         var displayName = user.displayName;
         var email = user.email;
@@ -127,29 +125,38 @@ function initUser(){
             $("#username").text(displayName);
             $("#login").html('<i class="fa fa-sign-out" aria-hidden="true"></i>Logout');
             $("#login").addClass("secondary");
-
-/*
-          document.getElementById('sign-in-status').textContent = 'Signed in';
-          document.getElementById('sign-in').textContent = 'Sign out';
-          document.getElementById('account-details').textContent = JSON.stringify({
-            displayName: displayName,
-            email: email,
-            emailVerified: emailVerified,
-            photoURL: photoURL,
-            uid: uid,
-            accessToken: accessToken,
-            providerData: providerData
-          }, null, '  ');
-*/
         });
-      } else {
-        loggedUser = null;
-        // User is signed out.
-        //document.getElementById('sign-in-status').textContent = 'Signed out';
-        //document.getElementById('sign-in').textContent = 'Sign in';
-        //document.getElementById('account-details').textContent = 'null';
       }
     }, function(error) {
-      console.log(error);
+      console.log("Error init user : "+error);
     });
+}
+
+function addFavorite(){
+    var userId = firebase.auth().currentUser.uid;
+    var database = firebase.database();
+
+    var favoriteSongs = database.ref('users/' + userId + '/favorite');
+    favoriteSongs.on('value', function(favList) {
+        var songId = Helpers.queryString['id'];
+
+        if(_.includes(favList.val(), songId)) {
+            console.log("already present");            
+        } else {
+            var favorites = favList.val();
+            favorites.push(songId);
+            
+            database.ref('users/' + userId).set({
+                favorite: favorites
+            });     
+        }  
+    });
+}
+
+function favoriteHandler(){
+    if(firebase.auth().currentUser){
+        addFavorite();
+    } else {
+        window.location='login.html';
+    }
 }
