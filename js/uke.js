@@ -140,11 +140,13 @@ function addFavorite(){
     favoriteSongs.on('value', function(favList) {
         var songId = Helpers.queryString['id'];
 
-        if(_.includes(favList.val(), songId)) {
-            console.log("already present");            
-        } else {
+        if(! _.includes(favList.val(), songId)) {            
             var favorites = favList.val();
-            favorites.push(songId);
+            if(favorites) {
+                favorites.push(songId);
+            } else {
+                favorites = [songId];
+            }
             
             database.ref('users/' + userId).set({
                 favorite: favorites
