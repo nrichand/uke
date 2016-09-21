@@ -138,7 +138,7 @@ function doWithFavorites(fun, forceLogin){
         var userId = currentUser.uid;
 
         var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
-        favoriteSongs.on('value', function(favList) {            
+        favoriteSongs.once('value', function(favList) {            
             fun(favList.val(), userId);
         });
     } else {
@@ -149,45 +149,66 @@ function doWithFavorites(fun, forceLogin){
     }
 }
 
+//Display favorites on main page
 function displayFavorites(){
     doWithFavorites(function(favorites, userId){
         if(favorites){
             var query = "[[:d = any(document.id, "+ JSON.stringify(favorites) + ")]]";
             displaySongsList(query);
+        } else {
+            $("#listSongs").html('<div class="column">No favorites</di>');
         }
     }, true);
 }
 
 function checkIfFavorited(){
-    doWithFavorites(function(favorites, userId){
-        var songId = Helpers.queryString['id'];
+    var currentUser = firebase.auth().currentUser;
 
-        if(_.includes(favorites, songId)) {
-            console.log("is a fav");
-            $("#favory").removeClass("warning").addClass("secondary");
-            $("#favory").html('<i class="fa fa-star-o" aria-hidden="true"></i> Remove favorite');
-        } else {
-            console.log("is not a favory");
-        }
-    }, false);
+    if(currentUser){
+        var userId = currentUser.uid;
+
+        var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
+        favoriteSongs.once('value', function(favList) {            
+            updateFavoriteButton(favList.val());
+        });
+    }
 }
 
-function addFavorite(){
+function updateFavoriteButton(favorites){
+    var songId = Helpers.queryString['id'];
+
+    if(_.includes(favorites, songId)) {
+        console.log("is a fav");
+        $("#favory").removeClass("warning").addClass("secondary");
+        $("#favory").html('<i class="fa fa-star-o" aria-hidden="true"></i> Remove favorite');
+    } else {
+        console.log("is not a fav");
+        $("#favory").removeClass("secondary").addClass("warning");
+        $("#favory").html('<i class="fa fa-star" aria-hidden="true"></i> Add to favorite');
+    }
+}
+
+function addOrDeleteFavorite(){
+
     doWithFavorites(function(favorites, userId){
         var songId = Helpers.queryString['id'];
 
+        //Add favorite
         if(!_.includes(favorites, songId)) {            
             if(favorites) {
                 favorites.push(songId);
             } else {
                 favorites = [songId];
             }
-            
-            firebase.database().ref('users/' + userId).set({
-                favorite: favorites
-            });
+        //Remove favorite
+        } else {
+            favorites= _.without(favorites, songId);
+        }
 
-            checkIfFavorited();
-        } 
+        firebase.database().ref('users/' + userId).set({
+            favorite: favorites
+        });
+
+        updateFavoriteButton(favorites);
     }, true);
 }
