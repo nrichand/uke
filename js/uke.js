@@ -62,6 +62,8 @@ function displayASong(){
             doc.tablature = doc.getStructuredText('uke-song.tabs').asHtml(ctx.linkResolver);
             doc.tablature = doc.tablature.replace(/ /g, "&nbsp;");
 
+            doc.arrowStrum = convertStrumToArrow(doc.data['uke-song.strumming_pattern'].value);
+
             var song = $("#song-template").html();
             var song_template = Handlebars.compile(song);
             $("#ukeSong").html(song_template(doc));
@@ -211,4 +213,18 @@ function addOrDeleteFavorite(){
 
         updateFavoriteButton(favorites);
     }, true);
+}
+
+function convertStrumToArrow(strum){
+    var downArrowIcon = '<i class="fa fa-arrow-down" aria-hidden="true"></i>';
+    var upArrowIcon = '<i class="fa fa-arrow-up" aria-hidden="true"></i>';
+    var minus = '<i class="fa fa-minus" aria-hidden="true"></i>';
+    var chuck = '<i class="fa fa-hand-paper-o" aria-hidden="true"></i>';
+
+    return strum.replace(new RegExp("--", 'g'), "- -")
+        .replace(new RegExp(" ", 'g'), "&nbsp;")
+        //.replace(new RegExp("-", 'g'), minus)
+        .replace(new RegExp("U", 'g'), upArrowIcon)
+        .replace(new RegExp("D", 'g'), downArrowIcon)
+        .replace(new RegExp("X", 'g'), chuck);
 }
