@@ -57,7 +57,7 @@ function displayASong(){
             }
 
             //console.log(doc);
-            document.title = "Ukulele song - " + doc.data['uke-song.artist'].value;
+            document.title = "Ukulele tutorial - " + doc.data['uke-song.artist'].value + " " + doc.data['uke-song.name'].value;
 
             doc.tablature = doc.getStructuredText('uke-song.tabs').asHtml(ctx.linkResolver);
             doc.tablature = doc.tablature.replace(/ /g, "&nbsp;");
