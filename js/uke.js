@@ -216,8 +216,8 @@ function addOrDeleteFavorite(){
 }
 
 function convertStrumToArrow(strum){
-    var downArrowIcon = '<i class="fa fa-arrow-down" aria-hidden="true"></i>';
-    var upArrowIcon = '<i class="fa fa-arrow-up" aria-hidden="true"></i>';
+    var downArrowIcon = '<i class="fa fa-long-arrow-down" aria-hidden="true"></i>';
+    var upArrowIcon = '<i class="fa fa-long-arrow-up" aria-hidden="true"></i>';
     var minus = '<i class="fa fa-minus" aria-hidden="true"></i>';
     var chuck = '<i class="fa fa-hand-paper-o" aria-hidden="true"></i>';
 
