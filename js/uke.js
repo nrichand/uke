@@ -228,3 +228,8 @@ function convertStrumToArrow(strum){
         .replace(new RegExp("D", 'g'), downArrowIcon)
         .replace(new RegExp("X", 'g'), chuck);
 }
+
+function pageScroll() {
+    window.scrollBy(0,1); // horizontal and vertical scroll increments
+    scrolldelay = setTimeout('pageScroll()',125); // scrolls every 100 milliseconds
+}

@@ -62,6 +62,7 @@
 
         <div class="row">
             <div id="ukeSong">
+
                 <script id="song-template" type="text/x-handlebars-template">                    
                     <div class="medium-6 columns">                        
                         <h5>Tutorial</h5>                       
@@ -77,7 +78,10 @@
                         </iframe>
                     </div>
 
-                    <div class="medium-6 large-5 columns">                        
+                    <div class="medium-6 large-5 columns">
+                        <a href="#" onclick="pageScroll()" class="button info small">
+                            <i class="fa fa-angle-double-down" aria-hidden="true"></i> Auto-scroll to play this song
+                        </a>                      
                         <div id="printableArea">
 
                             <h1>{{data.[uke-song.name].value}}</h1>
