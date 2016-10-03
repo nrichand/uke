@@ -49,6 +49,23 @@
                 content: none !important;
               }
             }
+
+            .chords:hover {
+                opacity: 0.9;
+
+                -webkit-filter: sepia(100%);
+                filter: sepia(100%);
+                -webkit-transition: .2s ease-in-out;
+                transition: .2s ease-in-out;
+            }
+            .chords {
+                opacity: 1;
+                -webkit-transition: .2s ease-in-out;
+                transition: .2s ease-in-out;
+
+                -webkit-filter: sepia(0);
+                filter: sepia(0);
+            }
         </style>
 	</head>
     <body>
@@ -85,11 +102,11 @@
 
                             <h4><b>Strumming pattern :</b> {{{arrowStrum}}}</h4>                        
                             <p>
-                                <b>Chords :</b>
+                                <b>Chords (click to see alternatives) :</b>
                                 <div class="primary callout">
                                 {{#each chords_img_url}}
                                     <a href={{chord_url}} target="_blank">
-                                        <img src="{{diag_mini}}">
+                                        <img class="chords" src="{{diag_mini}}">
                                     </a>
                                 {{/each}}
                                 </div>
