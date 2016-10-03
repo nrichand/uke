@@ -1,5 +1,10 @@
 var songs;
 
+var downArrowIcon = '<i class="fa fa-long-arrow-down" aria-hidden="true"></i>';
+var upArrowIcon = '<i class="fa fa-long-arrow-up" aria-hidden="true"></i>';
+var minusIcon = '<i class="fa fa-minus" aria-hidden="true"></i>';
+var chuckIcon = '<i class="fa fa-hand-paper-o" aria-hidden="true"></i>';
+
 function displaySongsList(query){
 	Helpers.withPrismic(function(ctx) {
 		var request = ctx.api.form("everything").ref(ctx.ref);
@@ -61,8 +66,10 @@ function displayASong(){
 
             //improve tablature
             doc.tablature = doc.getStructuredText('uke-song.tabs').asHtml(ctx.linkResolver);
-            doc.tablature = doc.tablature.replace(/ /g, "&nbsp;");
-
+            doc.tablature = doc.tablature.replace(/ /g, "&nbsp;")
+                .replace(new RegExp("\\(U\\)", 'g'), upArrowIcon)
+                .replace(new RegExp("\\(D\\)", 'g'), downArrowIcon);
+                    
             //replace chords by url from ukulele-chords website
             doc.chords_img_url = []
             var prismic_chords = doc.data['uke-song.chords'].value;
@@ -228,17 +235,12 @@ function addOrDeleteFavorite(){
 }
 
 function convertStrumToArrow(strum){
-    var downArrowIcon = '<i class="fa fa-long-arrow-down" aria-hidden="true"></i>';
-    var upArrowIcon = '<i class="fa fa-long-arrow-up" aria-hidden="true"></i>';
-    var minus = '<i class="fa fa-minus" aria-hidden="true"></i>';
-    var chuck = '<i class="fa fa-hand-paper-o" aria-hidden="true"></i>';
-
     return strum.replace(new RegExp("--", 'g'), "- -")
         .replace(new RegExp(" ", 'g'), "&nbsp;")
-        //.replace(new RegExp("-", 'g'), minus)
+        //.replace(new RegExp("-", 'g'), minusIcon)
         .replace(new RegExp("U", 'g'), upArrowIcon)
         .replace(new RegExp("D", 'g'), downArrowIcon)
-        .replace(new RegExp("X", 'g'), chuck);
+        .replace(new RegExp("X", 'g'), chuckIcon);
 }
 
 function pageScroll() {
