@@ -59,8 +59,20 @@ function displayASong(){
             //console.log(doc);
             document.title = "Ukulele tutorial - " + doc.data['uke-song.artist'].value + " " + doc.data['uke-song.name'].value;
 
+            //improve tablature
             doc.tablature = doc.getStructuredText('uke-song.tabs').asHtml(ctx.linkResolver);
             doc.tablature = doc.tablature.replace(/ /g, "&nbsp;");
+
+            //replace chords by url
+            doc.chords_img_url = []
+            var prismic_chords = doc.data['uke-song.chords'].value;
+            prismic_chords.forEach(function(elem){
+                var chord_first_alternative = all_chords[elem.label.value][0];
+                var chord_img_url = chord_first_alternative.chord_diag_mini;
+                var chord_url = chord_first_alternative.chord_url;
+                var newChord = { "diag_mini" : chord_img_url, "chord_url" : chord_url}
+                doc.chords_img_url.push(newChord);
+            });            
 
             doc.arrowStrum = convertStrumToArrow(doc.data['uke-song.strumming_pattern'].value);
 

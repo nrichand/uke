@@ -30,6 +30,7 @@
         <script src="js/prismic-configuration.js"></script>
         <script src="js/prismic-helpers.js"></script>
         <script src="js/uke.js"></script>
+        <script src="js/chords.js"></script>
 
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -91,8 +92,10 @@
                             <p>
                                 <b>Chords :</b>
                                 <div class="primary callout">
-                                {{#each data.[uke-song.chords].value}}
-                                    <img src="img/chords/{{label.value}}.jpg" style="height: 100px;">
+                                {{#each chords_img_url}}
+                                    <a href={{chord_url}} target="_blank">
+                                        <img src="{{diag_mini}}">
+                                    </a>
                                 {{/each}}
                                 </div>
                             </p>
