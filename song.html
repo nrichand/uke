@@ -65,21 +65,8 @@
             <div id="ukeSong">
 
                 <script id="song-template" type="text/x-handlebars-template">                    
-                    <div class="medium-6 columns">                        
-                        <h5>Tutorial</h5>                       
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{data.[uke-song.tuto_youtube_id].value}}" frameborder="0" allowfullscreen>
-                        </iframe>
-
-                        <h5>Clip</h5>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{data.[uke-song.clip_youtube_id].value}}" frameborder="0" allowfullscreen>
-                        </iframe>
-
-                        <h5>Ukulele covers to inspire you</h5>
-                         <iframe width="560" height="315" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele cover -teacher" frameborder="0" allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <div class="medium-6 large-5 columns">
+                    
+                    <div class="medium-8 columns">
                         <a href="#" onclick="pageScroll()" class="button info small">
                             <i class="fa fa-angle-double-down" aria-hidden="true"></i> Auto-scroll to play this song
                         </a>                      
@@ -107,6 +94,20 @@
                         <a href="#" onclick="printDiv('printableArea')" class="button info small"><i class="fa fa-print" aria-hidden="true"></i>
 Print the tutorial</a>
                         <a id="favory" href="javascript:;" onclick="addOrDeleteFavorite()" class="button warning small"><i class="fa fa-star" aria-hidden="true"></i> Add to favorite</a>
+                    </div>
+
+                    <div class="medium-4 columns">                        
+                        <h5>Video clip:</h5>
+                        <iframe width="400" height="225" src="https://www.youtube.com/embed/{{data.[uke-song.clip_youtube_id].value}}" frameborder="0" allowfullscreen>
+                        </iframe>
+
+                        <h5>Ukulele Tutorials:</h5>
+                        <iframe width="400" height="225" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele tutorial" frameborder="0" allowfullscreen>
+                        </iframe>                       
+
+                        <h5>Ukulele covers to inspire you:</h5>
+                        <iframe width="400" height="225" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele cover -teacher" frameborder="0" allowfullscreen>
+                        </iframe>
                     </div>
                 </script>
             </div>

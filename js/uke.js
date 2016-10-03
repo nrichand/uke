@@ -63,7 +63,7 @@ function displayASong(){
             doc.tablature = doc.getStructuredText('uke-song.tabs').asHtml(ctx.linkResolver);
             doc.tablature = doc.tablature.replace(/ /g, "&nbsp;");
 
-            //replace chords by url
+            //replace chords by url from ukulele-chords website
             doc.chords_img_url = []
             var prismic_chords = doc.data['uke-song.chords'].value;
             prismic_chords.forEach(function(elem){
