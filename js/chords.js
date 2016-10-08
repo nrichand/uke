@@ -7,7 +7,7 @@ var all_chords =
 			"chord_diag" : "http://ukulele-chords.com/img/chord/A_1.png",
 			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/A_1.png",
 			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Amajor_1.jpg",
-			"chord_url" : "http://ukulele-chords.com/A"
+			"m" : "http://ukulele-chords.com/A"
 		},
 		{
 			"chord_name" : "A",
@@ -1902,6 +1902,382 @@ var all_chords =
 			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Ab6_586.png",
 			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Ab6_586.jpg",
 			"chord_url" : "http://ukulele-chords.com/Ab6/3"
+		}
+	],
+	"Am7":[
+		{
+			"chord_name" : "Am7",
+			"chord_diff" : "0",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Am7_15.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Am7_15.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Am7_15.jpg",
+			"chord_url" : "http://ukulele-chords.com/Am7"
+		},
+		{
+			"chord_name" : "Am7",
+			"chord_diff" : "9",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Am7_16.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Am7_16.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Am7_16.jpg",
+			"chord_url" : "http://ukulele-chords.com/Am7/2"
+		},
+		{
+			"chord_name" : "Am7",
+			"chord_diff" : "7",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Am7_17.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Am7_17.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Am7_17.jpg",
+			"chord_url" : "http://ukulele-chords.com/Am7/3"
+		},
+		{
+			"chord_name" : "Am7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Am7_18.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Am7_18.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Am7/4"
+		}
+	],
+	"Bbm7":[
+		{
+			"chord_name" : "Bbm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Bbm7_55.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Bbm7_55.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Bbm7_55.jpg",
+			"chord_url" : "http://ukulele-chords.com/Bbm7"
+		},
+		{
+			"chord_name" : "Bbm7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Bbm7_56.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Bbm7_56.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Bbm7_56.jpg",
+			"chord_url" : "http://ukulele-chords.com/Bbm7/2"
+		}
+	],
+	"Bm7":[
+		{
+			"chord_name" : "Bm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Bm7_97.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Bm7_97.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Bm7_97.jpg",
+			"chord_url" : "http://ukulele-chords.com/Bm7"
+		},
+		{
+			"chord_name" : "Bm7",
+			"chord_diff" : "9",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Bm7_98.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Bm7_98.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Bm7/2"
+		},
+		{
+			"chord_name" : "Bm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Bm7_99.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Bm7_99.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Bm7_99.jpg",
+			"chord_url" : "http://ukulele-chords.com/Bm7/3"
+		}
+	],
+	"Cm7":[
+		{
+			"chord_name" : "Cm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Cm7_145.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Cm7_145.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Cm7_145.jpg",
+			"chord_url" : "http://ukulele-chords.com/Cm7"
+		},
+		{
+			"chord_name" : "Cm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Cm7_146.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Cm7_146.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Cm7/2"
+		},
+		{
+			"chord_name" : "Cm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Cm7_147.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Cm7_147.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Cm7/3"
+		},
+		{
+			"chord_name" : "Cm7",
+			"chord_diff" : "9",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Cm7_148.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Cm7_148.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Cm7/4"
+		},
+		{
+			"chord_name" : "Cm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Cm7_149.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Cm7_149.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Cm7_149.jpg",
+			"chord_url" : "http://ukulele-chords.com/Cm7/5"
+		}
+	],
+	"Dbm7":[
+		{
+			"chord_name" : "Dbm7",
+			"chord_diff" : "5",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Dbm7_202.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Dbm7_202.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Dbm7_202.jpg",
+			"chord_url" : "http://ukulele-chords.com/Dbm7"
+		},
+		{
+			"chord_name" : "Dbm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Dbm7_204.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Dbm7_204.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Dbm7/2"
+		},
+		{
+			"chord_name" : "Dbm7",
+			"chord_diff" : "9",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Dbm7_206.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Dbm7_206.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Dbm7/3"
+		}
+	],
+	"Dm7":[
+		{
+			"chord_name" : "Dm7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Dm7_260.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Dm7_260.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Dm7_260.jpg",
+			"chord_url" : "http://ukulele-chords.com/Dm7"
+		},
+		{
+			"chord_name" : "Dm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Dm7_262.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Dm7_262.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Dm7_262.jpg",
+			"chord_url" : "http://ukulele-chords.com/Dm7/2"
+		},
+		{
+			"chord_name" : "Dm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Dm7_263.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Dm7_263.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Dm7/3"
+		},
+		{
+			"chord_name" : "Dm7",
+			"chord_diff" : "9",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Dm7_264.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Dm7_264.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Dm7/5"
+		},
+		{
+			"chord_name" : "Dm7",
+			"chord_diff" : "5",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Dm7_611.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Dm7_611.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Dm7/4"
+		}
+	],
+	"Ebm7":[
+		{
+			"chord_name" : "Ebm7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Ebm7_314.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Ebm7_314.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Ebm7_314.jpg",
+			"chord_url" : "http://ukulele-chords.com/Ebm7"
+		},
+		{
+			"chord_name" : "Ebm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Ebm7_317.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Ebm7_317.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Ebm7_317.jpg",
+			"chord_url" : "http://ukulele-chords.com/Ebm7/2"
+		},
+		{
+			"chord_name" : "Ebm7",
+			"chord_diff" : "9",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Ebm7_319.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Ebm7_319.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Ebm7/3"
+		}
+	],
+	"Em7":[
+		{
+			"chord_name" : "Em7",
+			"chord_diff" : "3",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Em7_365.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Em7_365.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Em7_365.jpg",
+			"chord_url" : "http://ukulele-chords.com/Em7"
+		},
+		{
+			"chord_name" : "Em7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Em7_367.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Em7_367.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Em7/2"
+		},
+		{
+			"chord_name" : "Em7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Em7_368.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Em7_368.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Em7_368.jpg",
+			"chord_url" : "http://ukulele-chords.com/Em7/3"
+		}
+	],
+	"Fm7":[
+		{
+			"chord_name" : "Fm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Fm7_418.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Fm7_418.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Fm7_418.jpg",
+			"chord_url" : "http://ukulele-chords.com/Fm7"
+		},
+		{
+			"chord_name" : "Fm7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Fm7_420.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Fm7_420.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Fm7/2"
+		},
+		{
+			"chord_name" : "Fm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Fm7_421.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Fm7_421.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Fm7_421.jpg",
+			"chord_url" : "http://ukulele-chords.com/Fm7/3"
+		}
+	],
+	"Gbm7":[
+		{
+			"chord_name" : "Gbm7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gbm7_470.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gbm7_470.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Gbm7_470.jpg",
+			"chord_url" : "http://ukulele-chords.com/Gbm7"
+		},
+		{
+			"chord_name" : "Gbm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gbm7_471.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gbm7_471.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Gbm7/2"
+		},
+		{
+			"chord_name" : "Gbm7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gbm7_472.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gbm7_472.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Gbm7/3"
+		},
+		{
+			"chord_name" : "Gbm7",
+			"chord_diff" : "2",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gbm7_473.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gbm7_473.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Gbm7_473.jpg",
+			"chord_url" : "http://ukulele-chords.com/Gbm7/4"
+		}
+	],
+	"Gm7":[
+		{
+			"chord_name" : "Gm7",
+			"chord_diff" : "4",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gm7_518.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gm7_518.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Gm7_518.jpg",
+			"chord_url" : "http://ukulele-chords.com/Gm7"
+		},
+		{
+			"chord_name" : "Gm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gm7_519.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gm7_519.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Gm7_519.jpg",
+			"chord_url" : "http://ukulele-chords.com/Gm7/2"
+		},
+		{
+			"chord_name" : "Gm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gm7_520.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gm7_520.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Gm7/3"
+		},
+		{
+			"chord_name" : "Gm7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gm7_521.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gm7_521.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Gm7/4"
+		},
+		{
+			"chord_name" : "Gm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Gm7_522.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Gm7_522.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Gm7/5"
+		}
+	],
+	"Abm7":[
+		{
+			"chord_name" : "Abm7",
+			"chord_diff" : "9",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Abm7_568.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Abm7_568.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Abm7_568.jpg",
+			"chord_url" : "http://ukulele-chords.com/Abm7"
+		},
+		{
+			"chord_name" : "Abm7",
+			"chord_diff" : "6",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Abm7_569.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Abm7_569.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Abm7_569.jpg",
+			"chord_url" : "http://ukulele-chords.com/Abm7/2"
+		},
+		{
+			"chord_name" : "Abm7",
+			"chord_diff" : "8",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Abm7_571.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Abm7_571.png",
+			"chord_photo" : "false",
+			"chord_url" : "http://ukulele-chords.com/Abm7/3"
+		},
+		{
+			"chord_name" : "Abm7",
+			"chord_diff" : "1",
+			"chord_diag" : "http://ukulele-chords.com/img/chord/Abm7_572.png",
+			"chord_diag_mini" : "http://ukulele-chords.com/img/chord/mini/Abm7_572.png",
+			"chord_photo" : "http://ukulele-chords.com/img/chord/photo/Abm7_572.jpg",
+			"chord_url" : "http://ukulele-chords.com/Abm7/4"
 		}
 	]
 }

@@ -1,0 +1,146 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ukulele tutorial</title>
+        <meta name="description"
+              content="The best tutorials of the web available to you, with everything you need to play them in no time.">
+        <meta name="keywords" content="ukulele, uke, learning, song, strumming pattern, strumming, chords, tab, tablature, beginner, tutorial">
+        <meta name="author" content="DoYoukulele">
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">        
+
+        <!-- Prismic -->
+        <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
+        <!-- lodash -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
+
+        <!-- custom JS -->
+        <script src="js/prismic-configuration.js"></script>
+        <script src="js/prismic-helpers.js"></script>
+        <script src="js/uke.js"></script>
+        <script src="js/chords.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-84373454-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+        <style>
+            @media print {
+              a[href]:after {
+                content: none !important;
+              }
+            }
+
+            .chords:hover {
+                opacity: 0.75;
+            }
+            .chords {
+                opacity: 1;
+                -webkit-transition: .2s ease-in-out;
+                transition: .2s ease-in-out;
+            }
+        </style>
+	</head>
+    <body>
+
+    	<br>
+
+        <div class="row columns">
+          <nav aria-label="You are here:" role="navigation">
+            <ul class="breadcrumbs" id="bread">
+                <script id="breadcrumb-template" type="text/x-handlebars-template">
+                    <li><a href="index.html">Home</a></li>  
+                    <li class="disabled">{{infos.band}}</li>
+                    <li>
+                    <span class="show-for-sr">Current: </span> {{infos.title}}
+                    </li>
+                </script>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="row">
+            <div id="ukeSong">
+
+                Choose your song :<input id="ukeTabId" type="text"></input><a href="#" onclick="displaySongFromTab()" class="button">Load tab</a>
+
+                <script id="song-template" type="text/x-handlebars-template">                    
+                    
+                    <div class="large-8 medium-8 small-12 columns">
+                        <a href="#" onclick="pageScroll()" class="button info small">
+                            <i class="fa fa-angle-double-down" aria-hidden="true"></i> Auto-scroll to play this song
+                        </a>                      
+                        <div id="printableArea">
+
+                            <h1>{{infos.title}}</h1>
+                            <h2 class="subheader">{{infos.band}}</h2>
+
+                            <h4><b>Strumming pattern :</b> {{{arrowStrum}}}</h4>                        
+                            <p>
+                                <b>Chords (click to see alternatives) :</b>
+                                <div class="primary callout">
+                                {{#each chords_img_url}}
+                                    <a href={{chord_url}} target="_blank">
+                                        <img class="chords thumbnail" src="{{diag_mini}}">
+                                    </a>
+                                {{/each}}
+                                </div>
+                            </p>
+
+                            <div style="font-family: monospace;">
+                                {{{tablature}}}
+                            </div>
+                        </div>
+                        <a href="#" onclick="printDiv('printableArea')" class="button info small"><i class="fa fa-print" aria-hidden="true"></i>
+Print the tutorial</a>                     
+                    </div>
+
+                    <div class="large-4 medium-4 small-12 columns">
+                        <h5>Video clip:</h5>
+                        <iframe width="400" height="225" src="https://www.youtube.com/embed?listType=search&list={{infos.band}} {{infos.title}} clip" frameborder="0" allowfullscreen>
+                        </iframe>
+
+                        <h5>Ukulele Tutorials:</h5>
+                        <iframe width="400" height="225" src="https://www.youtube.com/embed?listType=search&list={{infos.band}} {{infos.title}} Ukulele tutorial" frameborder="0" allowfullscreen>
+                        </iframe>                       
+
+                        <h5>Ukulele covers to inspire you:</h5>
+                        <iframe width="400" height="225" src="https://www.youtube.com/embed?listType=search&list={{infos.band}} {{infos.title}} Ukulele cover -teacher -tutorial" frameborder="0" allowfullscreen>
+                        </iframe>
+                    </div>
+                </script>
+            </div>
+            
+        </div>
+
+    	<script src="https://static.cdn.prismic.io/prismic.js"></script>
+        <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+
+    	<script type="text/javascript">
+            $(function() {
+                //displaySongFromTab();
+                initFirebase();
+            });
+            $(document).foundation();
+        </script>
+    </body>
+</html>

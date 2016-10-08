@@ -97,6 +97,40 @@ function displayASong(){
     });
 }
 
+function displaySongFromTab(){
+    var tabId = $("#ukeTabId").val();
+    var url = "http://ukulele-agiletribu.rhcloud.com/tab?tabid="+tabId;
+
+    $.get( url, function( doc ) {
+      
+
+        doc.tablature = doc.infos.song.replace(/ /g, "&nbsp;")
+                .replace(new RegExp("\\\r", 'g'), "<br />")
+                .replace(new RegExp("\\\n", 'g'), "<br />")
+                .replace(new RegExp("\\(U\\)", 'g'), upArrowIcon)
+                .replace(new RegExp("\\(D\\)", 'g'), downArrowIcon);
+
+
+        doc.chords_img_url = []
+        var prismic_chords = doc.infos.chords;
+        prismic_chords.forEach(function(elem){
+            var chord_first_alternative = all_chords[elem][0];
+            var chord_img_url = chord_first_alternative.chord_diag_mini;
+            var chord_url = chord_first_alternative.chord_url;
+            var newChord = { "diag_mini" : chord_img_url, "chord_url" : chord_url}
+            doc.chords_img_url.push(newChord);
+        });
+
+        var bread = $("#breadcrumb-template").html();
+        var bread_template = Handlebars.compile(bread);            
+        $("#bread").html(bread_template(doc));
+
+        var song = $("#song-template").html();
+        var song_template = Handlebars.compile(song);
+        $("#ukeSong").html(song_template(doc));
+    });
+}
+
 function printDiv(divName) {
      var printContents = document.getElementById(divName).innerHTML;
      var originalContents = document.body.innerHTML;
