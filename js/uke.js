@@ -97,13 +97,25 @@ function displayASong(){
     });
 }
 
+function getURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+
+    for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+
 function displaySongFromTab(){
-    var tabId = $("#ukeTabId").val();
+    //var tabId = $("#ukeTabId").val();
+
+    var tabId = getURLParameter("tabId");
     var url = "http://ukulele-agiletribu.rhcloud.com/tab?tabid="+tabId;
 
     $.get( url, function( doc ) {
-      
-
         doc.tablature = doc.infos.song.replace(/ /g, "&nbsp;")
                 .replace(new RegExp("\\\r", 'g'), "<br />")
                 .replace(new RegExp("\\\n", 'g'), "<br />")

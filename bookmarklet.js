@@ -1,0 +1,1 @@
+javascript:(function(){var re = /.*-(\d+).html/;tabId=location.href.replace(re, '$1');location.href='http://www.doyoukulele.com/uketab.html?tabId='+tabId})();
