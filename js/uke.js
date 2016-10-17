@@ -4,6 +4,7 @@ var downArrowIcon = '<i class="fa fa-long-arrow-down" aria-hidden="true"></i>';
 var upArrowIcon = '<i class="fa fa-long-arrow-up" aria-hidden="true"></i>';
 var minusIcon = '<i class="fa fa-minus" aria-hidden="true"></i>';
 var chuckIcon = '<i class="fa fa-hand-paper-o" aria-hidden="true"></i>';
+var closeHandIcon = '<i class="fa fa-hand-rock-o" aria-hidden="true"></i>';
 
 function displaySongsList(query){
 	Helpers.withPrismic(function(ctx) {
@@ -286,7 +287,8 @@ function convertStrumToArrow(strum){
         //.replace(new RegExp("-", 'g'), minusIcon)
         .replace(new RegExp("U", 'g'), upArrowIcon)
         .replace(new RegExp("D", 'g'), downArrowIcon)
-        .replace(new RegExp("X", 'g'), chuckIcon);
+        .replace(new RegExp("X", 'g'), chuckIcon)
+        .replace(new RegExp("O", 'g'), closeHandIcon);
 }
 
 function pageScroll() {
