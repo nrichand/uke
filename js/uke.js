@@ -1,7 +1,11 @@
 var songs;
 
 var downArrowIcon = '<i class="fa fa-long-arrow-down" aria-hidden="true"></i>';
+var downArrowIconRed = '<i style="color: crimson;" class="fa fa-long-arrow-down" aria-hidden="true"></i>';
+
 var upArrowIcon = '<i class="fa fa-long-arrow-up" aria-hidden="true"></i>';
+var upArrowIconRed = '<i style="color: crimson;" class="fa fa-long-arrow-up" aria-hidden="true"></i>';
+
 var minusIcon = '<i class="fa fa-minus" aria-hidden="true"></i>';
 var chuckIcon = '<i class="fa fa-hand-paper-o" aria-hidden="true"></i>';
 var closeHandIcon = '<i class="fa fa-hand-rock-o" aria-hidden="true"></i>';
@@ -284,7 +288,9 @@ function addOrDeleteFavorite(){
 function convertStrumToArrow(strum){
     return strum.replace(new RegExp("--", 'g'), "- -")
         .replace(new RegExp(" ", 'g'), "&nbsp;")
-        //.replace(new RegExp("-", 'g'), minusIcon)
+        
+        .replace(new RegExp("\\(U\\)", 'g'), upArrowIconRed)
+        .replace(new RegExp("\\(D\\)", 'g'), downArrowIconRed)
         .replace(new RegExp("U", 'g'), upArrowIcon)
         .replace(new RegExp("D", 'g'), downArrowIcon)
         .replace(new RegExp("X", 'g'), chuckIcon)
