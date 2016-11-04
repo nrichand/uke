@@ -146,6 +146,10 @@ function displaySongFromTab(){
         var song = $("#song-template").html();
         var song_template = Handlebars.compile(song);
         $("#ukeSong").html(song_template(doc));
+
+
+
+        document.title = doc.infos.title + " - Ukulele tutorial";
     });
 }
 
