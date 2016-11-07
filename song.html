@@ -125,14 +125,9 @@
                         {{#each chords_img_url}}
                         <div class="box">
                           <p class="p-chords"><img src="{{diag_mini}}" alt="chord"/><span class="bc-variante"><img src="dist/img/a-variante.jpg" alt=""/></span></p>
-                          <p class="p-variante"><a href="#null">Variante</a></p>
+                          <!-- <p class="p-variante"><a href="#null">Variante</a></p> -->
                         </div>
                         {{/each}}
-
-                        <div class="box active">
-                          <p class="p-chords"><strong>A</strong><span class="bc-chord"> <img src="dist/img/a.jpg" width="109" height="80" alt=""/></span> <span class="bc-variante"><img src="dist/img/a-variante.jpg" width="99" height="80" alt=""/><img src="dist/img/a-variante2.jpg" width="99" height="80" alt=""/></span></p>
-                          <p class="p-variante"><a href="#null" lang="active"><em class="fa fa-times" aria-hidden="true"></em> Close</a></p>
-                        </div>
                       </div>
                       <!-- / block-chords --> 
                       
@@ -193,26 +188,26 @@
                   </div>
                 </article>
               </div>
-              <div class="col-sm-4 col-lg-offset-1 col-lg-3">
+              <div class="col-sm-4 col-lg-4">
                 <aside class="aside-sidebar">
                   <div class="block-sidebar">
                     <h2>Hear the stumming pattern</h2>
 
-                    <iframe width="232" height="78" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{data.[uke-song.soundcloud_id].value}}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;sharing=false&amp;show_playcount=false"></iframe>
+                    <iframe width="100%" height="auto" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{data.[uke-song.soundcloud_id].value}}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;sharing=false&amp;show_playcount=false"></iframe>
                   </div>
                   <div class="block-sidebar">
                     <h2>Video clip</h2>
-                    <iframe width="232" height="142" src="https://www.youtube.com/embed/{{data.[uke-song.clip_youtube_id].value}}" frameborder="0" allowfullscreen>
+                    <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{data.[uke-song.clip_youtube_id].value}}" frameborder="0" allowfullscreen>
                         </iframe>                    
                   </div>
                   <div class="block-sidebar">
                     <h2>Tutorials</h2>
-                    <iframe width="232" height="142" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele tutorial" frameborder="0" allowfullscreen>
+                    <iframe width="100%" height="auto" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele tutorial" frameborder="0" allowfullscreen>
                         </iframe> 
                   </div>
                   <div class="block-sidebar">
                     <h2>Ukulele covers</h2>
-                    <iframe width="232" height="142" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele cover" frameborder="0" allowfullscreen>
+                    <iframe width="100%" height="auto" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele cover" frameborder="0" allowfullscreen>
                         </iframe>
                   </div>                  
                 </aside>
