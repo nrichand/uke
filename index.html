@@ -83,6 +83,8 @@
       </div>
     </div>
   </header>
+
+<!--
   <div class="block-listfilter">
     <ul>
       <li class="active"><a href="#">All</a></li>
@@ -92,6 +94,7 @@
       <li><a href="#">Top favorites</a></li>
     </ul>
   </div>
+-->
   
   <!-- Only for smartphone-->
   <div class="block-listfilterforiphone visible-xs-block">
@@ -104,6 +107,7 @@
       <div class="col-sm-3">
         <aside id="aside-filter">
           <form>
+<!--
             <div class="block-filter">
               <h2>Options</h2>
               <div class="box">
@@ -129,6 +133,8 @@
                 </div>
               </div>
             </div>
+-->
+<!--
             <div class="block-filter">
               <h2>Search</h2>
               <div class="box">
@@ -138,6 +144,7 @@
                 </div>
               </div>
             </div>
+-->
             <div class="block-filter">
               <h2>Filter</h2>
               <div class="box">
@@ -151,6 +158,7 @@
                 </div>
               </div>
             </div>
+<!--
             <div class="block-filter">
               <h2>Title</h2>
               <div class="box">
@@ -177,6 +185,8 @@
                 </ul>
               </div>
             </div>
+-->
+<!--
             <div class="block-filter">
               <h2>Artiste</h2>
               <div class="box">
@@ -203,27 +213,33 @@
                 </ul>
               </div>
             </div>
+-->            
             <div class="block-filter">
               <h2>Chords difficulties</h2>
-              <div class="box">
+              <div class="box" id="chords_level">
                 <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforall">
+                  <input type="radio" name="chordifficulties" id="chordforall" value="">
                   <label for="chordforall">All</label>
                 </div>
                 <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforbeginner">
+                  <input type="radio" name="chordifficulties" id="chordforeasy" value="easy">
+                  <label for="chordforeasy">Ultra easy</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="chordifficulties" id="chordforbeginner" value="beginner">
                   <label for="chordforbeginner">Beginner</label>
                 </div>
                 <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforinter">
-                  <label for="chordforinter">Intermediate</label>
+                  <input type="radio" name="chordifficulties" id="chordforadv" value="adv beginner">
+                  <label for="chordforadv">Advanced beginner</label>
                 </div>
                 <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforadv">
-                  <label for="chordforadv">Advanced</label>
+                  <input type="radio" name="chordifficulties" id="chordforexp" value="experienced">
+                  <label for="chordforexp">Experienced</label>
                 </div>
               </div>
             </div>
+<!--
             <div class="block-filter">
               <h2>Genre</h2>
               <div class="box">
@@ -253,6 +269,7 @@
                 </div>
               </div>
             </div>
+-->            
           </form>
         </aside>
       </div>
@@ -265,18 +282,18 @@
 			            	<a href="song.html?id={{id}}&slug={{slug}}">
 			            		<img src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" width="242" height="241" alt=""/>
 			            	</a>
-			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> <a href="#">easy level</a> | <a href="#">Pop rock </a></span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
+			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> <a href="#">{{data.[uke-song.Chords_diff].value}} level</a> | <a href="#">{{data.[uke-song.musical_style].value}} </a></span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
 			            </figure>
 			            <p class="bp-title"><a href="song.html?id={{id}}&slug={{slug}}">{{data.[uke-song.name].value}}</a></p>
 			            <p class="bp-by">By : <a href="#null">{{data.[uke-song.artist].value}}</a></p>
 			            			            
-			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> <a href="#">easy level</a> | <a href="#">Pop rock </a></span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
+			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> <a href="#">{{data.[uke-song.Chords_diff].value}} level</a> | <a href="#">{{data.[uke-song.musical_style].value}} </a></span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
 		          	</div>
 	          	{{/each}}
           	</script>	
 
         </div>
-        <p class="info-loader"><span>LOADING...</span></p>
+        <p class="info-loader"><span>MORE TO COME...</span></p>
       </div>
     </div>
   </div>

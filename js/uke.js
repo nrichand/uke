@@ -37,8 +37,16 @@ function displaySongsList(query){
 }
 
 function addFilterHandler(){
-	$("#chords_level").on('change', function() {
-	  var selectedLevel = this.value;
+
+    //$("#chords_level").on('change', function() {
+    //var selectedLevel = this.value;
+
+    $("#chords_level").on('click', function() {
+      console.log("click fired");
+
+      var selectedLevel = $('#chords_level input:radio:checked').val()
+
+      console.log(selectedLevel);
 
 	  if(selectedLevel){
 	  	var query = '[[:d = at(my.uke-song.Chords_diff, "' + selectedLevel + '")]]';
