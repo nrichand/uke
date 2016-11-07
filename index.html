@@ -1,151 +1,354 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Discover &amp; learn ukulele with your favorite songs</title>
-		<meta name="description"
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="robots" content="noindex, nofollow" />
+	<title>Discover &amp; learn ukulele with your favorite songs</title>
+	<meta name="description"
               content="The best tutorials of the web available to you, with everything you need to play them in no time.">
-        <meta name="keywords" content="ukulele, uke, learning, song, strumming pattern, strumming, chords, tab, tablature, beginner, tutorial">
-        <meta name="author" content="DoYoukulele">
+    <meta name="keywords" content="ukulele, uke, learning, song, strumming pattern, strumming, chords, tab, tablature, beginner, tutorial">
+    <meta name="author" content="DoYoukulele">
 
-		
-		<!-- CSS -->
-		<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
 
-		<!-- Prismic -->
-        <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
 
-        <!-- Firebase -->
-        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+	<!-- Prismic -->
+    <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-        <!-- lodash -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 
-        <!-- custom JS -->
-        <script src="js/prismic-configuration.js"></script>
-        <script src="js/prismic-helpers.js"></script>
-        <script src="js/uke.js"></script>
+    <!-- lodash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
 
-        <script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <!-- custom JS -->
+    <script src="js/prismic-configuration.js"></script>
+    <script src="js/prismic-helpers.js"></script>
+    <script src="js/uke.js"></script>
 
-		  ga('create', 'UA-84373454-1', 'auto');
-		  ga('send', 'pageview');
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		</script>
-	</head>
-    <body>
-    	<div class="off-canvas-wrapper">
-      		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+	  ga('create', 'UA-84373454-1', 'auto');
+	  ga('send', 'pageview');
 
-				<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
-		          <div class="row column">
-		            <br>
-		            <img class="thumbnail" src="img/uke.jpg" alt="ukulele">
-		            <h3>Learn to play ukulele step by step with your favorite songs</h3>
-		            <p class="lead">
-		            	<blockquote><i>
-		            		The best tutorials of the web available to you, with <strong>everything</strong> you need to play them in no time.
-		            	</i></blockquote>
-		            </p>
-		          </div>
-		        </div>
+	</script>
+</head>
 
+<body>
 
-      			<div class="off-canvas-content" data-off-canvas-content>
-      				<!-- Start Top Bar -->
-				    <div class="top-bar">
-				      <div class="row">
-				        <div class="top-bar-left">
-				          <ul class="dropdown menu" data-dropdown-menu>
-				            <li class="menu-text">Choose your song and play</li> 
-				            <li><a href="begin.html">Basics for beginners</a></li>
-				          </ul>				          
-				        </div>
-				        <div class="top-bar-right">
-				          <ul class="menu">
-				          	<li class="menu-text" id="username">	          		
-				          	</li>
-				          	<li>
-				          		<a onclick="displayFavorites()" id="">My favorite songs</a>
-				          	</li>
-				          	<li>
-				          		<a onclick="displaySongsList()" id="">All songs</a>
-				          	</li>				          	
-				            <li>
-								<a id="login" onclick="login()" type="button" class="button">
-									<i class="fa fa-sign-in" aria-hidden="true"></i> Login
-								</a>
-							</li>
-				          </ul>
-				        </div>
-				      </div>
-				    </div>
-				    <!-- End Top Bar -->
+<!-- start HEADER -->
+<header id="hd">
+  <nav class="navbar navbar-default">
+    <div class="container"> 
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="icon-hamburger"> </span> </button>
+        <div class="btn-searching  visible-xs-block"><a href="#"><span>Search</span></a></div>
+        <a class="navbar-brand" href="#"><img src="dist/img/doyoukulele.svg" alt="Doyoukulele" width="216" height="53"/></a> </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="item-start"><a href="begin.html">Basics <span>for beginners</span></a></li>
+          <li class="item-songs"><a href="index.html"><span>List of</span> songs <span> to play</span></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Sign Up</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+</header>
+<!-- end HEADER --> 
 
-			    	<div class="row small-up-2 medium-up-3 large-up-4">
-			    		<br>
+<!-- start BODY -->
+<main id="bd">
+  <header class="header-listing">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Learn ukulele step by step</h1>
+          <p><em>with your favorite songs</em></p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="block-listfilter">
+    <ul>
+      <li class="active"><a href="#">All</a></li>
+      <li><a href="#">Most recent</a></li>
+      <li><a href="#">Most commented</a></li>
+      <li><a href="#">Most viewed</a></li>
+      <li><a href="#">Top favorites</a></li>
+    </ul>
+  </div>
+  
+  <!-- Only for smartphone-->
+  <div class="block-listfilterforiphone visible-xs-block">
+    <p class="text-center"><a id="btnfilter" href="#" class="btn btn-default">Filter</a></p>
+  </div>
+  <!-- / Only for smartphone-->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <aside id="aside-filter">
+          <form>
+            <div class="block-filter">
+              <h2>Options</h2>
+              <div class="box">
+                <div class="block-checkbox">
+                  <input name="choroptions" id="chordfo1" type="radio">
+                  <label for="chordfo1">All</label>
+                </div>
+                <div class="block-checkbox">
+                  <input name="choroptions" id="chordfo2" type="radio">
+                  <label for="chordfo2">Most recent</label>
+                </div>
+                <div class="block-checkbox">
+                  <input name="choroptions" id="chordfo3" type="radio">
+                  <label for="chordfo3">Most commented</label>
+                </div>
+                <div class="block-checkbox">
+                  <input name="choroptions" id="chordfo4" type="radio">
+                  <label for="chordfo4">Most viewed</label>
+                </div>
+                <div class="block-checkbox">
+                  <input name="choroptions" id="chordfo5" type="radio">
+                  <label for="chordfo5">Top favorites</label>
+                </div>
+              </div>
+            </div>
+            <div class="block-filter">
+              <h2>Search</h2>
+              <div class="box">
+                <div class="forminsearch">
+                  <input class="txt-input" type="text">
+                  <input class="btn-send" value="OK" type="submit">
+                </div>
+              </div>
+            </div>
+            <div class="block-filter">
+              <h2>Filter</h2>
+              <div class="box">
+                <div class="block-checkbox">
+                  <input type="radio" name="rfilter" id="forall">
+                  <label for="forall">All</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="rfilter" id="forfavorite">
+                  <label for="forfavorite">Favorites</label>
+                </div>
+              </div>
+            </div>
+            <div class="block-filter">
+              <h2>Title</h2>
+              <div class="box">
+                <ul>
+                  <li class="active"><a href="#">All</a></li>
+                  <li><a href="#">A</a></li>
+                  <li><a href="#">B</a></li>
+                  <li><a href="#">C</a></li>
+                  <li><a href="#">D</a></li>
+                  <li><a href="#">E</a></li>
+                  <li><a href="#">F</a></li>
+                  <li><a href="#">G</a></li>
+                  <li><a href="#">H</a></li>
+                  <li><a href="#">I</a></li>
+                  <li><a href="#">J</a></li>
+                  <li><a href="#">K</a></li>
+                  <li><a href="#">L</a></li>
+                  <li><a href="#">M</a></li>
+                  <li><a href="#">N</a></li>
+                  <li><a href="#">O</a></li>
+                  <li><a href="#">P</a></li>
+                  <li><a href="#">Q</a></li>
+                  <li><a href="#">R</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="block-filter">
+              <h2>Artiste</h2>
+              <div class="box">
+                <ul>
+                  <li class="active"><a href="#">All</a></li>
+                  <li><a href="#">A</a></li>
+                  <li><a href="#">B</a></li>
+                  <li><a href="#">C</a></li>
+                  <li><a href="#">D</a></li>
+                  <li><a href="#">E</a></li>
+                  <li><a href="#">F</a></li>
+                  <li><a href="#">G</a></li>
+                  <li><a href="#">H</a></li>
+                  <li><a href="#">I</a></li>
+                  <li><a href="#">J</a></li>
+                  <li><a href="#">K</a></li>
+                  <li><a href="#">L</a></li>
+                  <li><a href="#">M</a></li>
+                  <li><a href="#">N</a></li>
+                  <li><a href="#">O</a></li>
+                  <li><a href="#">P</a></li>
+                  <li><a href="#">Q</a></li>
+                  <li><a href="#">R</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="block-filter">
+              <h2>Chords difficulties</h2>
+              <div class="box">
+                <div class="block-checkbox">
+                  <input type="radio" name="chordifficulties" id="chordforall">
+                  <label for="chordforall">All</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="chordifficulties" id="chordforbeginner">
+                  <label for="chordforbeginner">Beginner</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="chordifficulties" id="chordforinter">
+                  <label for="chordforinter">Intermediate</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="chordifficulties" id="chordforadv">
+                  <label for="chordforadv">Advanced</label>
+                </div>
+              </div>
+            </div>
+            <div class="block-filter">
+              <h2>Genre</h2>
+              <div class="box">
+                <div class="block-checkbox">
+                  <input type="checkbox" id="byrock">
+                  <label for="byrock">Pop Rock </label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="checkbox" id="byfinger">
+                  <label for="byfinger">Fingepicking Songs</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="checkbox" id="bylorem2">
+                  <label for="bylorem2">... </label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="checkbox" id="bylorem3">
+                  <label for="bylorem3">... </label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="checkbox" id="bylorem4">
+                  <label for="bylorem4">... </label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="checkbox" id="buydeselectll">
+                  <label for="buydeselectll">Deselect all </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </aside>
+      </div>
+      <div class="col-sm-9">
+        <div class="listing-grid" id="listSongs"> 
+        	<script id="list-song-template" type="text/x-handlebars-template">
+        		{{#each this}}
+		          	<div class="block-prodfile">
+			            <figure>
+			            	<a href="song.html?id={{id}}&slug={{slug}}">
+			            		<img src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" width="242" height="241" alt=""/>
+			            	</a>
+			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> <a href="#">easy level</a> | <a href="#">Pop rock </a></span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
+			            </figure>
+			            <p class="bp-title"><a href="song.html?id={{id}}&slug={{slug}}">{{data.[uke-song.name].value}}</a></p>
+			            <p class="bp-by">By : <a href="#null">{{data.[uke-song.artist].value}}</a></p>
+			            			            
+			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> <a href="#">easy level</a> | <a href="#">Pop rock </a></span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
+		          	</div>
+	          	{{/each}}
+          	</script>	
 
-			    		<div class="text-center">           			               
-			               	<div class="column">     
-			                    <select id="chords_level">
-			                        <option value="">Chords difficulty : All</option> 
-			                        <option value="easy">Ultra easy</option>
-			                        <option value="beginner">Beginner</option>
-			                        <option value="adv beginner">Advanced beginner</option>
-									<option value="experienced">Experienced</option>                    
-			                    </select>			                    
-			                </div>
-			    		</div>
+        </div>
+        <p class="info-loader"><span>LOADING...</span></p>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- end Body --> 
 
-				    	<div class="text-center"  id="listSongs">
-				            <script id="list-song-template" type="text/x-handlebars-template">
-				                {{#each this}}
-				                	<div class="column">
-					                    <a href="song.html?id={{id}}&slug={{slug}}">
-					                    	<img class="thumbnail" src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg">
-					                    </a>
-					                    	<h5><a href="song.html?id={{id}}&slug={{slug}}">{{data.[uke-song.name].value}}</a> by {{data.[uke-song.artist].value}}<h5>
-				                    </div>
-				                {{/each}}
-				            </script>
-				        </div>
-				    </div>
+<!-- Le footer à toujours une marge négative à -80px, il faut donc toujours prévoir un paddin bottom de 80px en bas de chaque page. On peut rajouter la classe "padding-bottom" --> 
 
-				    <hr>
+<!-- start FOOTER -->
 
-				    <div class="row">
-			            <div class="medium-6 columns">			         
-			              <p>This site is just a prototype, stay tuned! For more information: contact@doyoukulele.com</p>
-			            </div>
-			            <div class="medium-6 columns">
-			            </div>
-			        </div>
+<footer id="ft">
+  <div class="first-row">
+    <div class="container"> 
+      <!-- row -->
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-4 col-md-offset-4  col-md-4  col-lg-offset-4 col-lg-4">
+          <ul class="list-social">
+            <li><strong>Follow us !</strong>
+              <ul>
+                <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> </a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
+                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> </a></li>
+                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i> </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-5  col-md-4 col-lg-4">
+          <div class="form-emailing">
+            <h2>Get in touch !</h2>
+            <p>subscribe to our newsletter</p>
+            <form>
+              <input class="txt-input" type="text">
+              <input class="btn-send" value="OK" type="submit">
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- / row --> 
+    </div>
+  </div>
+  <div class="second-row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="p-logo"><span class="hidden-xs"><img src="dist/img/logo.svg" alt="" width="141" height="21"/> - Learn Ukulele easily</span></p>
+        </div>
+        <div class="col-sm-6">
+          <p class="text-right"><em class="fa fa-copyright" aria-hidden="true"></em> Doyoukulele 2016 <br class="visible-xs-block">
+            <span class="hidden-xs">-</span> <a href="#">CONTACT</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end FOOTER --> 
+<script type="text/javascript" src="dist/js/jquery.js"></script> 
+<script type="text/javascript" src="dist/js/bootstrap.js"></script> 
+<script type="text/javascript" src="dist/js/plugins.js"></script> 
+<script type="text/javascript" src="dist/js/global.js"></script>
 
-				</div>
-			</div>
-		</div>
+	<script src="https://static.cdn.prismic.io/prismic.js"></script>
 
-    	<script src="https://static.cdn.prismic.io/prismic.js"></script>
-    	<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+	<script type="text/javascript">
+        $(function() {
+            displaySongsList();
+            addFilterHandler();
 
-    	<script type="text/javascript">
-            $(function() {
-                displaySongsList();
-                addFilterHandler();
-
-                //login
-                initFirebase();
-                initUser();
-            });
-            $(document).foundation();
-        </script>
-    </body>
+            //login
+            initFirebase();
+            initUser();
+        });
+    </script>
+</body>
 </html>
