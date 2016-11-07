@@ -9395,7 +9395,7 @@ input::-moz-focus-inner {
   position: relative;
   padding: 0  ;
   z-index: 1;
-  margin-top: -80px;
+  margin-top: -70px; /* TODO : remettre -80px */
 }
 #ft .first-row {
   padding-top: 70px;
@@ -10824,7 +10824,7 @@ p.p-btncall {
 }
 /* .block-suggest */
 .block-suggest {
-  width: 50%;
+  width: 100%;
   float: left;
   padding: 13px 13px 0 13px;
   color: #fff;
@@ -10851,6 +10851,11 @@ p.p-btncall {
   font-weight: 600;
   line-height: 1.1em;
 }
+.block-suggest .strumming{
+  color: #698500;
+  font-size: 28px;
+}
+
 .p-chords:before,
 .p-chords:after {
   content: " ";
@@ -10868,11 +10873,11 @@ p.p-btncall {
   clear: both;
 }
 .col-left {
-  width: 45%;
+  width: 40%;
   float: left;
 }
 .col-right {
-  width: 55%;
+  width: 60%;
   float: right;
 }
 /* block-infos */
