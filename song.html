@@ -103,7 +103,7 @@
         <div class="row" id="ukeSong">
             <script id="song-template" type="text/x-handlebars-template"> 
 
-              <div class="col-sm-8">
+              <div class="col-sm-8" id="printableArea">
                 <article class="article-file">
                   <header>
                     <div class="row">
@@ -111,7 +111,14 @@
                       <div class="col-sm-9">
                         <h1>{{data.[uke-song.name].value}}</h1>
                         <h2>{{data.[uke-song.artist].value}}</h2>
-                        <p class="af-meta"><strong>3 comments</strong> <em class="fa fa-circle" aria-hidden="true"></em> Added : 10/10/2015 <em class="fa fa-circle" aria-hidden="true"></em> Difficulty : easy <span class="visible-xs-inline"><em class="fa fa-circle" aria-hidden="true"></em> <a id="heartfavorite" href="#null">add favorite</a></span></p>
+                        <p class="af-meta">
+                            <strong>Chords difficulty :</strong> {{data.[uke-song.Chords_diff].value}}
+                            <em class="fa fa-circle" aria-hidden="true"></em>
+                            <strong>Strumming difficulty :</strong> {{data.[uke-song.Strummming_diff].value}}
+                            <em class="fa fa-circle" aria-hidden="true"></em>
+
+                            <a id="heartfavorite" href="#null">Add to favorite</a></span>
+                        </p>
                         <!-- Add class "active" if active --> 
                         <a id="yourfavorite" href="#null"><span>Your favorite</span></a> </div>
                     </div>
@@ -155,19 +162,7 @@
                       
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-sm-12"> 
-                      
-                      <!-- block articletools -->
-                      <div class="block-articletools">
-                        <p class="p-groupbtn"> <a href="#null" class="btn btn-info"><span class="icon-pdf"> </span> PDF</a> <a href="#null" class="btn btn-info"><span class="icon-print"> </span> Print</a></p>
-                        <p class="p-typo"><span class="pt-label">Typo</span> <a href="#null" class="pt-plus"><span>+</span></a> <a href="#null" class="pt-minus"><span>-</span></a> </p>
-                      </div>
-                      
-                      <!-- / block articletools --> 
-                      
-                    </div>
-                  </div>
+                  
                   <div class="row">
                     <div class="col-sm-12"> 
                       
@@ -183,6 +178,19 @@
                       </div>
                       
                       <!-- / block-lyrics --> 
+                      
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12"> 
+                      
+                      <!-- block articletools -->
+                      <div class="block-articletools">
+                        <p class="p-groupbtn"><a href="#null" onclick="printDiv('printableArea')" class="btn btn-info"><span class="icon-print"> </span> Print</a></p>                        
+                      </div>
+                      
+                      <!-- / block articletools --> 
                       
                     </div>
                   </div>
