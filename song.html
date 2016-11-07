@@ -1,147 +1,290 @@
-<!doctype html>
-
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ukulele tutorial</title>
-        <meta name="description"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Ukulele tutorial</title>
+    <meta name="description"
               content="Ukule tab, chords, strumming pattern &amp; much more for your favorite song.">
-        <meta name="keywords" content="ukulele, uke, learning, song, strumming pattern, strumming, chords, tab, tablature, beginner, tutorial">
-        <meta name="author" content="DoYoukulele">
+    <meta name="keywords" content="ukulele, uke, learning, song, strumming pattern, strumming, chords, tab, tablature, beginner, tutorial">
+    <meta name="author" content="DoYoukulele">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">        
+    <meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
 
-        <!-- Prismic -->
-        <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
 
-        <!-- Firebase -->
-        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <!-- Prismic -->
+    <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-        <!-- lodash -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 
-        <!-- custom JS -->
-        <script src="js/prismic-configuration.js"></script>
-        <script src="js/prismic-helpers.js"></script>
-        <script src="js/uke.js"></script>
-        <script src="js/chords.js"></script>
+    <!-- lodash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
 
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <!-- custom JS -->
+    <script src="js/prismic-configuration.js"></script>
+    <script src="js/prismic-helpers.js"></script>
+    <script src="js/uke.js"></script>
+    <script src="js/chords.js"></script>
 
-          ga('create', 'UA-84373454-1', 'auto');
-          ga('send', 'pageview');
-        </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        <style>
-            @media print {
-              a[href]:after {
-                content: none !important;
-              }
-            }
+      ga('create', 'UA-84373454-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
 
-            .chords:hover {
-                opacity: 0.75;
-            }
-            .chords {
-                opacity: 1;
-                -webkit-transition: .2s ease-in-out;
-                transition: .2s ease-in-out;
-            }
-        </style>
-	</head>
-    <body>
-
-    	<br>
-
-        <div class="row columns">
-          <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs" id="bread">
-                <script id="breadcrumb-template" type="text/x-handlebars-template">
-                    <li><a href="index.html">Home</a></li>  
-                    <li class="disabled">{{data.[uke-song.artist].value}}</li>
-                    <li>
-                    <span class="show-for-sr">Current: </span> {{data.[uke-song.name].value}}
-                    </li>
-                </script>
+<body>
+    <!-- start HEADER -->
+    <header id="hd">
+      <nav class="navbar navbar-default">
+        <div class="container"> 
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">            
+            <a class="navbar-brand" href="index.html"><img src="dist/img/doyoukulele.svg" alt="Doyoukulele" width="216" height="53"/></a> </div>
+          
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+              <li class="item-start"><a href="begin.html">Basics <span>for beginners</span></a></li>
+              <li class="item-songs"><a href="index.html"><span>List of</span> songs <span> to play</span></a></li>
             </ul>
-          </nav>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Sign Up</a></li>
+              <li><a href="#">Login</a></li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse --> 
         </div>
-
-        <div class="row">
-            <div id="ukeSong">
-
-                <script id="song-template" type="text/x-handlebars-template">                    
-                    
-                    <div class="large-8 medium-8 small-12 columns">
-                        <a href="#" onclick="pageScroll()" class="button info small">
-                            <i class="fa fa-angle-double-down" aria-hidden="true"></i> Auto-scroll to play this song
-                        </a>                      
-                        <div id="printableArea">
-
-                            <h1>{{data.[uke-song.name].value}}</h1>
-                            <h2 class="subheader">{{data.[uke-song.artist].value}}</h2>
-
-                            <h4><b>Suggested strumming pattern :</b> {{{arrowStrum}}}</h4>                        
-                            <p>
-                                <b>Chords (click to see alternatives) :</b>
-                                <div class="primary callout">
-                                {{#each chords_img_url}}
-                                    <a href={{chord_url}} target="_blank">
-                                        <img class="chords thumbnail" src="{{diag_mini}}">
-                                    </a>
-                                {{/each}}
-                                </div>
-                            </p>
-
-                            <div style="font-family: monospace;">
-                                {{{tablature}}}
-                            </div>
-                        </div>
-                        <a href="#" onclick="printDiv('printableArea')" class="button info small"><i class="fa fa-print" aria-hidden="true"></i>
-Print the tutorial</a>
-                        <a id="favory" href="javascript:;" onclick="addOrDeleteFavorite()" class="button warning small"><i class="fa fa-star" aria-hidden="true"></i> Add to favorite</a>
-                    </div>
-
-                    <div class="large-4 medium-4 small-12 columns">
-                        <h5>Hear the strumming pattern:</h5>                                                
-
-                        <iframe width="400" height="120" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{data.[uke-song.soundcloud_id].value}}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;sharing=false&amp;show_playcount=false"></iframe>
-
-                        <h5>Video clip:</h5>
-                        <iframe width="400" height="225" src="https://www.youtube.com/embed/{{data.[uke-song.clip_youtube_id].value}}" frameborder="0" allowfullscreen>
-                        </iframe>
-
-                        <h5>Ukulele Tutorials:</h5>
-                        <iframe width="400" height="225" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele tutorial" frameborder="0" allowfullscreen>
-                        </iframe>                       
-
-                        <h5>Ukulele covers to inspire you:</h5>
-                        <iframe width="400" height="225" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele cover" frameborder="0" allowfullscreen>
-                        </iframe>
-                    </div>
+        <!-- /.container-fluid --> 
+      </nav>
+    </header>
+    <!-- end HEADER --> 
+   
+    <!-- start BODY -->
+    <main id="bd"> 
+      
+      <!-- block-pathway -->
+      <div class="block-pathway">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <ul id="bread">
+                <script id="breadcrumb-template" type="text/x-handlebars-template">
+                    <li><a href="index.html">list of songs </a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+                    <!-- <li><a href="#">Pop Rock</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li> -->
+                    <li>{{data.[uke-song.artist].value}} <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+                    <li>{{data.[uke-song.name].value}}</li>
                 </script>
+              </ul>
+              
+              
+              <select>
+                <option>List of songs</option>
+                <option>Pop Rock</option>
+                <option>George Erza</option>
+              
+                </select>
             </div>
-            
+          </div>
         </div>
+      </div>
+      
+      <!-- / block-pathway -->
+      
+      <div class="container">
+        <div class="row" id="ukeSong">
+            <script id="song-template" type="text/x-handlebars-template"> 
 
-    	<script src="https://static.cdn.prismic.io/prismic.js"></script>
-        <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+              <div class="col-sm-8">
+                <article class="article-file">
+                  <header>
+                    <div class="row">
+                      <div class="col-sm-3"><img src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" width="241" height="242" alt=""/></div>
+                      <div class="col-sm-9">
+                        <h1>{{data.[uke-song.name].value}}</h1>
+                        <h2>{{data.[uke-song.artist].value}}</h2>
+                        <p class="af-meta"><strong>3 comments</strong> <em class="fa fa-circle" aria-hidden="true"></em> Added : 10/10/2015 <em class="fa fa-circle" aria-hidden="true"></em> Difficulty : easy <span class="visible-xs-inline"><em class="fa fa-circle" aria-hidden="true"></em> <a id="heartfavorite" href="#null">add favorite</a></span></p>
+                        <!-- Add class "active" if active --> 
+                        <a id="yourfavorite" href="#null"><span>Your favorite</span></a> </div>
+                    </div>
+                  </header>
+                  <div class="row">
+                    <div class="col-sm-12"> 
+                      
+                      <!-- block chords -->
+                      
+                      <div class="block-chords">
+                        {{#each chords_img_url}}
+                        <div class="box">
+                          <p class="p-chords"><img src="{{diag_mini}}" alt="chord"/><span class="bc-variante"><img src="dist/img/a-variante.jpg" alt=""/></span></p>
+                          <p class="p-variante"><a href="#null">Variante</a></p>
+                        </div>
+                        {{/each}}
 
-    	<script type="text/javascript">
-            $(function() {
-                displayASong();
-                initFirebase();
-            });
-            $(document).foundation();
-        </script>
-    </body>
+                        <div class="box active">
+                          <p class="p-chords"><strong>A</strong><span class="bc-chord"> <img src="dist/img/a.jpg" width="109" height="80" alt=""/></span> <span class="bc-variante"><img src="dist/img/a-variante.jpg" width="99" height="80" alt=""/><img src="dist/img/a-variante2.jpg" width="99" height="80" alt=""/></span></p>
+                          <p class="p-variante"><a href="#null" lang="active"><em class="fa fa-times" aria-hidden="true"></em> Close</a></p>
+                        </div>
+                      </div>
+                      <!-- / block-chords --> 
+                      
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12"> 
+                      
+                      <!-- block-suggest -->
+                      
+                      <div class="block-suggest">
+                        <div class="col-left">
+                          <p class="p-bs"><strong> Suggested </strong> strumming pattens</p>
+                        </div>
+                        <div class="col-right"> {{{arrowStrum}}} </div>
+                      </div>
+                      <!-- / block suggest --> 
+                      
+                      <!-- block infos -->
+                      <div class="block-infos">
+                        <p><strong>Recommended</strong> capo on the 2nd fret</p>
+                      </div>
+                      
+                      <!-- / block infos --> 
+                      
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12"> 
+                      
+                      <!-- block articletools -->
+                      <div class="block-articletools">
+                        <p class="p-groupbtn"> <a href="#null" class="btn btn-info"><span class="icon-pdf"> </span> PDF</a> <a href="#null" class="btn btn-info"><span class="icon-print"> </span> Print</a></p>
+                        <p class="p-typo"><span class="pt-label">Typo</span> <a href="#null" class="pt-plus"><span>+</span></a> <a href="#null" class="pt-minus"><span>-</span></a> </p>
+                      </div>
+                      
+                      <!-- / block articletools --> 
+                      
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12"> 
+                      
+                      <!-- Block scrolling -->
+                      <div class="block-scrolling"> <span class="bs-title"></span> <a id="bs-plus" href="#null"><span>plus</span></a> <span class="bs-label">0</span> <a id="bs-less" href="#null"><span>moins</span></a> 
+                        <!-- add class "active" for active button --> 
+                        <a id="bs-play" href="#null"><span>Play</span></a> </div>
+                      <!-- / Block scrolling --> 
+                      
+                      <!-- block-lyrics -->
+                      <div class="block-lyrics">
+                        {{{tablature}}}
+                      </div>
+                      
+                      <!-- / block-lyrics --> 
+                      
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="col-sm-4 col-lg-offset-1 col-lg-3">
+                <aside class="aside-sidebar">
+                  <div class="block-sidebar">
+                    <h2>Hear the stumming pattern</h2>
+
+                    <iframe width="232" height="78" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{data.[uke-song.soundcloud_id].value}}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;sharing=false&amp;show_playcount=false"></iframe>
+                  </div>
+                  <div class="block-sidebar">
+                    <h2>Video clip</h2>
+                    <iframe width="232" height="142" src="https://www.youtube.com/embed/{{data.[uke-song.clip_youtube_id].value}}" frameborder="0" allowfullscreen>
+                        </iframe>                    
+                  </div>
+                  <div class="block-sidebar">
+                    <h2>Tutorials</h2>
+                    <iframe width="232" height="142" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele tutorial" frameborder="0" allowfullscreen>
+                        </iframe> 
+                  </div>
+                  <div class="block-sidebar">
+                    <h2>Ukulele covers</h2>
+                    <iframe width="232" height="142" src="https://www.youtube.com/embed?listType=search&list={{data.[uke-song.artist].value}} {{data.[uke-song.name].value}} Ukulele cover" frameborder="0" allowfullscreen>
+                        </iframe>
+                  </div>                  
+                </aside>
+              </div>
+            </script>
+        </div>
+      </div>
+
+    </main>
+    <!-- end Body --> 
+    <!-- Le footer à toujours une marge négative à -80px, il faut donc toujours prévoir un paddin bottom de 80px en bas de chaque page. On peut rajouter la classe "padding-bottom" --> 
+
+    <!-- start FOOTER -->
+
+    <footer id="ft">
+      <div class="first-row">
+        <div class="container"> 
+          <!-- row -->
+          <div class="row">
+            <div class="col-sm-offset-3 col-sm-4 col-md-offset-4  col-md-4  col-lg-offset-4 col-lg-4">
+              <ul class="list-social">
+                <li><strong>Follow us !</strong>
+                  <ul>
+                    <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> </a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
+                    <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> </a></li>
+                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i> </a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-5  col-md-4 col-lg-4">
+              <div class="form-emailing">
+                <h2>Get in touch !</h2>
+                <p>subscribe to our newsletter</p>
+                <form>
+                  <input class="txt-input" type="text">
+                  <input class="btn-send" value="OK" type="submit">
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- / row --> 
+        </div>
+      </div>
+      <div class="second-row">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="p-logo"><span class="hidden-xs"><img src="dist/img/logo.svg" alt="" width="141" height="21"/> - Learn Ukulele easily</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-right"><em class="fa fa-copyright" aria-hidden="true"></em> Doyoukulele 2016 <br class="visible-xs-block">
+                <span class="hidden-xs">-</span> <a href="#">CONTACT</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end FOOTER --> 
+    <script type="text/javascript" src="dist/js/jquery.js"></script> 
+    <script type="text/javascript" src="dist/js/bootstrap.js"></script> 
+    <script type="text/javascript" src="dist/js/plugins.js"></script> 
+    <script type="text/javascript" src="dist/js/global.js"></script>
+
+    <script src="https://static.cdn.prismic.io/prismic.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            displayASong();
+            initFirebase();
+        });
+    </script>
+</body>
 </html>
