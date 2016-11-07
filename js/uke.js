@@ -37,11 +37,11 @@ function displaySongsList(query){
 }
 
 function addFilterHandler(){
-	$("#level").on('change', function() {
+	$("#chords_level").on('change', function() {
 	  var selectedLevel = this.value;
 
 	  if(selectedLevel){
-	  	var query = '[[:d = at(my.uke-song.ukelevel, "' + selectedLevel + '")]]';
+	  	var query = '[[:d = at(my.uke-song.Chords_diff, "' + selectedLevel + '")]]';
 	  	displaySongsList(query);	
 	  } else {
 	  	displaySongsList();
