@@ -9992,12 +9992,18 @@ p.p-btncall {
   margin: 0 0 20px 0;
   color: #fff;
 }
+
 .block-blue h3,
 .block-red h3,
 .block-blue h2,
 .block-red h2 {
   color: #fff;
 }
+
+.block-red a{
+  color: #f7d78b;
+}
+
 .container-jumbotron.container-orange {
   color: #fff;
   background: -moz-linear-gradient(-0.19% 44.62% -1.21deg, #f2c64d 0%, #fb9c26 53.18%);
