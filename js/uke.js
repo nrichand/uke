@@ -23,8 +23,6 @@ function displaySongsList(query){
             .pageSize(100)
         	.submit(function(err, docs) {
             if (err) { Configuration.onPrismicError(err); return; }
-            // Feed the templates
-            //console.log(docs.results);
 
             if(! songs){
             	songs = $("#list-song-template").html();          
@@ -34,28 +32,6 @@ function displaySongsList(query){
             $("#listSongs").html(song_template(docs.results))
         });
     });
-}
-
-function addFilterHandler(){
-
-    //$("#chords_level").on('change', function() {
-    //var selectedLevel = this.value;
-
-    $("#chords_level").on('click', function() {
-      console.log("click fired");
-
-      var selectedLevel = $('#chords_level input:radio:checked').val()
-
-      console.log(selectedLevel);
-
-	  if(selectedLevel){
-	  	var query = '[[:d = at(my.uke-song.Chords_diff, "' + selectedLevel + '")]]';
-	  	displaySongsList(query);	
-	  } else {
-	  	displaySongsList();
-	  }
-
-	});
 }
 
 function displayASong(){
@@ -107,7 +83,6 @@ function displayASong(){
 
             checkIfFavorited();       
         });
-
     });
 }
 
@@ -123,44 +98,6 @@ function getURLParameter(sParam) {
     }
 }
 
-function displaySongFromTab(){
-    //var tabId = $("#ukeTabId").val();
-
-    var tabId = getURLParameter("tabId");
-    var url = "http://ukulele-agiletribu.rhcloud.com/tab?tabid="+tabId;
-
-    $.get( url, function( doc ) {
-        doc.tablature = doc.infos.song.replace(/ /g, "&nbsp;")
-                .replace(new RegExp("\\\r", 'g'), "<br />")
-                .replace(new RegExp("\\\n", 'g'), "<br />")
-                .replace(new RegExp("\\(U\\)", 'g'), upArrowIcon)
-                .replace(new RegExp("\\(D\\)", 'g'), downArrowIcon);
-
-
-        doc.chords_img_url = []
-        var prismic_chords = doc.infos.chords;
-        prismic_chords.forEach(function(elem){
-            var chord_first_alternative = all_chords[elem][0];
-            var chord_img_url = chord_first_alternative.chord_diag_mini;
-            var chord_url = chord_first_alternative.chord_url;
-            var newChord = { "diag_mini" : chord_img_url, "chord_url" : chord_url}
-            doc.chords_img_url.push(newChord);
-        });
-
-        var bread = $("#breadcrumb-template").html();
-        var bread_template = Handlebars.compile(bread);            
-        $("#bread").html(bread_template(doc));
-
-        var song = $("#song-template").html();
-        var song_template = Handlebars.compile(song);
-        $("#ukeSong").html(song_template(doc));
-
-
-
-        document.title = doc.infos.title + " - Ukulele tutorial";
-    });
-}
-
 function printDiv(divName) {
      var printContents = document.getElementById(divName).innerHTML;
      var originalContents = document.body.innerHTML;
@@ -172,6 +109,148 @@ function printDiv(divName) {
      document.body.innerHTML = originalContents;
 }
 
+function convertStrumToArrow(strum){
+    return strum.replace(new RegExp("--", 'g'), "- -")
+        .replace(new RegExp(" ", 'g'), "&nbsp;")
+        
+        .replace(new RegExp("\\(U\\)", 'g'), upArrowIconRed)
+        .replace(new RegExp("\\(D\\)", 'g'), downArrowIconRed)
+        .replace(new RegExp("U", 'g'), upArrowIcon)
+        .replace(new RegExp("D", 'g'), downArrowIcon)
+        .replace(new RegExp("X", 'g'), chuckIcon)
+        .replace(new RegExp("O", 'g'), closeHandIcon);
+}
+
+/*
+ *
+ * Handling scrolling
+ *
+ */
+var scroller = (function () {
+    var state = "inactive"; // Private Variable
+    var speed = 1;
+
+    var pub = {};// public object - returned at end of module
+
+    pub.toggle = function () {
+        if(state == "active"){
+            console.log("stop");
+            state = "inactive";
+        } else {
+            console.log("start")
+            state = "active";
+            pageScroll();
+        }
+    };
+
+    pub.getState = function (){
+        return state;
+    }
+    pub.getSpeed = function () {
+        return speed;
+    }
+
+    return pub; // expose externally
+}());
+
+function pageScroll(){
+    if(scroller.getState() == "active"){
+        window.scrollBy(0, scroller.getSpeed()); // horizontal and vertical scroll increments
+        scrolldelay = setTimeout('pageScroll()', 125); // scrolls every 100 milliseconds
+    }
+}
+
+/*
+ *
+ * Favorites
+ *
+ */
+//Display favorites on main page
+function displayFavorites(){
+    doWithFavorites(function(favorites, userId){
+        if(favorites){
+            var query = "[[:d = any(document.id, "+ JSON.stringify(favorites) + ")]]";
+            displaySongsList(query);
+        } else {
+            $("#listSongs").html('<div class="column">No favorites</di>');
+        }
+    }, true);
+}
+
+function checkIfFavorited(){
+    var currentUser = firebase.auth().currentUser;
+
+    if(currentUser){
+        var userId = currentUser.uid;
+
+        var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
+        favoriteSongs.once('value', function(favList) {            
+            updateFavoriteButton(favList.val());
+        });
+    }
+}
+
+function updateFavoriteButton(favorites){
+    var songId = Helpers.queryString['id'];
+
+    if(_.includes(favorites, songId)) {
+        console.log("is a fav");
+        $("#favory").removeClass("warning").addClass("secondary");
+        $("#favory").html('<i class="fa fa-star-o" aria-hidden="true"></i> Remove favorite');
+    } else {
+        console.log("is not a fav");
+        $("#favory").removeClass("secondary").addClass("warning");
+        $("#favory").html('<i class="fa fa-star" aria-hidden="true"></i> Add to favorite');
+    }
+}
+
+function addOrDeleteFavorite(){
+    doWithFavorites(function(favorites, userId){
+        var songId = Helpers.queryString['id'];
+
+        //Add favorite
+        if(!_.includes(favorites, songId)) {            
+            if(favorites) {
+                favorites.push(songId);
+            } else {
+                favorites = [songId];
+            }
+        //Remove favorite
+        } else {
+            favorites= _.without(favorites, songId);
+        }
+
+        firebase.database().ref('users/' + userId).set({
+            favorite: favorites
+        });
+
+        updateFavoriteButton(favorites);
+    }, true);
+}
+
+function doWithFavorites(fun, forceLogin){
+    var currentUser = firebase.auth().currentUser;
+
+    if(currentUser){
+        var userId = currentUser.uid;
+
+        var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
+        favoriteSongs.once('value', function(favList) {            
+            fun(favList.val(), userId);
+        });
+    } else {
+        console.log("Is not logged !");
+        if(forceLogin){
+            window.location='login.html';
+        }
+    }
+}
+
+/*
+ *
+ * User
+ *
+ */
 function initFirebase(){
   var config = {
     apiKey: "AIzaSyDt379V8lGTwY8B2fXyy1CxIGhVxVgKSDg",
@@ -216,134 +295,34 @@ function initUser(){
     });
 }
 
-function doWithFavorites(fun, forceLogin){
-    var currentUser = firebase.auth().currentUser;
+/*
+ * 
+ * Filters
+ *
+ */
+function addFiltersHandler(){
+    $("#chords_level").on('click', function() {
+      reloadSongWithFilters();
+    });
 
-    if(currentUser){
-        var userId = currentUser.uid;
-
-        var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
-        favoriteSongs.once('value', function(favList) {            
-            fun(favList.val(), userId);
-        });
-    } else {
-        console.log("Is not logged !");
-        if(forceLogin){
-            window.location='login.html';
-        }
-    }
+    $("#language").on('click', function() {
+      reloadSongWithFilters();
+    });
 }
 
-//Display favorites on main page
-function displayFavorites(){
-    doWithFavorites(function(favorites, userId){
-        if(favorites){
-            var query = "[[:d = any(document.id, "+ JSON.stringify(favorites) + ")]]";
-            displaySongsList(query);
-        } else {
-            $("#listSongs").html('<div class="column">No favorites</di>');
-        }
-    }, true);
-}
+function reloadSongWithFilters(){
+    var query = "[";
 
-function checkIfFavorited(){
-    var currentUser = firebase.auth().currentUser;
-
-    if(currentUser){
-        var userId = currentUser.uid;
-
-        var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
-        favoriteSongs.once('value', function(favList) {            
-            updateFavoriteButton(favList.val());
-        });
-    }
-}
-
-function updateFavoriteButton(favorites){
-    var songId = Helpers.queryString['id'];
-
-    if(_.includes(favorites, songId)) {
-        console.log("is a fav");
-        $("#favory").removeClass("warning").addClass("secondary");
-        $("#favory").html('<i class="fa fa-star-o" aria-hidden="true"></i> Remove favorite');
-    } else {
-        console.log("is not a fav");
-        $("#favory").removeClass("secondary").addClass("warning");
-        $("#favory").html('<i class="fa fa-star" aria-hidden="true"></i> Add to favorite');
-    }
-}
-
-function addOrDeleteFavorite(){
-
-    doWithFavorites(function(favorites, userId){
-        var songId = Helpers.queryString['id'];
-
-        //Add favorite
-        if(!_.includes(favorites, songId)) {            
-            if(favorites) {
-                favorites.push(songId);
-            } else {
-                favorites = [songId];
-            }
-        //Remove favorite
-        } else {
-            favorites= _.without(favorites, songId);
-        }
-
-        firebase.database().ref('users/' + userId).set({
-            favorite: favorites
-        });
-
-        updateFavoriteButton(favorites);
-    }, true);
-}
-
-function convertStrumToArrow(strum){
-    return strum.replace(new RegExp("--", 'g'), "- -")
-        .replace(new RegExp(" ", 'g'), "&nbsp;")
-        
-        .replace(new RegExp("\\(U\\)", 'g'), upArrowIconRed)
-        .replace(new RegExp("\\(D\\)", 'g'), downArrowIconRed)
-        .replace(new RegExp("U", 'g'), upArrowIcon)
-        .replace(new RegExp("D", 'g'), downArrowIcon)
-        .replace(new RegExp("X", 'g'), chuckIcon)
-        .replace(new RegExp("O", 'g'), closeHandIcon);
-}
-
-
-var scroller = (function () {
-    var state = "inactive"; // Private Variable
-    var speed = 1;
-
-    var pub = {
-    };// public object - returned at end of module
-
-    pub.toggle = function () {
-        if(state == "active"){
-            console.log("stop");
-            state = "inactive";
-        } else {
-            console.log("start")
-            state = "active";
-            pageScroll();
-        }
-    };
-
-    pub.getState = function (){
-        return state;
+    var selectedLevel = $('#chords_level input:radio:checked').val();
+    if(selectedLevel){
+        query += '[:d = at(my.uke-song.Chords_diff, "' + selectedLevel + '")]';        
     }
 
-    pub.getSpeed = function () {
-        return speed;
+    var selectedLang = $('#language input:radio:checked').val();
+    if(selectedLang){
+        query += '[:d = at(my.uke-song.lang, "' + selectedLang + '")]';        
     }
 
-    return pub; // expose externally
-}());
-
-function pageScroll(){
-    if(scroller.getState() == "active"){
-        window.scrollBy(0, scroller.getSpeed()); // horizontal and vertical scroll increments
-        scrolldelay = setTimeout('pageScroll()', 125); // scrolls every 100 milliseconds
-    }
+    query += "]"
+    displaySongsList(query);
 }
-

@@ -50,7 +50,6 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="icon-hamburger"> </span> </button>
-        <div class="btn-searching  visible-xs-block"><a href="#"><span>Search</span></a></div>
         <a class="navbar-brand" href="#"><img src="dist/img/doyoukulele.svg" alt="Doyoukulele" width="216" height="53"/></a> </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -145,6 +144,7 @@
               </div>
             </div>
 -->
+<!--
             <div class="block-filter">
               <h2>Filter</h2>
               <div class="box">
@@ -158,6 +158,7 @@
                 </div>
               </div>
             </div>
+-->
 <!--
             <div class="block-filter">
               <h2>Title</h2>
@@ -218,7 +219,7 @@
               <h2>Chords difficulties</h2>
               <div class="box" id="chords_level">
                 <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforall" value="">
+                  <input type="radio" name="chordifficulties" checked="checked" id="chordforall" value="">
                   <label for="chordforall">All</label>
                 </div>
                 <div class="block-checkbox">
@@ -236,6 +237,20 @@
                 <div class="block-checkbox">
                   <input type="radio" name="chordifficulties" id="chordforexp" value="experienced">
                   <label for="chordforexp">Experienced</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-filter">
+              <h2>Language</h2>
+              <div class="box" id="language">
+                <div class="block-checkbox">
+                  <input type="radio" name="radio_language" checked="checked" id="lang_en" value="en">
+                  <label for="lang_en">English</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="radio_language" id="lang_fr" value="fr">
+                  <label for="lang_fr">French</label>
                 </div>
               </div>
             </div>
@@ -359,7 +374,7 @@
 	<script type="text/javascript">
         $(function() {
             displaySongsList();
-            addFilterHandler();
+            addFiltersHandler();
 
             //login
             initFirebase();
