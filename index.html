@@ -242,6 +242,32 @@
             </div>
 
             <div class="block-filter">
+              <h2>Genre</h2>
+              <div class="box" id="genre">
+              	<div class="block-checkbox">
+                  <input type="radio" name="genreRadio" checked="checked" id="byGenreAll" value="">
+                  <label for="byGenreAll">All</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="genreRadio" id="byPop" value="Pop">
+                  <label for="byPop">Pop</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="genreRadio" id="byClassic" value="Classic songs">
+                  <label for="byClassic">Classic Songs</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="genreRadio" id="byMovie" value="Movie">
+                  <label for="byMovie">Movie</label>
+                </div>
+                <div class="block-checkbox">
+                  <input type="radio" name="genreRadio" id="byDisney" value="Disney">
+                  <label for="byDisney">Disney</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-filter">
               <h2>Language</h2>
               <div class="box" id="language">
                 <div class="block-checkbox">
@@ -253,38 +279,7 @@
                   <label for="lang_fr">French</label>
                 </div>
               </div>
-            </div>
-<!--
-            <div class="block-filter">
-              <h2>Genre</h2>
-              <div class="box">
-                <div class="block-checkbox">
-                  <input type="checkbox" id="byrock">
-                  <label for="byrock">Pop Rock </label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="checkbox" id="byfinger">
-                  <label for="byfinger">Fingepicking Songs</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="checkbox" id="bylorem2">
-                  <label for="bylorem2">... </label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="checkbox" id="bylorem3">
-                  <label for="bylorem3">... </label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="checkbox" id="bylorem4">
-                  <label for="bylorem4">... </label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="checkbox" id="buydeselectll">
-                  <label for="buydeselectll">Deselect all </label>
-                </div>
-              </div>
-            </div>
--->            
+            </div>          
           </form>
         </aside>
       </div>
@@ -373,7 +368,7 @@
 
 	<script type="text/javascript">
         $(function() {
-            displaySongsList();
+            reloadSongWithFilters();
             addFiltersHandler();
 
             //login

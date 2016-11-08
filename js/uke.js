@@ -301,13 +301,9 @@ function initUser(){
  *
  */
 function addFiltersHandler(){
-    $("#chords_level").on('click', function() {
-      reloadSongWithFilters();
-    });
-
-    $("#language").on('click', function() {
-      reloadSongWithFilters();
-    });
+    $("#chords_level").on('click', function() { reloadSongWithFilters(); });
+    $("#language").on('click', function() { reloadSongWithFilters(); });
+    $("#genre").on('click', function() { reloadSongWithFilters(); });
 }
 
 function reloadSongWithFilters(){
@@ -321,6 +317,11 @@ function reloadSongWithFilters(){
     var selectedLang = $('#language input:radio:checked').val();
     if(selectedLang){
         query += '[:d = at(my.uke-song.lang, "' + selectedLang + '")]';        
+    }
+
+    var selectedGenre = $('#genre input:radio:checked').val();
+    if(selectedGenre){
+        query += '[:d = at(my.uke-song.musical_style, "' + selectedGenre + '")]';        
     }
 
     query += "]"
