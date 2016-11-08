@@ -292,12 +292,12 @@
 			            	<a href="song.html?id={{id}}&slug={{slug}}">
 			            		<img src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" width="242" height="241" alt="song miniature"/>
 			            	</a>
-			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> <a href="#">{{data.[uke-song.Chords_diff].value}}</a> | <a href="#">{{data.[uke-song.musical_style].value}} </a></span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
+			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{data.[uke-song.Chords_diff].value}} | {{data.[uke-song.musical_style].value}} </span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
 			            </figure>
 			            <p class="bp-title"><a href="song.html?id={{id}}&slug={{slug}}">{{data.[uke-song.name].value}}</a></p>
-			            <p class="bp-by">By : <a href="#null">{{data.[uke-song.artist].value}}</a></p>
+			            <p class="bp-by">By : {{data.[uke-song.artist].value}}</p>
 			            			            
-			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> <a href="#">{{data.[uke-song.Chords_diff].value}} level</a> | <a href="#">{{data.[uke-song.musical_style].value}} </a></span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
+			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{data.[uke-song.Chords_diff].value}} | {{data.[uke-song.musical_style].value}}</span> <span class="bp-favorite"><a href="#"><em>Favorite</em></a></span> </div>
 		          	</div>
 	          	{{/each}}
           	</script>	
