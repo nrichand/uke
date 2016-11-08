@@ -310,7 +310,40 @@ function convertStrumToArrow(strum){
         .replace(new RegExp("O", 'g'), closeHandIcon);
 }
 
-function pageScroll() {
-    window.scrollBy(0,1); // horizontal and vertical scroll increments
-    scrolldelay = setTimeout('pageScroll()',125); // scrolls every 100 milliseconds
+
+var scroller = (function () {
+    var state = "inactive"; // Private Variable
+    var speed = 1;
+
+    var pub = {
+    };// public object - returned at end of module
+
+    pub.toggle = function () {
+        if(state == "active"){
+            console.log("stop");
+            state = "inactive";
+        } else {
+            console.log("start")
+            state = "active";
+            pageScroll();
+        }
+    };
+
+    pub.getState = function (){
+        return state;
+    }
+
+    pub.getSpeed = function () {
+        return speed;
+    }
+
+    return pub; // expose externally
+}());
+
+function pageScroll(){
+    if(scroller.getState() == "active"){
+        window.scrollBy(0, scroller.getSpeed()); // horizontal and vertical scroll increments
+        scrolldelay = setTimeout('pageScroll()', 125); // scrolls every 100 milliseconds
+    }
 }
+
