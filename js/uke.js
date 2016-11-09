@@ -302,6 +302,7 @@ function initUser(){
  */
 function addFiltersHandler(){
     $("#chords_level").on('click', function() { reloadSongWithFilters(); });
+    $("#strumming_level").on('click', function() { reloadSongWithFilters(); });
     $("#language").on('click', function() { reloadSongWithFilters(); });
     $("#genre").on('click', function() { reloadSongWithFilters(); });
 }
@@ -312,6 +313,11 @@ function reloadSongWithFilters(){
     var selectedLevel = $('#chords_level input:radio:checked').val();
     if(selectedLevel){
         query += '[:d = at(my.uke-song.Chords_diff, "' + selectedLevel + '")]';        
+    }
+
+    var selectedStrumLevel = $('#strumming_level input:radio:checked').val();
+    if(selectedStrumLevel){
+        query += '[:d = at(my.uke-song.Strummming_diff, "' + selectedStrumLevel + '")]';        
     }
 
     var selectedLang = $('#language input:radio:checked').val();
