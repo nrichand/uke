@@ -11353,9 +11353,12 @@ p.p-btncall {
   .block-articletools {
     padding: 0;
   }
+
+/*
   .block-scrolling {
     display: none;
   }
+*/
   /* coments */
   .p-seecomments a.btn {
     padding-top: 11px;
