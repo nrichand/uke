@@ -11351,14 +11351,14 @@ p.p-btncall {
     width: 100%;
   }
   .block-articletools {
+    display: none;
     padding: 0;
   }
 
-/*
   .block-scrolling {
-    display: none;
+    position: initial;
   }
-*/
+
   /* coments */
   .p-seecomments a.btn {
     padding-top: 11px;
