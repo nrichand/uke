@@ -30,6 +30,8 @@ function displaySongsList(query){
             var song_template = Handlebars.compile(songs);
 
             $("#listSongs").html(song_template(docs.results))
+
+            checkIfFavorited(updateFavoriteButtonForList);
         });
     });
 }
@@ -81,7 +83,7 @@ function displayASong(){
             var bread_template = Handlebars.compile(bread);            
             $("#bread").html(bread_template(doc));
 
-            checkIfFavorited();       
+            checkIfFavorited(updateFavoriteButtonForSong);       
         });
     });
 }
@@ -166,6 +168,7 @@ function pageScroll(){
  *
  */
 //Display favorites on main page
+/*
 function displayFavorites(){
     doWithFavorites(function(favorites, userId){
         if(favorites){
@@ -176,9 +179,10 @@ function displayFavorites(){
         }
     }, true);
 }
+*/
 
 //Get all favorited then display fav icon
-function checkIfFavorited(){
+function checkIfFavorited(fun){
     var currentUser = firebase.auth().currentUser;
 
     if(currentUser){
@@ -186,7 +190,7 @@ function checkIfFavorited(){
 
         var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
         favoriteSongs.once('value', function(favList) {            
-            updateFavoriteButton(favList.val());
+            fun(favList.val());
         });
     }
 }
@@ -211,11 +215,11 @@ function addOrDeleteFavorite(){
             favorite: favorites
         });
 
-        updateFavoriteButton(favorites);
+        updateFavoriteButtonForSong(favorites);
     }, true);
 }
 
-function updateFavoriteButton(favorites){
+function updateFavoriteButtonForSong(favorites){
     var songId = Helpers.queryString['id'];
 
     if(_.includes(favorites, songId)) {
@@ -224,6 +228,13 @@ function updateFavoriteButton(favorites){
     } else {
         $("#yourfavorite").removeClass("active");
         $("#heartfavorite").html('Add to favorite');
+    }
+}
+
+function updateFavoriteButtonForList(favorites){
+    for (fav of favorites){
+        $("#fav-"+fav).addClass("active");
+        $("#fav-mobile-"+fav).addClass("active");
     }
 }
 
