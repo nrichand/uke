@@ -177,6 +177,7 @@ function displayFavorites(){
     }, true);
 }
 
+//Get all favorited then display fav icon
 function checkIfFavorited(){
     var currentUser = firebase.auth().currentUser;
 
@@ -187,20 +188,6 @@ function checkIfFavorited(){
         favoriteSongs.once('value', function(favList) {            
             updateFavoriteButton(favList.val());
         });
-    }
-}
-
-function updateFavoriteButton(favorites){
-    var songId = Helpers.queryString['id'];
-
-    if(_.includes(favorites, songId)) {
-        console.log("is a fav");
-        $("#favory").removeClass("warning").addClass("secondary");
-        $("#favory").html('<i class="fa fa-star-o" aria-hidden="true"></i> Remove favorite');
-    } else {
-        console.log("is not a fav");
-        $("#favory").removeClass("secondary").addClass("warning");
-        $("#favory").html('<i class="fa fa-star" aria-hidden="true"></i> Add to favorite');
     }
 }
 
@@ -226,6 +213,18 @@ function addOrDeleteFavorite(){
 
         updateFavoriteButton(favorites);
     }, true);
+}
+
+function updateFavoriteButton(favorites){
+    var songId = Helpers.queryString['id'];
+
+    if(_.includes(favorites, songId)) {
+        $("#yourfavorite").addClass("active");
+        $("#heartfavorite").html('Remove favorite');
+    } else {
+        $("#yourfavorite").removeClass("active");
+        $("#heartfavorite").html('Add to favorite');
+    }
 }
 
 function doWithFavorites(fun, forceLogin){
