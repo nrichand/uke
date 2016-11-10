@@ -74,10 +74,16 @@ function displayASong(){
             });            
 
             doc.arrowStrum = convertStrumToArrow(doc.data['uke-song.strumming_pattern'].value);
-
+            
             var song = $("#song-template").html();
             var song_template = Handlebars.compile(song);
             $("#ukeSong").html(song_template(doc));
+
+            if(doc.data['uke-song.soundcloud_id'] == null){
+                console.log("entered into");
+                $("#soundcloud_iframe").html("Sorry, we are recording this song. Comeback later!");
+            }
+
 
             var bread = $("#breadcrumb-template").html();
             var bread_template = Handlebars.compile(bread);            
