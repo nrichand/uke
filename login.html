@@ -2,9 +2,11 @@
 
 <html class="no-js" lang="en">
     <head>
-        <meta charset="utf-8">
-		
-       	<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    	<link rel="shortcut icon" href="favicon-96x96.png" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="author" content="DoYoukulele">
+
+       	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
 
 		<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 		<script>
@@ -43,10 +45,29 @@
 	    </script>
     </head>
     <body>
-    	<div class="row">
+    	<main id="bd">
+    		<header class="page-header">
+	    		<h1 class="text-center">Signup or login</h1>
+	    		<div id="firebaseui-auth-container"></div>
+	    	</header>
+	    </main>
 
-	    	<h2 class="text-center">Signup or login</h2>
-	    	<div id="firebaseui-auth-container"></div>
-	    </div>
+	    <footer id="ft">
+	    	<div class="first-row"></div>
+	      	
+	      	<div class="second-row">
+			    <div class="container">
+			      <div class="row">
+			        <div class="col-sm-6">
+			          <p class="p-logo"><span class="hidden-xs"><img src="dist/img/logo.svg" alt="logo" width="141" height="21"/> - Learn Ukulele easily</span></p>
+			        </div>
+			        <div class="col-sm-6">
+			          <p class="text-right"><em class="fa fa-copyright" aria-hidden="true"></em> Doyoukulele 2016 <br class="visible-xs-block">
+			            <span class="hidden-xs">-</span> <a href="mailto:contact@doyoukulele.com">CONTACT</a></p>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+  		</footer>
     </body>
 </html>
