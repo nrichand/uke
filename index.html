@@ -12,6 +12,8 @@
 
 	<meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
 
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
 
 	<!-- Prismic -->
@@ -160,7 +162,7 @@
                 </div>
                 <div class="block-checkbox">
                   <input type="radio" name="chordifficulties" id="chordforeasy" value="easy">
-                  <label for="chordforeasy">Ultra easy</label>
+                  <label for="chordforeasy">Ultra easy (C, F, Am, G)</label>
                 </div>
                 <div class="block-checkbox">
                   <input type="radio" name="chordifficulties" id="chordforbeginner" value="beginner">
@@ -169,10 +171,6 @@
                 <div class="block-checkbox">
                   <input type="radio" name="chordifficulties" id="chordforadv" value="adv beginner">
                   <label for="chordforadv">Advanced beginner</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforexp" value="experienced">
-                  <label for="chordforexp">Experienced</label>
                 </div>
               </div>
             </div>
@@ -245,7 +243,7 @@
         <div class="listing-grid" id="listSongs"> 
         	<script id="list-song-template" type="text/x-handlebars-template">
         		{{#each this}}
-		          	<div class="block-prodfile">
+		          	<div class="block-prodfile blockSong">
 			            <figure>
 			            	<a href="song.html?id={{id}}&slug={{slug}}">
 			            		<img src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" width="242" height="241" alt="song miniature"/>
@@ -318,7 +316,7 @@
 	<script type="text/javascript">
         $(function() {
             reloadSongWithFilters();
-            addFiltersHandler();
+            addFiltersHandler();            
 
             //login
             initFirebase();

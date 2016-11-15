@@ -32,6 +32,7 @@ function displaySongsList(query){
             $("#listSongs").html(song_template(docs.results))
 
             checkIfFavorited(updateFavoriteButtonForList);
+            addAnimationsOnList();
         });
     });
 }
@@ -80,10 +81,8 @@ function displayASong(){
             $("#ukeSong").html(song_template(doc));
 
             if(doc.data['uke-song.soundcloud_id'] == null){
-                console.log("entered into");
                 $("#soundcloud_iframe").html("Sorry, we are recording this song. Comeback later!");
             }
-
 
             var bread = $("#breadcrumb-template").html();
             var bread_template = Handlebars.compile(bread);            
@@ -91,6 +90,12 @@ function displayASong(){
 
             checkIfFavorited(updateFavoriteButtonForSong);       
         });
+    });
+}
+
+function addAnimationsOnList(){
+    $(".blockSong").click(function() {
+        $(this).addClass("animated rubberBand");
     });
 }
 
