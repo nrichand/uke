@@ -250,8 +250,10 @@
 			            	</a>
 			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{data.[uke-song.Chords_diff].value}} | {{data.[uke-song.musical_style].value}} </span> <span class="bp-favorite"><a href="#null" id="fav-{{id}}"><em>Favorite</em></a></span> </div>
 			            </figure>
-			            <p class="bp-title"><a href="song.html?id={{id}}&slug={{slug}}">{{data.[uke-song.name].value}}</a></p>
-			            <p class="bp-by">By : {{data.[uke-song.artist].value}}</p>
+			            <a href="song.html?id={{id}}&slug={{slug}}">
+			            	<p class="bp-title">{{data.[uke-song.name].value}}</p>
+			            	<p class="bp-by">By : {{data.[uke-song.artist].value}}</p>
+			            </a>	
 			            			            
 			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{data.[uke-song.Chords_diff].value}} | {{data.[uke-song.musical_style].value}}</span> <span class="bp-favorite"><a href="#null" id="fav-mobile-{{id}}"><em>Favorite</em></a></span> </div>
 		          	</div>
