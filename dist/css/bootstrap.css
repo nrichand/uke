@@ -10859,7 +10859,25 @@ p.p-btncall {
 }
 .block-suggest .strumming{
   color: #698500;
-  font-size: 28px;
+  font-size: 35px;
+}
+
+.block-suggest .box {
+  font-size: 20px;
+}
+.block-suggest .box a {
+  color: #005570;
+  font-size: 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  line-height: 1em;
+  padding: 3px 10px;
+}
+.block-suggest .box a:hover,
+.block-suggest .box.active a {
+  color: #fff;
+  background-color: #005570;
+  text-decoration: none;
 }
 
 .p-chords:before,
