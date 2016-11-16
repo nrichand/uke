@@ -10866,6 +10866,7 @@ p.p-btncall {
   font-size: 20px;
 }
 .block-suggest .box a {
+  white-space: nowrap;
   color: #005570;
   font-size: 12px;
   background-color: #fff;
