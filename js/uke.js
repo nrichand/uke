@@ -64,7 +64,7 @@ function displayASong(){
                 .replace(new RegExp("\\(D\\)", 'g'), downArrowIcon);
                     
             //replace chords by url from ukulele-chords website
-            doc.chords_img_url = []
+            doc.chords_img_url = [];
             var prismic_chords = doc.data['uke-song.chords'].value;
             prismic_chords.forEach(function(elem){
                 var chord_first_alternative = all_chords[elem.label.value][0];
@@ -87,6 +87,18 @@ function displayASong(){
             var bread = $("#breadcrumb-template").html();
             var bread_template = Handlebars.compile(bread);            
             $("#bread").html(bread_template(doc));
+
+            doc.strumming_alternatives = [];
+            var strumming_alternatives = doc.data['uke-song.alternative_strum'].value;
+            strumming_alternatives.forEach(function(elem){
+                var strumming_alt = convertStrumToArrow(elem.label.value);
+                doc.strumming_alternatives.push(strumming_alt);
+                console.log(strumming_alt);
+            });
+
+            var alternatives = $("#alternative-template").html();
+            var alternative_template = Handlebars.compile(alternatives);            
+            $("#alternatives").html(alternative_template(doc));            
 
             checkIfFavorited(updateFavoriteButtonForSong);       
         });
