@@ -26,8 +26,7 @@
     </script>
 </head>
 
-<body>
-
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="25">
 
 <!-- start HEADER -->
 <header id="hd">
@@ -66,19 +65,20 @@
   </header>
   <div class="wrapper">
     <nav id="page-nav">
-   <div class="inside">   <ul>
-        <li class="active"><a href="#buy">Buy a ukulele</a></li>
-        <li><a href="#reco">Recommended Ukulele</a></li>
-        <li><a href="#tune">Tune your ukulele</a></li>
-        <li><a href="#learn">Learn to strum</a></li>
-        <li><a href="#your">Your first strumming pattern</a></li>
-        <li><a href="#capo">Do I need a capo?</a></li>
-        <li><a href="#howto">How to sing while playing?</a></li>
-      </ul>
-      
-    <div class="block-flower"><img src="dist/img/flower.png" width="205" height="118" alt="flowers"/></div> 
-    </div>
-     </nav>
+     <div class="inside" id="myScrollspy">   
+        <ul class="nav">
+          <li class="active"><a href="#buy">Buy a ukulele</a></li>
+          <li><a href="#reco">Recommended Ukulele</a></li>
+          <li><a href="#tune">Tune your ukulele</a></li>
+          <li><a href="#learn">Learn to strum</a></li>
+          <li><a href="#your">Your first strumming pattern</a></li>
+          <li><a href="#capo">Do I need a capo?</a></li>
+          <li><a href="#howto">How to sing while playing?</a></li>
+        </ul>
+        
+      <div class="block-flower"><img src="dist/img/flower.png" width="205" height="118" alt="flowers"/></div> 
+      </div>
+    </nav>
     
     <!-- Container Jumbotron -->
     <div id="buy" class="container-jumbotron">
@@ -313,7 +313,7 @@
 </footer>
 <!-- end FOOTER --> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript" src="dist/js/bootstrap.js"></script> 
+<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="dist/js/plugins.js"></script> 
 <script type="text/javascript" src="dist/js/global.js"></script>
 </body>
