@@ -9394,7 +9394,7 @@ input::-moz-focus-inner {
   position: relative;
   padding: 0  ;
   z-index: 1;
-  margin-top: -70px; /* TODO : remettre -80px */
+  margin-top: -60px; /* TODO : remettre -80px */
 }
 #ft .first-row {
   padding-top: 70px;
@@ -10230,7 +10230,7 @@ p.p-btncall {
 }
 #aside-filter {
   padding-right: 5%;
-  padding-bottom: 25px;
+  padding-bottom: 90px;
 }
 #aside-filter h2 {
   position: relative;
