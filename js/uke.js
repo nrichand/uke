@@ -10,7 +10,7 @@ var minusIcon = '<i class="fa fa-minus" aria-hidden="true"></i>';
 var chuckIcon = '<i class="fa fa-hand-paper-o" aria-hidden="true"></i>';
 var closeHandIcon = '<i class="fa fa-hand-rock-o" aria-hidden="true"></i>';
 
-function displaySongsList(query){
+function displaySongsList(query, orderCriteria){
 	Helpers.withPrismic(function(ctx) {
 		var request = ctx.api.form("everything").ref(ctx.ref);
 
@@ -19,7 +19,7 @@ function displaySongsList(query){
         }
 
         request.set('page', parseInt(window.location.hash.substring(1)) || 1 )
-            .orderings('[my.uke-song.name]')
+            .orderings('[' + orderCriteria + ']')
             .pageSize(100)
         	.submit(function(err, docs) {
             if (err) { Configuration.onPrismicError(err); return; }
@@ -337,6 +337,7 @@ function addFiltersHandler(){
     $("#strumming_level").on('click', function() { reloadSongWithFilters(); });
     $("#language").on('click', function() { reloadSongWithFilters(); });
     $("#genre").on('click', function() { reloadSongWithFilters(); });
+    $("#orderBy").on('click', function() { reloadSongWithFilters(); });
 }
 
 function reloadSongWithFilters(){
@@ -363,5 +364,8 @@ function reloadSongWithFilters(){
     }
 
     query += "]"
-    displaySongsList(query);
+
+    var selectedOrderCriteria = $('#orderBy input:radio:checked').val();
+
+    displaySongsList(query, selectedOrderCriteria);
 }
