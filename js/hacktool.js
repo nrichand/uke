@@ -14,11 +14,15 @@ function displaySongFromTab(){
         doc.chords_img_url = []
         var prismic_chords = doc.infos.chords;
         prismic_chords.forEach(function(elem){
-            var chord_first_alternative = all_chords[elem][0];
-            var chord_img_url = chord_first_alternative.chord_diag_mini;
-            var chord_url = chord_first_alternative.chord_url;
-            var newChord = { "diag_mini" : chord_img_url, "chord_url" : chord_url}
-            doc.chords_img_url.push(newChord);
+            if(all_chords[elem]){
+                var chord_first_alternative = all_chords[elem][0];
+                var chord_img_url = chord_first_alternative.chord_diag_mini;
+                var chord_url = chord_first_alternative.chord_url;
+                var newChord = { "diag_mini" : chord_img_url, "chord_url" : chord_url}
+                doc.chords_img_url.push(newChord);
+            } else {
+                console.log("Missing chord : "+elem);
+            }
         });
 
         var bread = $("#breadcrumb-template").html();
