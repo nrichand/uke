@@ -82,6 +82,24 @@
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
+
+  /* SPECIFIC FOR PRINTING */
+  #printFooter {
+    display: none;
+  }
+  #strummingHelpers {
+    display: none;
+  }
+  #songInfos {
+    display: none;
+  }
+  #songYoutubeMiniImg {
+    width: 150px;
+  }
+
+  header {
+    margin: 0 0 10px 0 !important;
+  }
 }
 * {
   -webkit-box-sizing: border-box;

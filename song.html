@@ -102,11 +102,11 @@
                 <article class="article-file">
                   <header>
                     <div class="row">
-                      <div class="col-sm-3"><img src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" width="241" height="242" alt="video miniature"/></div>
+                      <div class="col-sm-3"><img id="songYoutubeMiniImg" src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" alt="video miniature"/></div>
                       <div class="col-sm-9">
                         <h1>{{data.[uke-song.name].value}}</h1>
                         <h2>{{data.[uke-song.artist].value}}</h2>
-                        <p class="af-meta">
+                        <p id="songInfos" class="af-meta">
                             <strong>Chords difficulty :</strong> {{data.[uke-song.Chords_diff].value}}
                             <em class="fa fa-circle" aria-hidden="true"></em>
                             <strong>Strumming difficulty :</strong> {{data.[uke-song.Strummming_diff].value}}
@@ -148,7 +148,7 @@
                             <div class="col-sm-8 strumming">  
                                 {{{arrowStrum}}}
                             </div>
-                            <div class= "col-sm-4 box">
+                            <div class= "col-sm-4 box" id="strummingHelpers">
                                 <p class="p-variante">                                
                                     <a href="#alternativeModal" role="button" data-toggle="modal"><i class="fa  fa-ellipsis-h" aria-hidden="true"></i>Alternatives</a>
                                     <a href="#explanationModal" role="button" data-toggle="modal"><i class="fa  fa-question" aria-hidden="true"></i> How to read</a>
@@ -183,7 +183,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row" id="printFooter">
                     <div class="col-sm-12"> 
                       
                       <!-- block articletools -->
