@@ -93,7 +93,6 @@ function displayASong(){
             strumming_alternatives.forEach(function(elem){
                 var strumming_alt = convertStrumToArrow(elem.label.value);
                 doc.strumming_alternatives.push(strumming_alt);
-                console.log(strumming_alt);
             });
 
             var alternatives = $("#alternative-template").html();
@@ -159,13 +158,21 @@ var scroller = (function () {
 
     pub.toggle = function () {
         if(state == "active"){
-            console.log("stop");
             state = "inactive";
         } else {
-            console.log("start")
             state = "active";
             pageScroll();
         }
+    };
+
+    pub.plus = function () {
+        speed = speed + 1;
+        $("#scrollerSpeed").html(speed);
+    };
+
+    pub.less = function () {
+        speed = speed - 1;
+        $("#scrollerSpeed").html(speed);
     };
 
     pub.getState = function (){
