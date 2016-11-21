@@ -11096,7 +11096,10 @@ p.p-btncall {
   height: 18px;
   background: url(../img/autoscroll.png) no-repeat -70px -126px;
 }
-.block-scrolling #bs-play:hover,
+.block-scrolling #bs-play:hover {
+  -webkit-filter: saturate(2);
+  filter: saturate(2);
+}
 .block-scrolling #bs-play.active {
   background: url(../img/autoscroll.png) no-repeat -8px -126px;
 }

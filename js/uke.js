@@ -159,8 +159,10 @@ var scroller = (function () {
     pub.toggle = function () {
         if(state == "active"){
             state = "inactive";
+            $("#bs-play").removeClass("active");
         } else {
             state = "active";
+            $("#bs-play").addClass("active");
             pageScroll();
         }
     };
