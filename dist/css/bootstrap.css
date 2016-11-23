@@ -8384,7 +8384,8 @@ tbody tr:last-child td:last-child {
     line-height: 3em;
   }
   #hd .navbar-nav li.item-start a,
-  #hd .navbar-nav li.item-songs a {
+  #hd .navbar-nav li.item-songs a,
+  #hd .navbar-nav li.item-login a {
     width: 181px;
   }
   #hd .navbar-nav li a:hover {
@@ -8396,14 +8397,9 @@ tbody tr:last-child td:last-child {
   }
   #hd .navbar-nav.navbar-right li a {
     vertical-align: top;
-    height: 43px;
-    background-image: none;
-    background-color: #fff;
     border-radius: 4px;
-    box-shadow: 1px 1px 0 #806b4a;
   }
   #hd .navbar-nav.navbar-right li a:hover {
-    background-color: #806b4a;
     color: #fff;
   }
   #hd .navbar-nav.navbar-right li.li-search a {

@@ -328,7 +328,7 @@ function initUser(){
         var providerData = user.providerData;
         user.getToken().then(function(accessToken) {
             $("#username").html("<i>" + displayName + "</i>");
-            $("#login").html('<i class="fa fa-sign-out" aria-hidden="true"></i> Logout - '+displayName);
+            $("#login").html('<i class="fa fa-sign-out" aria-hidden="true"></i> Logout');
         });
       }
     }, function(error) {
