@@ -9635,7 +9635,8 @@ input::-moz-focus-inner {
 }
 /* header-index */
 .header-index h1 {
-  color: #fff;
+  color: #7c695c;
+  text-shadow: 1px 1px 1px #333;
   font-size: 45px;
   font-family: 'Rubik', Arial, sans-serif;
   margin: 0;
@@ -9643,7 +9644,7 @@ input::-moz-focus-inner {
   font-weight: 500;
 }
 .header-index p {
-  color: #fff;
+  color: #000;
   font-size: 21px;
   font-family: 'Rubik', Arial, sans-serif;
   margin: 0;
@@ -9667,7 +9668,7 @@ p.p-gobottom {
 }
 p.p-gobottom a {
   font-size: 40px;
-  color: #d1af7a;
+  color: #7c695c;
 }
 p.p-gobottom a:hover {
   font-size: 40px;
@@ -9729,7 +9730,7 @@ p.p-btncall {
   text-align: left;
 }
 .block-calltoaction ul li {
-  font-size: 21px;
+  font-size: 15px;
   color: #614835;
   line-height: 1.3em;
   margin: 0 0 17px 0;
@@ -9783,7 +9784,7 @@ p.p-btncall {
   }
   .block-calltoaction ul li {
     position: relative;
-    font-size: 21px;
+    font-size: 15px;
     color: #614835;
     line-height: 1.3em;
     margin: 0 0 17px 0;
@@ -11326,6 +11327,9 @@ p.p-btncall {
 }
 .btn-top {
   padding-top: 30px;
+}
+#mainimg {
+  width: 100%;
 }
 @media only screen and (min-width: 20px) and (max-width: 767px) {
   #yourfavorite {
