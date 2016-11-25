@@ -111,12 +111,12 @@
             <script id="song-template" type="text/x-handlebars-template"> 
 
               <div class="col-sm-8" id="printableArea">
-                <article class="article-file">
+                <article class="article-file" itemscope itemtype="http://schema.org/Article">
                   <header>
                     <div class="row">
-                      <div class="col-sm-3"><img id="songYoutubeMiniImg" src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" alt="video miniature"/></div>
+                      <div class="col-sm-3"><img  itemprop="image" id="songYoutubeMiniImg" src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" alt="video miniature"/></div>
                       <div class="col-sm-9">
-                        <h1>{{data.[uke-song.name].value}}</h1>
+                        <h1 itemprop="name">{{data.[uke-song.name].value}}</h1>
                         <h2>{{data.[uke-song.artist].value}}</h2>
                         <p id="songInfos" class="af-meta">
                             <strong>Chords difficulty :</strong> {{data.[uke-song.Chords_diff].value}}
