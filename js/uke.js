@@ -176,7 +176,7 @@ var scroller = (function() {
     };
 
     pub.less = function() {
-        if(delay < 250){
+        if(delay < 225){
             delay = delay + 25;
             updateDisplay();
         }
@@ -190,7 +190,7 @@ var scroller = (function() {
     }
 
     function updateDisplay() {
-        delayToDisplay = (delay /25) - ((2 * delay / 25) -11);
+        delayToDisplay = (delay /25) - ((2 * delay / 25) -10);
         $("#scrollerSpeed").html(delayToDisplay );
     }
 
