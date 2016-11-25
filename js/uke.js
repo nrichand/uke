@@ -150,13 +150,14 @@ function convertStrumToArrow(strum){
  * Handling scrolling
  *
  */
-var scroller = (function () {
+var scroller = (function() {
     var state = "inactive"; // Private Variable
     var speed = 1;
+    var delay = 125;
 
     var pub = {};// public object - returned at end of module
 
-    pub.toggle = function () {
+    pub.toggle = function() {
         if(state == "active"){
             state = "inactive";
             $("#bs-play").removeClass("active");
@@ -167,21 +168,30 @@ var scroller = (function () {
         }
     };
 
-    pub.plus = function () {
-        speed = speed + 1;
-        $("#scrollerSpeed").html(speed);
+    pub.plus = function() {
+        if(delay > 25){
+            delay = delay - 25;
+            updateDisplay();
+        }
     };
 
-    pub.less = function () {
-        speed = speed - 1;
-        $("#scrollerSpeed").html(speed);
+    pub.less = function() {
+        if(delay < 250){
+            delay = delay + 25;
+            updateDisplay();
+        }
     };
 
-    pub.getState = function (){
+    pub.getState = function(){
         return state;
     }
-    pub.getSpeed = function () {
-        return speed;
+    pub.getDelay = function() {
+        return delay;
+    }
+
+    function updateDisplay() {
+        delayToDisplay = (delay /25) - ((2 * delay / 25) -11);
+        $("#scrollerSpeed").html(delayToDisplay );
     }
 
     return pub; // expose externally
@@ -189,8 +199,8 @@ var scroller = (function () {
 
 function pageScroll(){
     if(scroller.getState() == "active"){
-        window.scrollBy(0, scroller.getSpeed()); // horizontal and vertical scroll increments
-        scrolldelay = setTimeout('pageScroll()', 125); // scrolls every 100 milliseconds
+        window.scrollBy(0, 1); // horizontal and vertical scroll increments in px
+        scrolldelay = setTimeout('pageScroll()', scroller.getDelay()); // scrolls every 100 milliseconds
     }
 }
 
