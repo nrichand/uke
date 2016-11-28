@@ -11081,9 +11081,7 @@ p.p-btncall {
 .block-scrolling #bs-less:hover {
   background: url(../img/autoscroll.png) no-repeat -70px -75px;
 }
-.block-scrolling #bs-plus span,
-.block-scrolling #bs-less span,
-.block-scrolling #bs-play span {
+.block-scrolling {
   display: none;
 }
 .block-scrolling #bs-play {
