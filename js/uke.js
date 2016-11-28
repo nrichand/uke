@@ -66,14 +66,14 @@ function injectMicroDataList(listing){
     });
 
     $("#microdataId").text(function() {
-    return JSON.stringify({
-        "@context": "http://schema.org/",
-        "@type": "ItemList",
-        "name": "Ukulele songs to learn",
-        "description": "The best songs to learn for ukulele beginner",
-        "itemListElement": microDataResult
+        return JSON.stringify({
+            "@context": "http://schema.org/",
+            "@type": "ItemList",
+            "name": "Ukulele songs to learn",
+            "description": "The best songs to learn for ukulele beginner",
+            "itemListElement": microDataResult
+        });
     });
-});
 }
 
 function displayASong(){
@@ -94,7 +94,7 @@ function displayASong(){
             }
 
             //console.log(doc);
-            document.title = "Ukulele tutorial - " + doc.data['uke-song.artist'].value + " " + doc.data['uke-song.name'].value;
+            document.title = "Easy ukulele tutorial - " + doc.data['uke-song.artist'].value + " " + doc.data['uke-song.name'].value;
 
             //improve tablature
             doc.tablature = doc.getStructuredText('uke-song.tabs').asHtml(ctx.linkResolver);
