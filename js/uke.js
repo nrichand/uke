@@ -51,6 +51,8 @@ function injectMicroDataList(listing){
                 "@type": "MusicRecording",
                 "name": song.data['uke-song.name'].value,
                 "url": "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
+                "genre": song.data['uke-song.musical_style'].value,
+                "inLanguage": song.data['uke-song.lang'].value,
                 "byArtist": {
                   "@type": "MusicGroup",
                   "name": song.data['uke-song.artist'].value
@@ -125,18 +127,40 @@ function displayASong(){
             $("#bread").html(bread_template(doc));
 
             doc.strumming_alternatives = [];
-            var strumming_alternatives = doc.data['uke-song.alternative_strum'].value;
-            strumming_alternatives.forEach(function(elem){
-                var strumming_alt = convertStrumToArrow(elem.label.value);
-                doc.strumming_alternatives.push(strumming_alt);
-            });
+            if(doc.data['uke-song.alternative_strum']){
+                var strumming_alternatives = doc.data['uke-song.alternative_strum'].value;
+                strumming_alternatives.forEach(function(elem){
+                    var strumming_alt = convertStrumToArrow(elem.label.value);
+                    doc.strumming_alternatives.push(strumming_alt);
+                });
+            } else {
+                doc.strumming_alternatives.push("No alternative for this song.");
+            }
 
             var alternatives = $("#alternative-template").html();
             var alternative_template = Handlebars.compile(alternatives);            
             $("#alternatives").html(alternative_template(doc));            
 
-            checkIfFavorited(updateFavoriteButtonForSong);       
+            injectMicroDataSong(doc);
+            checkIfFavorited(updateFavoriteButtonForSong);   
         });
+    });
+}
+
+function injectMicroDataSong(song){
+    $("#microdataId").text(function() {
+        return JSON.stringify({
+            "@context": "http://schema.org/",
+            "@type": "MusicRecording",
+            "name": song.data['uke-song.name'].value,
+            "url": "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
+            "genre": song.data['uke-song.musical_style'].value,
+            "inLanguage": song.data['uke-song.lang'].value,
+            "byArtist": {
+              "@type": "MusicGroup",
+              "name": song.data['uke-song.artist'].value
+            }
+        })
     });
 }
 
