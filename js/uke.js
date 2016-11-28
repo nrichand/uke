@@ -31,10 +31,46 @@ function displaySongsList(query, orderCriteria){
 
             $("#listSongs").html(song_template(docs.results))
 
+            injectMicroDataList(docs.results);
+
             checkIfFavorited(updateFavoriteButtonForList);
             addAnimationsOnList();
         });
     });
+}
+
+function injectMicroDataList(listing){
+    var microDataResult = [];
+    var index = 1;
+
+    listing.forEach(function(song){
+        var microDataItem = {
+            "@type": "ListItem",
+            "position": index,
+            "item": {
+                "@type": "MusicRecording",
+                "name": song.data['uke-song.name'].value,
+                "url": "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
+                "byArtist": {
+                  "@type": "MusicGroup",
+                  "name": song.data['uke-song.artist'].value
+                }
+            }
+        };
+
+        microDataResult.push(microDataItem);
+        index++;
+    });
+
+    $("#microdataId").text(function() {
+    return JSON.stringify({
+        "@context": "http://schema.org/",
+        "@type": "ItemList",
+        "name": "Ukulele songs to learn",
+        "description": "The best songs to learn for ukulele beginner",
+        "itemListElement": microDataResult
+    });
+});
 }
 
 function displayASong(){
