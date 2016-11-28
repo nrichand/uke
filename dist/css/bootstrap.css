@@ -84,6 +84,9 @@
   }
 
   /* SPECIFIC FOR PRINTING */
+  .block-scrolling {
+    display: none;
+  }
   .block-lyrics {
     font-family: 'Inconsolata', monospace !important;
   }
@@ -11081,7 +11084,9 @@ p.p-btncall {
 .block-scrolling #bs-less:hover {
   background: url(../img/autoscroll.png) no-repeat -70px -75px;
 }
-.block-scrolling {
+.block-scrolling #bs-plus span,
+.block-scrolling #bs-less span,
+.block-scrolling #bs-play span {
   display: none;
 }
 .block-scrolling #bs-play {
