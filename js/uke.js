@@ -53,6 +53,7 @@ function injectMicroDataList(listing){
                 "url": "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
                 "genre": song.data['uke-song.musical_style'].value,
                 "inLanguage": song.data['uke-song.lang'].value,
+                "thumbnailUrl": "https://img.youtube.com/vi/" + song.data['uke-song.clip_youtube_id'].value + "/0.jpg",
                 "byArtist": {
                   "@type": "MusicGroup",
                   "name": song.data['uke-song.artist'].value
@@ -156,6 +157,7 @@ function injectMicroDataSong(song){
             "url": "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
             "genre": song.data['uke-song.musical_style'].value,
             "inLanguage": song.data['uke-song.lang'].value,
+            "thumbnailUrl": "https://img.youtube.com/vi/" + song.data['uke-song.clip_youtube_id'].value + "/0.jpg",
             "byArtist": {
               "@type": "MusicGroup",
               "name": song.data['uke-song.artist'].value
