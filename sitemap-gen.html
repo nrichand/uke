@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	  	<title>Generate sitemap for doyoukulele</title>
+
+	  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	  	<!-- Prismic -->
+	    <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    	<!-- custom JS -->
+	    <script src="js/prismic-configuration.js"></script>
+	    <script src="js/prismic-helpers.js"></script>
+	    <script src="js/uke.js"></script>
+	</head>
+	<body>
+
+		<div id="sitemap" />
+
+		<script src="https://static.cdn.prismic.io/prismic.js"></script>
+
+		<script type="text/javascript">
+	        $(function() {
+        		Helpers.withPrismic(function(ctx) {
+				var request = ctx.api.form("everything").ref(ctx.ref);
+
+		        request.set('page', parseInt(window.location.hash.substring(1)) || 1 )		            
+		            .pageSize(100)
+		        	.submit(function(err, docs) {
+			            if (err) { Configuration.onPrismicError(err); return; }
+
+			            var result = "";
+			            result += "http://www.doyoukulele.com/<br />";
+			            result += "http://www.doyoukulele.com/begin.html<br>";
+
+			            docs.results.forEach(function(song){
+			            	result += "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug;
+			            	result += "<br />";
+			            });			            
+			            
+			            $("#sitemap").html(result);
+			        });
+		    	});
+	        });
+    	</script>
+
+	</body>
+<html>
