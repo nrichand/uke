@@ -446,7 +446,9 @@ function reloadSongWithFilters(){
 
     query += "]"
 
-    var selectedOrderCriteria = $('#orderBy input:radio:checked').val();
+    //TODO : temporaire à voir lorsque le sort sera fait
+    //var selectedOrderCriteria = $('#orderBy input:radio:checked').val();
+    var selectedOrderCriteria = "my.uke-song.name";
 
     displaySongsList(query, selectedOrderCriteria);
 }
