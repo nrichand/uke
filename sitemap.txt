@@ -1,8 +1,11 @@
 http://www.doyoukulele.com/
 http://www.doyoukulele.com/begin.html
+http://www.doyoukulele.com/listing.html
+http://www.doyoukulele.com/song.html?id=WECT2SkAAKUpdWDj&slug=steven-universe--rebecca-sugar
 http://www.doyoukulele.com/song.html?id=WAShGigAADpGwKpS&slug=imagine-dragons
 http://www.doyoukulele.com/song.html?id=WC4T1ikAAAgfMMuF&slug=john-legend
 http://www.doyoukulele.com/song.html?id=V9sQbigAACYABNEp&slug=vance-joyce
+http://www.doyoukulele.com/song.html?id=WCossykAACYAMdXf&slug=asterix
 http://www.doyoukulele.com/song.html?id=WCRI6iEAAMZc_Iro&slug=jeff-buckley
 http://www.doyoukulele.com/song.html?id=WDw3ICwAACkAVj9b&slug=le-livre-de-la-jungle
 http://www.doyoukulele.com/song.html?id=WC4VVykAAAYfMNGI&slug=aladin
@@ -13,10 +16,10 @@ http://www.doyoukulele.com/song.html?id=WDL4UikAAFhxRF1A&slug=pow-wow
 http://www.doyoukulele.com/song.html?id=WCgboiEAAABfC9Wq&slug=m
 http://www.doyoukulele.com/song.html?id=WDLXWCkAAHFzQ9k-&slug=serge-gainsbourg
 http://www.doyoukulele.com/song.html?id=WCHPXyEAABxI8qP6&slug=joe-dassin
+http://www.doyoukulele.com/song.html?id=WAYBeSgAAOpyxi_K&slug=bruno-mars
 http://www.doyoukulele.com/song.html?id=V9xNXCgAAIcbCcYq&slug=ingrid-michaelson
 http://www.doyoukulele.com/song.html?id=V974eygAACsAR3z5&slug=bruno-mars
 http://www.doyoukulele.com/song.html?id=V9-HwygAAD8ASbo-&slug=omi
-http://www.doyoukulele.com/song.html?id=WCossykAACYAMdXf&slug=asterix
 http://www.doyoukulele.com/song.html?id=V-boKCoAACcAwUIN&slug=louis-armstrong
 http://www.doyoukulele.com/song.html?id=WCRL4yEAAMVc_JbT&slug=twenty-one-pilots
 http://www.doyoukulele.com/song.html?id=V9xPvygAAIcbCc--&slug=bobby-mcferrin
@@ -24,6 +27,8 @@ http://www.doyoukulele.com/song.html?id=V9xoQSgAACoACjHI&slug=the-little-mermaid
 http://www.doyoukulele.com/song.html?id=WAPruCgAACgAvdIY&slug=israel-kamakawiwoole
 http://www.doyoukulele.com/song.html?id=V8nu3SgAACoAbURe&slug=george-ezra
 http://www.doyoukulele.com/song.html?id=WAnyZB8AAITsnjFP&slug=nat-king-cole
+http://www.doyoukulele.com/song.html?id=WAnmfR8AAJvdngGu&slug=cocoon
+http://www.doyoukulele.com/song.html?id=WECMqSkAAHBFdUQm&slug=ray-charles
 http://www.doyoukulele.com/song.html?id=V9sDFygAACYABJuv&slug=the-jungle-book
 http://www.doyoukulele.com/song.html?id=WDw0RCwAACkAVjPl&slug=aladin
 http://www.doyoukulele.com/song.html?id=WDoCJCgAACsLr1gs&slug=frank-sinatra
@@ -38,9 +43,7 @@ http://www.doyoukulele.com/song.html?id=WC4goCkAAAYfMP7D&slug=steven-universe--r
 http://www.doyoukulele.com/song.html?id=WCzcdCkAADQCK-2f&slug=lilicub
 http://www.doyoukulele.com/song.html?id=V_QmBSsAABkWrpmH&slug=justin-bieber
 http://www.doyoukulele.com/song.html?id=WAPvjygAALgjveGB&slug=magic
-http://www.doyoukulele.com/song.html?id=WAYBeSgAAOpyxi_K&slug=bruno-mars
 http://www.doyoukulele.com/song.html?id=V9sEeCgAACkABKE4&slug=elvis--twenty-one-pilots
-http://www.doyoukulele.com/song.html?id=WAnmfR8AAJvdngGu&slug=cocoon
 http://www.doyoukulele.com/song.html?id=V-eJpioAACoAw8fr&slug=monty-python
 http://www.doyoukulele.com/song.html?id=WASO_SgAAHJDwGB2&slug=train
 http://www.doyoukulele.com/song.html?id=WCHNUCEAAK3L8pu9&slug=the-jungle-book
