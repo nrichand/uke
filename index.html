@@ -1,302 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="shortcut icon" href="favicon-96x96.png" />
+  <link rel="shortcut icon" href="favicon-96x96.png" />
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Discover &amp; learn ukulele with your favorite songs</title>
-	<meta name="description"
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Discover &amp; learn ukulele with your favorite songs</title>
+  <meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
+
+    <meta name="description"
               content="We design easy ukulele tutorials and deliver them with all you need to play them quickly : tab, chords, strumming pattern, original song and more...">
-    <meta name="keywords" content="ukulele, uke, learning, song, strumming pattern, strumming, chords, tab, tablature, beginner, tutorial">
-    <meta name="author" content="DoYoukulele">
-    <meta http-equiv="content-language" content="en-US" />
-	<meta name="language" content="en-US" />
+    <meta name="keywords" content="ukulele, uke, learning, song, strumming pattern, strumming, chords, tab, beginner, easy, tutorial">
 
-	<meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
+  <meta name="author" content="DoYoukulele">
+  <meta http-equiv="content-language" content="en-US" />
+  <meta name="language" content="en-US" />
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="dist/js/bootstrap.js"></script> 
+  <script type="text/javascript" src="dist/js/plugins.js"></script> 
+  <script type="text/javascript" src="dist/js/global.js"></script>
 
-	<!-- Prismic -->
-    <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    ga('create', 'UA-84373454-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 
-    <!-- lodash -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
-
-    <!-- custom JS -->
-    <script src="js/prismic-configuration.js"></script>
-    <script src="js/prismic-helpers.js"></script>
-    <script src="js/uke.js"></script>
-
-    <script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-84373454-1', 'auto');
-	  ga('send', 'pageview');
-	</script>
-
-	<!-- Hotjar Tracking Code for www.doyoukulele.com -->
-	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:345958,hjsv:5};
-	        a=o.getElementsByTagName('head')[0];
-	        r=o.createElement('script');r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-	</script>
+  <!-- Hotjar Tracking Code for www.doyoukulele.com -->
+  <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:345958,hjsv:5};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
 </head>
 
 <body>
 
-<!-- start HEADER -->
-<header id="hd">
-  <nav class="navbar navbar-default">
-    <div class="container"> 
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false"> <span class="icon-hamburger"> </span> </button>
-        <a class="navbar-brand" href="#"><img src="dist/img/doyoukulele.svg" alt="Doyoukulele" width="216" height="53"/></a> </div>
-      
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-left">
-          <li class="item-start"><a href="begin.html">Basics <span>for beginners</span></a></li>
-          <li class="item-songs"><a href="index.html"><span>List of</span> songs <span> to play</span></a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="item-login">
-          	<a href="#null" onclick="login()" id="login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-          </li>
-        </ul>
+<!-- ALERT USE COOKIES - COOKIES SWEEP DAY -->
+<!--
+<div id="cookistop" class="alert alert-dismissible" role="alert">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="sm-col-12 text-center">
+        <p>We use cookies to give you the best experience. If you do nothing we'll assume that it's ok. <a href="#" id="closecookiediv" class="closeme" data-dismiss="alert"><em class="fa fa-times"></em> Fermer</a></p>
       </div>
-      <!-- /.navbar-collapse --> 
     </div>
-    <!-- /.container-fluid --> 
-  </nav>
-</header>
-<!-- end HEADER --> 
+  </div>
+</div>
+-->
+
+<!-- / ALERT USE COOKIES - COOKIES SWEEP DAY --> 
 
 <!-- start BODY -->
-<main id="bd">
-  <header class="header-listing">
-    <div class="container">
+ 
+ <main id="bd">
+  <div class="index-jumbotron marge-bottom">
+    <div class="container"> 
+      <!-- row -->
       <div class="row">
-        <div class="col-sm-12 col-lg-offset-3 col-lg-9">
-          <h1>Ready to play your favorite songs?</h1>
-          <p><em>Easy ukulele versions, carefully designed, with all you need to learn them</em></p>
+        <div class="col-sm-12">
+          <header class="header-index">
+         <div class="inside">
+            <h1> Enjoy playing and singing <br>
+              with your Ukulele </h1>
+            <p><strong>We provide all you need !</strong></p>
+            <p class="p-btncall text-center">
+              <a href="listing.html" class="btn btn-primary"><i class="fa fa-th" aria-hidden="true"></i> Browse the songs (free)</a>
+              <a href="#null" class="btn btn-warning"><i class="fa fa-user" aria-hidden="true"></i> Subscribe (coming soon)</a>
+            </p>           
+			  </div>
+ 
+          </header>
+        </div>
+      </div>
+      <!-- / row --> 
+    </div>
+     <p class="p-gobottom"><a href="#"><span class="icon-gobottom"></span></a></p>
+     <!-- not yet
+     <video autoplay loop id="video-background" muted>
+  <source src="https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761" type="video/mp4">
+	  </video>
+  -->
+     <img id="mainimg" src="dist/img/man-playing-ukulele.jpg" alt="man playing ukulele in the mountain">
+
+  </div>
+  <div class="container marge-bottom"> 
+    
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h2>How it works?</h2>
+        <h3>For each songs, you'll find everything needed to play it :</h3>
+        <img id="howtodoitImg" src="dist/img/howItWorksDontWorry.jpg" width="800" height="800" alt="How it works with an exemple song">
+      </div>
+    </div>
+
+    <!-- row -->
+<!--
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <p class="thumb"><img src="dist/img/very-fun.jpg" width="194" height="190" alt=""/></p>
+        <h2>Very easy, very Fun !</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis suscipit enim ac commodo. Maecenas dignissim est scelerisque.</p>
+      </div>
+      <div class="col-sm-4 text-center">
+        <p class="thumb"><img src="dist/img/high-quality.jpg" width="213" height="178" alt=""/></p>
+        <h2>High quality</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis suscipit enim ac commodo. Maecenas dignissim est scelerisque.</p>
+      </div>
+      <div class="col-sm-4 text-center">
+        <p class="thumb"><img src="dist/img/share-with-us.jpg" width="171" height="172" alt=""/></p>
+        <h2>Share with us...</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis suscipit enim ac commodo. Maecenas dignissim est scelerisque.</p>
+      </div>
+    </div>
+--> 
+  </div>
+  
+  <!-- jumbotron -->
+  <div class="jumbotron marge-bottom">
+    <div class="container"> 
+      
+      <!-- row -->
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h2>Are you a total beginner ?</h2>
+          <p><a href="begin.html" class="btn btn-default">Learn to buy, tune &amp; strum your ukulele</a></p>
         </div>
       </div>
     </div>
-  </header>
-
-<!--
-  <div class="block-listfilter">
-    <ul>
-      <li class="active"><a href="#">All</a></li>
-      <li><a href="#">Most recent</a></li>
-      <li><a href="#">Most commented</a></li>
-      <li><a href="#">Most viewed</a></li>
-      <li><a href="#">Top favorites</a></li>
-    </ul>
   </div>
--->
   
-  <!-- Only for smartphone-->
-  <div class="block-listfilterforiphone visible-xs-block">
-    <p class="text-center"><a id="btnfilter" href="#" class="btn btn-default">Filter</a></p>
-  </div>
-  <!-- / Only for smartphone-->
+  <!-- / jumbotron -->
   
   <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <aside id="aside-filter">
-          <form>
-<!--
-            <div class="block-filter">
-              <h2>Options</h2>
-              <div class="box">
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo1" type="radio">
-                  <label for="chordfo1">All</label>
-                </div>
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo2" type="radio">
-                  <label for="chordfo2">Most recent</label>
-                </div>
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo3" type="radio">
-                  <label for="chordfo3">Most commented</label>
-                </div>
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo4" type="radio">
-                  <label for="chordfo4">Most viewed</label>
-                </div>
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo5" type="radio">
-                  <label for="chordfo5">Top favorites</label>
-                </div>
-              </div>
-            </div>
--->
-<!--
-            <div class="block-filter">
-              <h2>Filter</h2>
-              <div class="box">
-                <div class="block-checkbox">
-                  <input type="radio" name="rfilter" id="forall">
-                  <label for="forall">All</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="rfilter" id="forfavorite">
-                  <label for="forfavorite">Favorites</label>
-                </div>
-              </div>
-            </div>
--->
-
-     		<!-- ORDER BY -->
-<!--
-            <div class="block-filter">
-              <h2><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i> Order by</h2>
-              <div class="box" id="orderBy">              	              	
-              	<div class="block-checkbox">
-                  <input type="radio" name="orderByRadio" checked="checked" id="bySongOrder" value="my.uke-song.name">
-                  <label for="bySongOrder">Song Name</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="orderByRadio" id="byArtistOrder" value="my.uke-song.artist">
-                  <label for="byArtistOrder">Artist Name</label>
-                </div>
-               
-                <div class="block-checkbox">
-                  <input type="radio" name="orderByRadio" id="byDateOrder" value="my.uke-song.first_publication_date">
-                  <label for="byDateOrder">Last added</label>
-                </div>
-            	
-              </div>
-            </div>
--->
-            <div class="block-filter">
-              <h2><i class="fa fa-filter" aria-hidden="true"></i> Chords difficulties</h2>
-              <div class="box" id="chords_level">
-                <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" checked="checked" id="chordforall" value="">
-                  <label for="chordforall">All</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforeasy" value="easy">
-                  <label for="chordforeasy">Ultra easy (C, F, Am, G)</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforbeginner" value="beginner">
-                  <label for="chordforbeginner">Easy</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="chordifficulties" id="chordforadv" value="adv beginner">
-                  <label for="chordforadv">Advanced beginner</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="block-filter">
-              <h2><i class="fa fa-filter" aria-hidden="true"></i> Strumming difficulties</h2>
-              <div class="box" id="strumming_level">
-                <div class="block-checkbox">
-                  <input type="radio" name="Strumdifficulties" checked="checked" id="Strumforall" value="">
-                  <label for="Strumforall">All</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="Strumdifficulties" id="Strumforeasy" value="easy">
-                  <label for="Strumforeasy">No brain</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="Strumdifficulties" id="Strumforbeginner" value="beginner">
-                  <label for="Strumforbeginner">Quite easy</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="Strumdifficulties" id="Strumforadv" value="adv beginner">
-                  <label for="Strumforadv">Challenging</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="block-filter">
-              <h2><i class="fa fa-filter" aria-hidden="true"></i> Genre</h2>
-              <div class="box" id="genre">
-              	<div class="block-checkbox">
-                  <input type="radio" name="genreRadio" checked="checked" id="byGenreAll" value="">
-                  <label for="byGenreAll">All</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="genreRadio" id="byPop" value="Pop">
-                  <label for="byPop">Pop</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="genreRadio" id="byClassic" value="Classic songs">
-                  <label for="byClassic">Classic Songs</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="genreRadio" id="byMovie" value="Movie">
-                  <label for="byMovie">Movie</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="genreRadio" id="byDisney" value="Disney">
-                  <label for="byDisney">Disney</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="block-filter">
-              <h2><i class="fa fa-globe" aria-hidden="true"></i> Language</h2>
-              <div class="box" id="language">
-                <div class="block-checkbox">
-                  <input type="radio" name="radio_language" checked="checked" id="lang_en" value="en">
-                  <label for="lang_en"><img src="dist/img/United-kingdom-flag.png" width="20px" alt="French flag"> English</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="radio_language" id="lang_fr" value="fr">
-                  <label for="lang_fr"><img src="dist/img/France-flag.png" width="20px" alt="French flag"> French</label>
-                </div>
-              </div>
-            </div>         
-          </form>
-        </aside>
-      </div>
-      <div class="col-sm-9">
-        <div class="listing-grid" id="listSongs"> 
-        	<script id="list-song-template" type="text/x-handlebars-template">
-        		{{#each this}}
-		          	<div class="block-prodfile blockSong">
-			            <figure>
-			            	<a href="song.html?id={{id}}&slug={{slug}}">
-			            		<img src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" width="242" height="241" alt="song miniature"/>
-			            	</a>
-			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{data.[uke-song.Chords_diff].value}} | {{data.[uke-song.musical_style].value}} </span> <span class="bp-favorite"><a href="#null" id="fav-{{id}}"><em>Favorite</em></a></span> </div>
-			            </figure>
-			            <a href="song.html?id={{id}}&slug={{slug}}">
-			            	<p class="bp-title">{{data.[uke-song.name].value}}</p>
-			            	<p class="bp-by">{{data.[uke-song.artist].value}}</p>
-			            </a>	
-
-			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{data.[uke-song.Chords_diff].value}} | {{data.[uke-song.musical_style].value}}</span> <span class="bp-favorite"><a href="#null" id="fav-mobile-{{id}}"><em>Favorite</em></a></span> </div>
-		          	</div>
-	          	{{/each}}
-          	</script>	
-
+    <div class="row row-calltoaction"> <img id="flower-index" src="dist/img/flowers-index.png" width="306" height="159" alt=""/>
+      <div class="col-sm-6">
+        <div class="block-calltoaction">
+          <h2>Explorer</h2>
+          <p><img src="dist/img/girl.png" width="200" height="153" alt=""/></p>
+          <ul>
+            <li>High quality songs, designed with care</li>
+            <li>Pretty print</li>
+            <li>Save your favorites</li>
+            <li>25% of content available</li>
+            <li><strong>All you need to learn included</strong></li>
+          </ul>
+          <p><a href="listing.html" class="btn btn-primary"><i class="fa fa-th" aria-hidden="true"></i> Browse the songs (free)</a></p>
         </div>
-        <p class="info-loader"><span>MORE TO COME...</span></p>
+      </div>
+      <div class="col-sm-6">
+        <div class="block-calltoaction">
+          <h2>Supporter</h2>
+          <p><img src="dist/img/member.png" width="200" height="153" alt=""/></p>
+          <ul>
+            <li>All the advantage of explorer</li>            
+            <li>New quality songs added every week</li>
+            <li>Support us to help us create new great songs</li>
+            <li>Support the development of new features and mobile apps</li>
+            <li><strong>Access to all songs!</strong></li>
+          </ul>
+          <p><a href="#null" class="btn btn-warning"><i class="fa fa-user" aria-hidden="true"></i> Subscribe (coming soon)</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -333,7 +208,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <p class="p-logo"><span class="hidden-xs"><img src="dist/img/logo.svg" alt="logo" width="141" height="21"/> - Learn Ukulele easily</span></p>
+          <p class="p-logo"><span class="hidden-xs"><img src="dist/img/logo.svg" alt="" width="141" height="21"/> - Learn Ukulele easily</span></p>
         </div>
         <div class="col-sm-6">
           <p class="text-right"><em class="fa fa-copyright" aria-hidden="true"></em> Doyoukulele 2016 <br class="visible-xs-block">
@@ -343,24 +218,7 @@
     </div>
   </div>
 </footer>
-	<!-- end FOOTER --> 
-	<script type="text/javascript" src="dist/js/bootstrap.js"></script> 
-	<script type="text/javascript" src="dist/js/plugins.js"></script> 
-	<script type="text/javascript" src="dist/js/global.js"></script>
+<!-- end FOOTER --> 
 
-	<script src="https://static.cdn.prismic.io/prismic.js"></script>
-
-	<script type="text/javascript">
-        $(function() {
-            reloadSongWithFilters();
-            addFiltersHandler();            
-
-            //login
-            initFirebase();
-            initUser();
-        });
-    </script>
-
-    <script id="microdataId" type="application/ld+json"></script>
 </body>
 </html>
