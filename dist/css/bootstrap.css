@@ -9639,7 +9639,7 @@ input::-moz-focus-inner {
 /* header-index */
 .header-index h1 {
   color: #7c695c;
-  text-shadow: 1px 1px 1px #333;
+  text-shadow: 1px 1px 1px #FFF;
   font-size: 45px;
   font-family: 'Rubik', Arial, sans-serif;
   margin: 0;
@@ -9647,7 +9647,7 @@ input::-moz-focus-inner {
   font-weight: 500;
 }
 .header-index p {
-  color: #000;
+  color: #FFF;
   font-size: 21px;
   font-family: 'Rubik', Arial, sans-serif;
   margin: 0;
@@ -11331,9 +11331,18 @@ p.p-btncall {
 .btn-top {
   padding-top: 30px;
 }
+
+/* Added by NRI*/
 #mainimg {
   width: 100%;
 }
+#howtodoitImg {
+   padding:1px;
+   border:1px solid #eee;
+   background-color:#ddd;
+}
+
+
 @media only screen and (min-width: 20px) and (max-width: 767px) {
   #yourfavorite {
     display: none;
