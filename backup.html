@@ -32,6 +32,10 @@
 		        	.submit(function(err, docs) {
 			            if (err) { Configuration.onPrismicError(err); return; }			            
 			            
+						docs.results.forEach(function(song){
+							song.tab = song.getStructuredText('uke-song.tabs').asHtml();
+						});
+
 			            var fullContent = JSON.stringify(docs.results, null, 2);
 
 			            console.log(fullContent);
