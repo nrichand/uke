@@ -103,6 +103,10 @@
     width: 150px;
   }
 
+  .block-lyrics p {
+    page-break-inside: avoid !important;
+  }
+
   header {
     margin: 0 0 10px 0 !important;
   }
