@@ -33,6 +33,8 @@ function displaySongsList(query, orderCriteria){
 
             injectMicroDataList(docs.results);
 
+            checkIfPremium();
+
             checkIfFavorited(updateFavoriteButtonForList);
             addAnimationsOnList();
         });
@@ -293,8 +295,25 @@ function checkIfFavorited(fun){
         var userId = currentUser.uid;
 
         var favoriteSongs = firebase.database().ref('users/' + userId + '/favorite');
-        favoriteSongs.once('value', function(favList) {            
+        favoriteSongs.once('value', function(favList) {
             fun(favList.val());
+        });
+    }
+}
+
+function checkIfPremium(){
+    var currentUser = firebase.auth().currentUser;
+
+    if(currentUser){
+        console.log("check is premium for user : "+currentUser.uid);
+
+        var userId = currentUser.uid;
+
+        var premium = firebase.database().ref('premium/' + userId);
+        premium.once('value', function(premiumEntry) {
+            if(premiumEntry.val() == "OK"){
+                console.log("user is premium");
+            }
         });
     }
 }
