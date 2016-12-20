@@ -29,13 +29,60 @@ function displaySongsList(query, orderCriteria){
             }
             var song_template = Handlebars.compile(songs);
 
-            $("#listSongs").html(song_template(docs.results))
+            //Change result to an object
+            var all_songs = convertSongsToObject(docs.results);
+
+            $("#listSongs").html(song_template(all_songs))
 
             injectMicroDataList(docs.results);
 
             checkIfFavorited(updateFavoriteButtonForList);
             addAnimationsOnList();
+            addPremiumClicHandler();
         });
+    });
+}
+
+function Song(id, slug, name, artist, clip_youtube_id, chords_diff, musical_style, availability) {
+    this.id = id;
+    this.slug = slug;
+    this.name = name;
+    this.artist = artist;
+    this.clip_youtube_id = clip_youtube_id;
+    this.chords_diff = chords_diff;
+    this.musical_style = musical_style;
+    this.availability = availability;
+    this.premiumClassIfNecessary = function() { 
+        if(this.availability == "premium"){ 
+            return "block-lock"
+        } else {
+            return "";
+        } 
+    };
+    this.url = function() {return "song.html?id="+this.id+"&slug="+this.slug;};
+}
+
+function convertSongsToObject(prismicResults){
+    songObjectList = [];
+
+    prismicResults.forEach(function(prismicSong){
+
+        var song = new Song(prismicSong.id, prismicSong.slug, prismicSong.data['uke-song.name'].value,
+            prismicSong.data['uke-song.artist'].value, prismicSong.data['uke-song.clip_youtube_id'].value,
+            prismicSong.data['uke-song.Chords_diff'].value, prismicSong.data['uke-song.musical_style'].value,
+            prismicSong.data['uke-song.availability'].value);
+
+        songObjectList.push(song);
+    });
+
+    return songObjectList;
+}
+
+function addPremiumClicHandler(){
+    $(".block-lock").click(function() {
+        $('#myModal').modal('show');
+
+        event.preventDefault();
     });
 }
 

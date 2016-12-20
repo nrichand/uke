@@ -278,19 +278,19 @@
         <div class="listing-grid" id="listSongs"> 
         	<script id="list-song-template" type="text/x-handlebars-template">
         		{{#each this}}
-		          	<div class="block-prodfile blockSong">
+		          	<div class="block-prodfile blockSong {{premiumClassIfNecessary}}">
 			            <figure>
-			            	<a href="song.html?id={{id}}&slug={{slug}}">
-			            		<img src="https://img.youtube.com/vi/{{data.[uke-song.clip_youtube_id].value}}/0.jpg" width="242" height="241" alt="song miniature"/>
+			            	<a href="{{url}}">
+			            		<img src="https://img.youtube.com/vi/{{clip_youtube_id}}/0.jpg" width="242" height="241" alt="song miniature"/>
 			            	</a>
-			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{data.[uke-song.Chords_diff].value}} | {{data.[uke-song.musical_style].value}} </span> <span class="bp-favorite"><a href="#null" id="fav-{{id}}"><em>Favorite</em></a></span> </div>
+			              <div class="boxmeta"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{chords_diff}} | {{musical_style}} </span> <span class="bp-favorite"><a href="#null" id="fav-{{id}}"><em>Favorite</em></a></span> </div>
 			            </figure>
-			            <a href="song.html?id={{id}}&slug={{slug}}">
-			            	<p class="bp-title">{{data.[uke-song.name].value}}</p>
-			            	<p class="bp-by">{{data.[uke-song.artist].value}}</p>
+			            <a href="{{url}}">
+			            	<p class="bp-title">{{name}}</p>
+			            	<p class="bp-by">{{artist}}</p>
 			            </a>	
 
-			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{data.[uke-song.Chords_diff].value}} | {{data.[uke-song.musical_style].value}}</span> <span class="bp-favorite"><a href="#null" id="fav-mobile-{{id}}"><em>Favorite</em></a></span> </div>
+			            <div class="boxmetaclone"> <span class="bp-meta"><i class="fa fa-tag" aria-hidden="true"></i> {{chords_diff}} | {{musical_style}}</span> <span class="bp-favorite"><a href="#null" id="fav-mobile-{{id}}"><em>Favorite</em></a></span> </div>
 		          	</div>
 	          	{{/each}}
           	</script>	
@@ -335,21 +335,46 @@
         <div class="col-sm-6">
           <p class="p-logo"><span class="hidden-xs"><img src="dist/img/logo.svg" alt="logo" width="141" height="21"/> - Learn Ukulele easily</span></p>
 
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="VERMT2UXM26S4">
-            <input type="hidden" name="custom" value="MyID">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-          </form>
-
-
         </div>
         <div class="col-sm-6">
           <p class="text-right"><em class="fa fa-copyright" aria-hidden="true"></em> Doyoukulele 2016 <br class="visible-xs-block">
             <span class="hidden-xs">-</span> <a href="mailto:contact@doyoukulele.com">CONTACT</a></p>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Help us develop doyoukulele and access to all songs !</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="block-calltoaction">
+            <p><img src="dist/img/member.png" width="200" height="153" alt="member title"/></p>
+            <ul>         
+              <li>New quality songs added every week</li>
+              <li>Support us to help us create new great songs</li>
+              <li>Support the development of new features and mobile apps</li>
+              <li><strong>Access to all songs!</strong></li>
+            </ul>
+            
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="VERMT2UXM26S4">
+              <input type="hidden" name="custom" value="MyID">
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+              <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </div>          
+        </div>
+      </div>
+
     </div>
   </div>
 </footer>
