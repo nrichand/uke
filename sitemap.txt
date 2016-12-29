@@ -1,11 +1,13 @@
 http://www.doyoukulele.com/
 http://www.doyoukulele.com/begin.html
 http://www.doyoukulele.com/listing.html
+http://www.doyoukulele.com/all-songs.html
+http://www.doyoukulele.com/song.html?id=WFessSYAAClFXR4V&slug=coconut-radio
 http://www.doyoukulele.com/song.html?id=WE8YoyYAAGRMW4sX&slug=chanson-de-noel
 http://www.doyoukulele.com/song.html?id=WFflfSYAAClFXgMW&slug=weezer
-http://www.doyoukulele.com/song.html?id=WFessSYAAClFXR4V&slug=coconut-radio
 http://www.doyoukulele.com/song.html?id=WCossykAACYAMdXf&slug=asterix
 http://www.doyoukulele.com/song.html?id=WC4boikAADgZMOq4&slug=little-birdy
+http://www.doyoukulele.com/song.html?id=WCbwBSEAAN1TBydh&slug=little-talks
 http://www.doyoukulele.com/song.html?id=WECT2SkAAKUpdWDj&slug=steven-universe--rebecca-sugar
 http://www.doyoukulele.com/song.html?id=V9sQbigAACYABNEp&slug=vance-joyce
 http://www.doyoukulele.com/song.html?id=WAShGigAADpGwKpS&slug=imagine-dragons
@@ -14,7 +16,7 @@ http://www.doyoukulele.com/song.html?id=WCRI6iEAAMZc_Iro&slug=jeff-buckley
 http://www.doyoukulele.com/song.html?id=WFj4ZCYAADEVwPUr&slug=frozen
 http://www.doyoukulele.com/song.html?id=WC4VVykAAAYfMNGI&slug=aladin
 http://www.doyoukulele.com/song.html?id=WAPruCgAACgAvdIY&slug=israel-kamakawiwoole
-http://www.doyoukulele.com/song.html?id=WCbwBSEAAN1TBydh&slug=little-talks
+http://www.doyoukulele.com/song.html?id=WCzcdCkAADQCK-2f&slug=lilicub
 http://www.doyoukulele.com/song.html?id=WDw3ICwAACkAVj9b&slug=le-livre-de-la-jungle
 http://www.doyoukulele.com/song.html?id=V9-KuCgAACwAScYX&slug=grace-vanderwaal
 http://www.doyoukulele.com/song.html?id=WDL4UikAAFhxRF1A&slug=pow-wow
@@ -31,11 +33,11 @@ http://www.doyoukulele.com/song.html?id=V9xPvygAAIcbCc--&slug=bobby-mcferrin
 http://www.doyoukulele.com/song.html?id=V9xoQSgAACoACjHI&slug=the-little-mermaid
 http://www.doyoukulele.com/song.html?id=V8nu3SgAACoAbURe&slug=george-ezra
 http://www.doyoukulele.com/song.html?id=WAnyZB8AAITsnjFP&slug=nat-king-cole
+http://www.doyoukulele.com/song.html?id=WGUcvigAAMIdvbyR&slug=adele
 http://www.doyoukulele.com/song.html?id=V9sEeCgAACkABKE4&slug=elvis--twenty-one-pilots
 http://www.doyoukulele.com/song.html?id=WDw0RCwAACkAVjPl&slug=aladin
 http://www.doyoukulele.com/song.html?id=WAh_Fx8AAP6tmF58&slug=pocahontas
 http://www.doyoukulele.com/song.html?id=V_QmBSsAABkWrpmH&slug=justin-bieber
-http://www.doyoukulele.com/song.html?id=WCzcdCkAADQCK-2f&slug=lilicub
 http://www.doyoukulele.com/song.html?id=WDhT1CgAAGIHqJ9e&slug=grace-vanderwaal
 http://www.doyoukulele.com/song.html?id=WAnmfR8AAJvdngGu&slug=cocoon
 http://www.doyoukulele.com/song.html?id=WECMqSkAAHBFdUQm&slug=ray-charles
