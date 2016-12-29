@@ -4,8 +4,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	  	<title>Generate sitemap for doyoukulele</title>
 
-	  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
 	  	<!-- Prismic -->
 	    <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -36,6 +34,7 @@
 			            result += "http://www.doyoukulele.com/<br />";
 			            result += "http://www.doyoukulele.com/begin.html<br>";
 			            result += "http://www.doyoukulele.com/listing.html<br>";
+			            result += "http://www.doyoukulele.com/all-songs.html<br>";
 
 			            docs.results.forEach(function(song){
 			            	result += "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug;

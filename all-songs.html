@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="favicon-96x96.png" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Discover &amp; learn ukulele with your favorite songs</title>
+  <meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
+
+    <meta name="description"
+              content="All the songs to learn with your uke...">
+    <meta name="keywords" content="ukulele, uke, learning, songs">
+
+  <meta name="author" content="DoYoukulele">
+  <meta http-equiv="content-language" content="en-US" />
+  <meta name="language" content="en-US" />
+
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+  
+  <!-- Prismic -->
+  <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+  <!-- custom JS -->
+  <script src="js/prismic-configuration.js"></script>
+  <script src="js/prismic-helpers.js"></script>
+  <script src="js/uke.js"></script>
+
+  <script type="text/javascript" src="dist/js/bootstrap.js"></script> 
+  <script type="text/javascript" src="dist/js/plugins.js"></script> 
+  <script type="text/javascript" src="dist/js/global.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-84373454-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+
+<!-- start BODY -->
+ 
+<main id="bd">
+  <div class="index-jumbotron marge-bottom">
+    <div class="container"> 
+      <!-- row -->
+      <div class="row">
+        <div class="col-sm-12">
+          
+              <h1> All songs </h1>
+
+              <div id="sitemap" />        
+ 
+        </div>
+      </div>
+      <!-- / row --> 
+    </div>
+  </div>
+</main>
+<!-- end Body --> 
+
+
+<!-- Le footer à toujours une marge négative à -80px, il faut donc toujours prévoir un paddin bottom de 80px en bas de chaque page. On peut rajouter la classe "padding-bottom" --> 
+
+<!-- start FOOTER -->
+
+<footer id="ft">
+  <div class="first-row">
+    <div class="container"> 
+      <!-- row -->
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-4 col-md-offset-4  col-md-4  col-lg-offset-4 col-lg-4">          
+        </div>
+        <div class="col-sm-5  col-md-4 col-lg-4">
+          <ul class="list-social">
+            <li><strong>Follow us !</strong>
+              <ul>
+                <li><a href="https://www.facebook.com/doyoukulele/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i> </a></li>
+                <li><a href="https://twitter.com/doyoukulele" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
+                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- / row --> 
+    </div>
+  </div>
+  <div class="second-row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="p-logo"><span class="hidden-xs"><img src="dist/img/logo.svg" alt="doyoukulele logo" width="141" height="21"/> - Learn Ukulele easily</span></p>
+        </div>
+        <div class="col-sm-6">
+          <p class="text-right"><em class="fa fa-copyright" aria-hidden="true"></em> Doyoukulele 2016 <br class="visible-xs-block">
+            <span class="hidden-xs">-</span> <a href="mailto:contact@doyoukulele.com">CONTACT</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end FOOTER --> 
+
+  <script src="https://static.cdn.prismic.io/prismic.js"></script>
+
+    <script type="text/javascript">
+          $(function() {
+            Helpers.withPrismic(function(ctx) {
+        var request = ctx.api.form("everything").ref(ctx.ref);
+
+            request.set('page', parseInt(window.location.hash.substring(1)) || 1 )
+                .orderings('[my.uke-song.name]')              
+                .pageSize(100)
+              .submit(function(err, docs) {
+                  if (err) { Configuration.onPrismicError(err); return; }
+
+                  var result = "";
+                  
+                  docs.results.forEach(function(song){
+                    console.log(song);
+                    result += "<a href=\"http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug + "\">" + song.data['uke-song.name'].value + " BY " + song.data['uke-song.artist'].value + "</a>";
+                    result += "<br />";
+                  });                 
+                  
+                  $("#sitemap").html(result);
+              });
+          });
+          });
+      </script>
+
+</body>
+</html>
