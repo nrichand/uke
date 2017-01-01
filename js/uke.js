@@ -34,6 +34,8 @@ function displaySongsList(query, orderCriteria){
 
             $("#listSongs").html(song_template(all_songs))
 
+            injectCustomPaypalVar();
+
             injectMicroDataList(docs.results);
 
             checkIfFavorited(updateFavoriteButtonForList);
@@ -81,9 +83,18 @@ function convertSongsToObject(prismicResults){
 function addPremiumClicHandler(){
     $(".block-lock").click(function() {
         $('#myModal').modal('show');
-
         event.preventDefault();
     });
+}
+
+function injectCustomPaypalVar(){
+    var currentUser = firebase.auth().currentUser;
+
+    if(currentUser){
+        var userId = currentUser.uid;
+        console.log("injecting userID : "+userId);
+        $("#paypalCustom").val(userId);
+    }
 }
 
 function injectMicroDataList(listing){
