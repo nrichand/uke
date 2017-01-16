@@ -10495,15 +10495,19 @@ p.p-btncall {
   width: 89px;
   height: 89px;
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
-.block-lock .bp-title,
-.block-lock .bp-by {
+.block-lock img {
   opacity: 0.6;
 }
+.block-lock .bp-title,
+.block-lock .bp-by {
+  opacity: 0.4;
+}
+
 /* smartphone */
 @media only screen and (min-width: 20px) and (max-width: 767px) {
   .listing-grid {
