@@ -19,14 +19,21 @@
 	      "source" : "**/*.@(jpg|jpeg|gif|png|svg)",
 	      "headers" : [ {
 	        "key" : "Cache-Control",
-	        "value" : "max-age=172800"
+	        "value" : "max-age=604800"
 	      } ]
 	    },
 	    {
 	      "source" : "https://img.youtube.com/vi/*/0.jpg",
 	      "headers" : [ {
 	        "key" : "Cache-Control",
-	        "value" : "max-age=172800"
+	        "value" : "max-age=604800"
+	      } ]
+	    },
+	    {
+	      "source" : "dist/js/*.js",
+	      "headers" : [ {
+	        "key" : "Cache-Control",
+	        "value" : "max-age=604800"
 	      } ]
 	    }
     ]
