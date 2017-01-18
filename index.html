@@ -19,22 +19,22 @@
 	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
 
 	<!-- Prismic -->
-    <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 
-    <!-- lodash -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
+  <!-- lodash -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
 
-    <!-- custom JS -->
-    <script src="js/prismic-configuration.js"></script>
-    <script src="js/prismic-helpers.js"></script>
-    <script src="js/uke.js"></script>
+  <!-- custom JS -->
+  <script src="js/prismic-configuration.js"></script>
+  <script src="js/prismic-helpers.js"></script>
+  <script src="js/uke.js"></script>
 
-    <script>
+  <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -100,18 +100,6 @@
     </div>
   </header>
 
-<!--
-  <div class="block-listfilter">
-    <ul>
-      <li class="active"><a href="#">All</a></li>
-      <li><a href="#">Most recent</a></li>
-      <li><a href="#">Most commented</a></li>
-      <li><a href="#">Most viewed</a></li>
-      <li><a href="#">Top favorites</a></li>
-    </ul>
-  </div>
--->
-  
   <!-- Only for smartphone-->
   <div class="block-listfilterforiphone visible-xs-block">
     <p class="text-center"><a id="btnfilter" href="#" class="btn btn-default">Filter</a></p>
@@ -123,71 +111,6 @@
       <div class="col-sm-3">
         <aside id="aside-filter">
           <form>
-<!--
-            <div class="block-filter">
-              <h2>Options</h2>
-              <div class="box">
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo1" type="radio">
-                  <label for="chordfo1">All</label>
-                </div>
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo2" type="radio">
-                  <label for="chordfo2">Most recent</label>
-                </div>
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo3" type="radio">
-                  <label for="chordfo3">Most commented</label>
-                </div>
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo4" type="radio">
-                  <label for="chordfo4">Most viewed</label>
-                </div>
-                <div class="block-checkbox">
-                  <input name="choroptions" id="chordfo5" type="radio">
-                  <label for="chordfo5">Top favorites</label>
-                </div>
-              </div>
-            </div>
--->
-<!--
-            <div class="block-filter">
-              <h2>Filter</h2>
-              <div class="box">
-                <div class="block-checkbox">
-                  <input type="radio" name="rfilter" id="forall">
-                  <label for="forall">All</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="rfilter" id="forfavorite">
-                  <label for="forfavorite">Favorites</label>
-                </div>
-              </div>
-            </div>
--->
-
-     		<!-- ORDER BY -->
-<!--
-            <div class="block-filter">
-              <h2><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i> Order by</h2>
-              <div class="box" id="orderBy">              	              	
-              	<div class="block-checkbox">
-                  <input type="radio" name="orderByRadio" checked="checked" id="bySongOrder" value="my.uke-song.name">
-                  <label for="bySongOrder">Song Name</label>
-                </div>
-                <div class="block-checkbox">
-                  <input type="radio" name="orderByRadio" id="byArtistOrder" value="my.uke-song.artist">
-                  <label for="byArtistOrder">Artist Name</label>
-                </div>
-               
-                <div class="block-checkbox">
-                  <input type="radio" name="orderByRadio" id="byDateOrder" value="my.uke-song.first_publication_date">
-                  <label for="byDateOrder">Last added</label>
-                </div>
-            	
-              </div>
-            </div>
--->
             <div class="block-filter">
               <h2><i class="fa fa-filter" aria-hidden="true"></i> Chords difficulties</h2>
               <div class="box" id="chords_level">
