@@ -3,6 +3,17 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "."
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".gitignore",
+      ".firebaserc",
+      "database.rules.json"
+    ],
+    "redirects": [ {
+      "source" : "/listing.html",
+      "destination" : "/index.html",
+      "type" : 301
+    }]
   }
 }
