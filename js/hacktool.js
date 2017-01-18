@@ -1,7 +1,7 @@
 function displaySongFromTab(){
 
     var tabId = getURLParameter("tabId");
-    var url = "http://ukulele-agiletribu.rhcloud.com/tab?tabid="+tabId;
+    var url = "https://ukulele-agiletribu.rhcloud.com/tab?tabid="+tabId;
 
     $.get( url, function( doc ) {
         doc.tablature = doc.infos.song.replace(/ /g, "&nbsp;")
