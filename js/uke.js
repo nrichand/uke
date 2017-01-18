@@ -43,6 +43,8 @@ function displaySongsList(query, orderCriteria){
             checkIfFavorited(updateFavoriteButtonForList);
             addAnimationsOnList();
             addPremiumClicHandler();
+
+            $("#nbSongs").text(all_songs.length);
         });
     });
 }
