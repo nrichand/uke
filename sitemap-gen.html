@@ -30,12 +30,12 @@
 			            if (err) { Configuration.onPrismicError(err); return; }
 
 			            var result = "";
-			            result += "http://www.doyoukulele.com/<br />";
-			            result += "http://www.doyoukulele.com/begin.html<br>";
-			            result += "http://www.doyoukulele.com/all-songs.html<br>";
+			            result += "https://www.doyoukulele.com/<br />";
+			            result += "https://www.doyoukulele.com/begin.html<br>";
+			            result += "https://www.doyoukulele.com/all-songs.html<br>";
 
 			            docs.results.forEach(function(song){
-			            	result += "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug;
+			            	result += "https://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug;
 			            	result += "<br />";
 			            });			            
 			            
