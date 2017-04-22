@@ -523,7 +523,7 @@ function reloadSongWithFilters(){
         query += '[:d = at(my.uke-song.musical_style, "' + selectedGenre + '")]';        
     }
 
-    query += "]"
+    query += "]";
 
     //TODO : temporaire à voir lorsque le sort sera fait
     //var selectedOrderCriteria = $('#orderBy input:radio:checked').val();
