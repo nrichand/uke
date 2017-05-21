@@ -277,7 +277,7 @@ function convertStrumToArrow(strum){
 var scroller = (function() {
     var state = "inactive"; // Private Variable
     var speed = 1;
-    var delay = 125;
+    var delay = 75;
 
     var pub = {};// public object - returned at end of module
 
