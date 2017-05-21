@@ -1,6 +1,7 @@
 https://www.doyoukulele.com/
 https://www.doyoukulele.com/begin.html
 https://www.doyoukulele.com/all-songs.html
+https://www.doyoukulele.com/song.html?id=WR_5HicAANtJM2y7&slug=mr.-blue-sky
 https://www.doyoukulele.com/song.html?id=WHZVKSoAACcAQc0v&slug=mon-fils-ma-bataille
 https://www.doyoukulele.com/song.html?id=WECT2SkAAKUpdWDj&slug=steven-universe--rebecca-sugar
 https://www.doyoukulele.com/song.html?id=WCRI6iEAAMZc_Iro&slug=jeff-buckley
@@ -17,11 +18,13 @@ https://www.doyoukulele.com/song.html?id=V9xNXCgAAIcbCcYq&slug=ingrid-michaelson
 https://www.doyoukulele.com/song.html?id=WFj4ZCYAADEVwPUr&slug=frozen
 https://www.doyoukulele.com/song.html?id=WH-SzigAAKEB7TKM&slug=let-it-be
 https://www.doyoukulele.com/song.html?id=V974eygAACsAR3z5&slug=bruno-mars
+https://www.doyoukulele.com/song.html?id=WPxeoiUAAEMhY3Zp&slug=creep
 https://www.doyoukulele.com/song.html?id=WDL4UikAAFhxRF1A&slug=pow-wow
 https://www.doyoukulele.com/song.html?id=WCgboiEAAABfC9Wq&slug=m
 https://www.doyoukulele.com/song.html?id=V-boKCoAACcAwUIN&slug=louis-armstrong
 https://www.doyoukulele.com/song.html?id=WC4VVykAAAYfMNGI&slug=aladin
 https://www.doyoukulele.com/song.html?id=WAnyZB8AAITsnjFP&slug=nat-king-cole
+https://www.doyoukulele.com/song.html?id=WPttxCUAAEQmX1Mo&slug=poupine-et-thierry
 https://www.doyoukulele.com/song.html?id=WAPruCgAACgAvdIY&slug=israel-kamakawiwoole
 https://www.doyoukulele.com/song.html?id=WCRL4yEAAMVc_JbT&slug=twenty-one-pilots
 https://www.doyoukulele.com/song.html?id=WH-JSigAACYA7Qk4&slug=everythings-okay
@@ -35,6 +38,7 @@ https://www.doyoukulele.com/song.html?id=WDLXWCkAAHFzQ9k-&slug=serge-gainsbourg
 https://www.doyoukulele.com/song.html?id=V9-HwygAAD8ASbo-&slug=omi
 https://www.doyoukulele.com/song.html?id=WAYBeSgAAOpyxi_K&slug=bruno-mars
 https://www.doyoukulele.com/song.html?id=WCzcdCkAADQCK-2f&slug=lilicub
+https://www.doyoukulele.com/song.html?id=WLH2UyYAAGshndUn&slug=wind-of-change
 https://www.doyoukulele.com/song.html?id=WHnoeR8AAFomMMka&slug=imagine
 https://www.doyoukulele.com/song.html?id=WGWJ9CgAANEav5sP&slug=lava
 https://www.doyoukulele.com/song.html?id=WHqM9x8AAA4cM5zc&slug=hotel-california
@@ -62,3 +66,4 @@ https://www.doyoukulele.com/song.html?id=WDoCJCgAACsLr1gs&slug=frank-sinatra
 https://www.doyoukulele.com/song.html?id=V9sDFygAACYABJuv&slug=the-jungle-book
 https://www.doyoukulele.com/song.html?id=WDMcbSkAAFhxRO4O&slug=jason-mraz
 https://www.doyoukulele.com/song.html?id=WDhT1CgAAGIHqJ9e&slug=grace-vanderwaal
+https://www.doyoukulele.com/song.html?id=WPtgBCUAAA4pXxaf&slug=la-seine
