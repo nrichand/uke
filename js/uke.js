@@ -49,7 +49,7 @@ function displaySongsList(query, orderCriteria){
     });
 }
 
-function Song(id, slug, name, artist, clip_youtube_id, chords_diff, musical_style, availability) {
+function Song(id, slug, name, artist, clip_youtube_id, chords_diff, musical_style, availability, chords_hack) {
     this.id = id;
     this.slug = slug;
     this.name = name;
@@ -58,6 +58,7 @@ function Song(id, slug, name, artist, clip_youtube_id, chords_diff, musical_styl
     this.chords_diff = chords_diff;
     this.musical_style = musical_style;
     this.availability = availability;
+    this.chords_hack  = chords_hack
     this.premiumClassIfNecessary = function() { 
         if(this.availability == "premium"){ 
             return "block-lock"
@@ -73,10 +74,17 @@ function convertSongsToObject(prismicResults){
 
     prismicResults.forEach(function(prismicSong){
 
+        chords_hack = "";
+        if (prismicSong.data['uke-song.chords-hack']){
+            //chords_hack = prismicSong.data['uke-song.chords-hack'].value
+            chords_hack = prismicSong.getStructuredText('uke-song.chords-hack').asHtml();
+
+        }
+
         var song = new Song(prismicSong.id, prismicSong.slug, prismicSong.data['uke-song.name'].value,
             prismicSong.data['uke-song.artist'].value, prismicSong.data['uke-song.clip_youtube_id'].value,
             prismicSong.data['uke-song.Chords_diff'].value, prismicSong.data['uke-song.musical_style'].value,
-            prismicSong.data['uke-song.availability'].value);
+            prismicSong.data['uke-song.availability'].value, chords_hack);
 
         songObjectList.push(song);
     });
