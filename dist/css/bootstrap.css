@@ -10200,6 +10200,11 @@ p.p-btncall {
   color: #4c392c;
   margin: 0 0 20px 0;
 }
+#aside-filter h2.result{
+  color: #FFFFFF;
+  text-align:center;
+}
+
 #aside-filter ul {
   margin: 0 5px 0 0;
   padding: 0;
@@ -11031,7 +11036,7 @@ p.p-btncall {
   margin: 0 0 13px 9px;
   display: block;
   width: 43px;
-  height: 18px;
+  height: 43px;
   background: url(../img/autoscroll.png) no-repeat -70px -126px;
 }
 .block-scrolling #bs-play:hover {
