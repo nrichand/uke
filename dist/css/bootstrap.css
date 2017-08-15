@@ -9355,7 +9355,7 @@ input::-moz-focus-inner {
   position: relative;
   padding: 0  ;
   z-index: 1;
-  margin-top: -60px; /* TODO : remettre -80px */
+  margin-top: -80px;
 }
 #ft .first-row {
   padding-top: 70px;
