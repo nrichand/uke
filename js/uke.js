@@ -120,7 +120,7 @@ function injectMicroDataList(listing){
             "item": {
                 "@type": "MusicRecording",
                 "name": song.data['uke-song.name'].value,
-                "url": "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
+                "url": "https://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
                 "genre": song.data['uke-song.musical_style'].value,
                 "inLanguage": song.data['uke-song.lang'].value,
                 "thumbnailUrl": "https://img.youtube.com/vi/" + song.data['uke-song.clip_youtube_id'].value + "/0.jpg",
@@ -224,7 +224,7 @@ function injectMicroDataSong(song){
             "@context": "http://schema.org/",
             "@type": "MusicRecording",
             "name": song.data['uke-song.name'].value,
-            "url": "http://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
+            "url": "https://www.doyoukulele.com/song.html?id=" + song.id + "&slug=" + song.slug,
             "genre": song.data['uke-song.musical_style'].value,
             "inLanguage": song.data['uke-song.lang'].value,
             "thumbnailUrl": "https://img.youtube.com/vi/" + song.data['uke-song.clip_youtube_id'].value + "/0.jpg",
