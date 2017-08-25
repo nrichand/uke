@@ -11,11 +11,12 @@
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
+  * {transition:none!important}
+  
   *,
   *:before,
   *:after {
-    background: transparent !important;
-    color: #000 !important;
+    background: transparent !important;    
     box-shadow: none !important;
     text-shadow: none !important;
   }
