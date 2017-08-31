@@ -8,7 +8,8 @@
       "firebase.json",
       ".gitignore",
       ".firebaserc",
-      "database.rules.json"
+      "database.rules.json",
+      ".git/**"
     ],
     "redirects": [ {
       "source" : "/listing.html",
