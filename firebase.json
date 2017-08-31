@@ -23,7 +23,7 @@
 	      } ]
 	    },
 	    {
-	      "source" : "https://img.youtube.com/vi/*/0.jpg",
+	      "source" : "https://img.youtube.com/vi/*/mqdefault.jpg",
 	      "headers" : [ {
 	        "key" : "Cache-Control",
 	        "value" : "max-age=604800"

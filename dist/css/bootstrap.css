@@ -8805,7 +8805,7 @@ form :active {
   border: none;
 }
 .form-control::placeholder {
-  color: #979797;
+  color: #999999;
 }
 /* Fieldset */
 fieldset {
