@@ -9475,7 +9475,7 @@ input::-moz-focus-inner {
 }
 @media only screen and (min-width: 20px) and (max-width: 767px) {
   #ft {
-    background: url(../img/footer-smartphone.png ) no-repeat 0 0;
+    background: url(../img/footer-smartphone.jpg ) no-repeat 0 0;
     margin-top: 0;
   }
   #ft::before {
