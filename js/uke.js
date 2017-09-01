@@ -176,7 +176,9 @@ function displayASong(){
             doc.chords_img_url = [];
             var prismic_chords = doc.data['uke-song.chords'].value;
             prismic_chords.forEach(function(elem){
-                var chord_first_alternative = all_chords[elem.label.value][0];
+                var chord_first_alternative = all_chords[elem.label.value];
+                console.log(elem.label.value)
+                console.log(all_chords[elem.label.value])
                 var chord_img_url = chord_first_alternative.chord_diag_mini;
                 var chord_url = chord_first_alternative.chord_url;
                 var newChord = { "diag_mini" : chord_img_url, "chord_url" : chord_url}

@@ -7,7 +7,7 @@ var all_chords =
 			"chord_diag" : "https://ukulele-chords.com/img/chord/A_1.png",
 			"chord_diag_mini" : "https://ukulele-chords.com/img/chord/mini/A_1.png",
 			"chord_photo" : "https://ukulele-chords.com/img/chord/photo/Amajor_1.jpg",
-			"m" : "https://ukulele-chords.com/A"
+			"chord_url" : "https://ukulele-chords.com/A"
 		},
 		{
 			"chord_name" : "A",
