@@ -2,7 +2,11 @@ https://www.doyoukulele.com/
 https://www.doyoukulele.com/begin.html
 https://www.doyoukulele.com/all-songs.html
 https://www.doyoukulele.com/song.html?id=WFessSYAAClFXR4V&slug=ukelele-girl
+https://www.doyoukulele.com/song.html?id=WaBd8CUAALP0OvTo&slug=lovely-hula-hands
+https://www.doyoukulele.com/song.html?id=WAPruCgAACgAvdIY&slug=somewhere-over-the-rainbow
 https://www.doyoukulele.com/song.html?id=WYRPpSkAAJqm6zCj&slug=il-est-cinq-heures-paris-seveille
+https://www.doyoukulele.com/song.html?id=WbDwJx8AAO3Gad0Y&slug=my-little-grass-shack
+https://www.doyoukulele.com/song.html?id=WHqM9x8AAA4cM5zc&slug=hotel-california
 https://www.doyoukulele.com/song.html?id=WCRI6iEAAMZc_Iro&slug=hallelujah
 https://www.doyoukulele.com/song.html?id=V9sQbigAACYABNEp&slug=riptide
 https://www.doyoukulele.com/song.html?id=WFflfSYAAClFXgMW&slug=island-in-the-sun
@@ -10,7 +14,6 @@ https://www.doyoukulele.com/song.html?id=WAShGigAADpGwKpS&slug=radioactive
 https://www.doyoukulele.com/song.html?id=V9xNXCgAAIcbCcYq&slug=you-and-i
 https://www.doyoukulele.com/song.html?id=V974eygAACsAR3z5&slug=count-on-me
 https://www.doyoukulele.com/song.html?id=WAnyZB8AAITsnjFP&slug=l.o.v.e
-https://www.doyoukulele.com/song.html?id=WAPruCgAACgAvdIY&slug=somewhere-over-the-rainbow
 https://www.doyoukulele.com/song.html?id=WCRL4yEAAMVc_JbT&slug=house-of-gold
 https://www.doyoukulele.com/song.html?id=V8nu3SgAACoAbURe&slug=budapest
 https://www.doyoukulele.com/song.html?id=WCHPXyEAABxI8qP6&slug=les-champs-elysee
@@ -22,7 +25,6 @@ https://www.doyoukulele.com/song.html?id=V9-HwygAAD8ASbo-&slug=cheerleader
 https://www.doyoukulele.com/song.html?id=WAYBeSgAAOpyxi_K&slug=marry-you
 https://www.doyoukulele.com/song.html?id=WCzcdCkAADQCK-2f&slug=voyage-en-italie
 https://www.doyoukulele.com/song.html?id=WLH2UyYAAGshndUn&slug=wind-of-change
-https://www.doyoukulele.com/song.html?id=WHqM9x8AAA4cM5zc&slug=hotel-california
 https://www.doyoukulele.com/song.html?id=WR_5HicAANtJM2y7&slug=mr.-blue-sky
 https://www.doyoukulele.com/song.html?id=WASO_SgAAHJDwGB2&slug=soul-sister
 https://www.doyoukulele.com/song.html?id=WAnmfR8AAJvdngGu&slug=chupee
