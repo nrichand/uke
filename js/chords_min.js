@@ -479,5 +479,10 @@ var all_chords =
 		"chord_name": "Abm6",
 		"chord_diag_mini": "https://ukulele-chords.com/img/chord/mini/Abm6_587.png",
 		"chord_url": "https://ukulele-chords.com/Abm6"
+	},
+	"Gbdim": {
+		"chord_name": "Gbdim",
+		"chord_diag_mini": "https://ukulele-chords.com/img/chord/mini/Gbdim_500.png",
+		"chord_url": "https://ukulele-chords.com/Gbdim"
 	}
 }
